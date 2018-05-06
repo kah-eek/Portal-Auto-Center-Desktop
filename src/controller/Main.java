@@ -1,12 +1,7 @@
 package controller;
 	
 import javafx.scene.control.TextField;
-
-import javax.swing.JOptionPane;
-
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -14,12 +9,11 @@ import utils.Utils;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 
 
 public class Main extends Application {
 	
-	// get fields from window
+	// Get fields from window
 	@FXML TextField txtUsername;
 	@FXML TextField txtPassword;
 	
@@ -29,9 +23,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		this.primaryStage = primaryStage;
-		
+				
 		// open main window
-		Main.openWindow("Main");
+		Main.openWindow("Main", null);
 		
 	}
 	
@@ -43,18 +37,21 @@ public class Main extends Application {
 	 * Open system's windows 
 	 * @param xmlFile
 	 */
-	static public void openWindow(String xmlFile)
-	{
-		// main windows
-		Parent window;
-		
+	static public void openWindow(String xmlFile, Object controller)
+	{		
 		try {
 			
-			// try to load XML file into variable
-			window = FXMLLoader.load(Main.class.getResource("../view/"+xmlFile+".fxml"));
+			// try to load XML file
+			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../view/"+xmlFile+".fxml"));
 			
+			// Verify if is to set controller into FXML file
+			if(controller != null) 
+			{
+				fxmlLoader.setController(controller);
+			}
+						
 			// create the scene
-			Scene scene = new Scene(window);
+			Scene scene = new Scene(fxmlLoader.load());
 			
 			// set scene on window
 			primaryStage.setScene(scene);
@@ -100,8 +97,14 @@ public class Main extends Application {
 			// Verifies if exists the authentication
 			if(authentication.existentCredential(authentication))
 			{
+				// Get user's information from DB
+				User user = User.getUser(txtUsername.getText(), txtPassword.getText());
+				
+				// Get employee's information from DB
+				Employee employee = new Employee().getEmployeesInformation(user.getIdUsuario());
+				
 				// Go to home page
-				Main.openWindow("Home");
+				Main.openWindow("Home", new Home(employee));
 			}
 			else
 			{
