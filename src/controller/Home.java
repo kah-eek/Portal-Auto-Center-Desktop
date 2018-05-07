@@ -13,6 +13,8 @@ public class Home {
 	@FXML Label lblQtdParceiros;
 	@FXML Label lblQtdParceirosAtivos;
 	@FXML Label lblQtdParcierosInativos;
+	@FXML Label lblLucroAssinaturas;
+	@FXML Label lblTotalGastosInternos;
 	
 	// Default constructor
 	public Home(Employee employeeObj)
@@ -34,6 +36,12 @@ public class Home {
 		
 		// Show inactive partners amount
 		lblQtdParcierosInativos.setText(String.valueOf(Partner.getInactivePartnersAmount()));
+		
+		// Show profit earned on partners' subscriptions
+		lblLucroAssinaturas.setText(String.valueOf(Subscription.getAllProfitValue()));
+		
+		// Show total of company expend's value
+		lblTotalGastosInternos.setText(String.valueOf(Expend.getAllExpendValue()));
 		
 	}
 	

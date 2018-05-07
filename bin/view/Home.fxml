@@ -137,7 +137,7 @@
                   <Image url="@../resources/pictures/icons/money.png" />
                </image>
             </ImageView>
-            <Label layoutX="537.0" layoutY="106.0" text="2451,63" textFill="WHITE">
+            <Label fx:id="lblLucroAssinaturas" layoutX="537.0" layoutY="106.0" text="0000,00" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -176,7 +176,7 @@
             </Label>
             <Separator layoutX="151.0" layoutY="325.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
             <Separator layoutX="453.0" layoutY="322.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-            <Label layoutX="524.0" layoutY="263.0" text="140232,22" textFill="WHITE">
+            <Label fx:id="lblTotalGastosInternos" layoutX="524.0" layoutY="263.0" text="00000,00" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
