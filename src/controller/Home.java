@@ -9,7 +9,10 @@ public class Home {
 	private Employee employee;
 	
 	// Get fields from window
-	@FXML Label txtUsersName;
+	@FXML Label lblUsersName;
+	@FXML Label lblQtdParceiros;
+	@FXML Label lblQtdParceirosAtivos;
+	@FXML Label lblQtdParcierosInativos;
 	
 	// Default constructor
 	public Home(Employee employeeObj)
@@ -21,7 +24,17 @@ public class Home {
 	@FXML public void initialize() 
 	{				
 		// Show employee's name
-		txtUsersName.setText(this.employee.getNome());
+		lblUsersName.setText(this.employee.getNome());
+		
+		// Show partners amount existents
+		lblQtdParceiros.setText(String.valueOf(Partner.getPartnersAmount()));
+		
+		// Show active partners amount
+		lblQtdParceirosAtivos.setText(String.valueOf(Partner.getActivePartnersAmount()));
+		
+		// Show inactive partners amount
+		lblQtdParcierosInativos.setText(String.valueOf(Partner.getInactivePartnersAmount()));
+		
 	}
 	
 	

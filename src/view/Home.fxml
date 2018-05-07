@@ -85,7 +85,7 @@
       <Label />
       <Label layoutX="200.0" prefHeight="79.0" prefWidth="1080.0" style="-fx-background-color: #1F1F1F;" />
       <Separator layoutX="200.0" layoutY="80.0" prefHeight="3.0" prefWidth="1080.0" />
-      <Label fx:id="txtUsersName" layoutX="1060.0" layoutY="40.0" text="Caique M. Oliveira" textFill="WHITE">
+      <Label fx:id="lblUsersName" layoutX="1060.0" layoutY="40.0" text="Caique M. Oliveira" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -122,7 +122,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="250.0" layoutY="106.0" text="19852" textFill="WHITE">
+            <Label fx:id="lblQtdParceiros" layoutX="250.0" layoutY="106.0" text="00000" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -144,7 +144,7 @@
             </Label>
             <Separator layoutX="453.0" layoutY="166.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
             <Separator layoutX="741.0" layoutY="162.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-            <Label layoutX="825.0" layoutY="102.0" text="856921" textFill="WHITE">
+            <Label fx:id="lblQtdParceirosAtivos" layoutX="833.0" layoutY="102.0" text="000000" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -169,7 +169,7 @@
                   <Image url="@../resources/pictures/icons/downTrands.png" />
                </image>
             </ImageView>
-            <Label layoutX="256.0" layoutY="266.0" text="1256" textFill="WHITE">
+            <Label fx:id="lblQtdParcierosInativos" layoutX="256.0" layoutY="266.0" text="0000" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
