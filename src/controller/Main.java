@@ -60,7 +60,7 @@ public class Main extends Application {
 			primaryStage.setMaximized(true);
 
 			// disable resizable option
-			//primaryStage.setResizable(false);
+			primaryStage.setResizable(false);
 
 			// set window's title
 			primaryStage.setTitle("Portal Auto Center");

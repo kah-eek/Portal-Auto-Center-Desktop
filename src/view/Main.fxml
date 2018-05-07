@@ -17,12 +17,12 @@
             <Group StackPane.alignment="CENTER">
                <children>
                   <TextFlow prefHeight="200.0" prefWidth="200.0" />
-                  <TextField id="txtEmail" fx:id="txtUsername" layoutY="-53.0" onMouseClicked="#cleanUsernameField" prefHeight="30.0" prefWidth="320.0" promptText="Usuário" stylesheets="@application.css">
+                  <TextField id="txtEmail" fx:id="txtUsername" layoutY="-103.0" onMouseClicked="#cleanUsernameField" prefHeight="30.0" prefWidth="320.0" promptText="Usuário" stylesheets="@application.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="txtPassword" fx:id="txtPassword" layoutX="1.0" layoutY="-105.0" onMouseClicked="#cleanPasswordField" prefHeight="30.0" prefWidth="320.0" promptText="Senha" stylesheets="@application.css">
+                  <TextField id="txtPassword" fx:id="txtPassword" layoutY="-53.0" onMouseClicked="#cleanPasswordField" prefHeight="30.0" prefWidth="320.0" promptText="Senha" stylesheets="@application.css">
                      <font>
                         <Font size="14.0" />
                      </font>
