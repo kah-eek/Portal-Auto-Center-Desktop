@@ -67,7 +67,7 @@
                               <Image url="@../resources/pictures/icons/work.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="57.0" layoutY="139.0" text="Parceiros" textFill="WHITE">
+                        <Label layoutX="57.0" layoutY="139.0" onMouseClicked="#openPartnersWindow" text="Parceiros" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

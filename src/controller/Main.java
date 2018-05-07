@@ -59,6 +59,7 @@ public class Main extends Application {
 			// set scene on window
 			primaryStage.setScene(scene);
 
+			// Set maximized manually
 			Screen screen = Screen.getPrimary();
 			Rectangle2D bounds = screen.getVisualBounds();
 

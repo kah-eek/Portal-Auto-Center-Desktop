@@ -95,7 +95,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="37.0" layoutY="-60.0" text="Resume" textFill="WHITE">
+                  <Label layoutX="37.0" layoutY="-60.0" text="Parceiros" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -105,100 +105,25 @@
                   <Separator layoutX="10.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
                   <Separator layoutX="1010.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
                   <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
-                  <ImageView fitHeight="639.0" fitWidth="1080.0" layoutY="1.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../resources/pictures/background/graphAnalitics.jpg" />
-                     </image>
-                  </ImageView>
-                  <Pane layoutY="273.0" prefHeight="367.0" prefWidth="1080.0" style="-fx-background-color: rgba(0,0,0,0.8);">
+                  <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: rgba(0,0,0,0.8);">
                      <children>
-                        <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="190.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/work.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="199.0" layoutY="51.0" text="Nº" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="151.0" layoutY="164.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-                        <Label layoutX="234.0" layoutY="51.0" text="Parceiros" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblQtdParceiros" layoutX="250.0" layoutY="106.0" text="00000" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="506.0" layoutY="51.0" text="Assinaturas" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="492.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/money.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="lblLucroAssinaturas" layoutX="537.0" layoutY="106.0" text="0000,00" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="453.0" layoutY="166.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-                        <Separator layoutX="741.0" layoutY="162.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-                        <Label fx:id="lblQtdParceirosAtivos" layoutX="833.0" layoutY="102.0" text="000000" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="780.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/check.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="764.0" layoutY="51.0" text="Parceiros Ativos" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="174.0" layoutY="214.0" text="Parceiros Inativos" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="190.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/downTrands.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="lblQtdParcierosInativos" layoutX="256.0" layoutY="266.0" text="0000" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="151.0" layoutY="325.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-                        <Separator layoutX="453.0" layoutY="322.0" opacity="0.3" prefHeight="3.0" prefWidth="213.0" />
-                        <Label fx:id="lblTotalGastosInternos" layoutX="524.0" layoutY="263.0" text="00000,00" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="483.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/redMoney.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="477.0" layoutY="208.0" text="Gastos Internos" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <TableView layoutX="153.0" layoutY="44.0" prefHeight="400.0" prefWidth="800.0">
+                          <columns>
+                            <TableColumn prefWidth="30.0" text="ID" />
+                            <TableColumn prefWidth="359.0" text="Razão Social" />
+                            <TableColumn prefWidth="104.0" text="Plano" />
+                            <TableColumn prefWidth="134.0" text="Início da Parceria" />
+                            <TableColumn prefWidth="249.0" text="E-mail" />
+                            <TableColumn minWidth="0.0" prefWidth="83.0" text="Ativo" />
+                          </columns>
+                        </TableView>
                      </children>
                   </Pane>
+                  <ImageView fitHeight="180.0" fitWidth="1080.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resources/pictures/background/partners.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </Group>
          </children>

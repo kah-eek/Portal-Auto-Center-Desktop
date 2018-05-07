@@ -45,6 +45,11 @@ public class Home {
 
 	}
 
+	@FXML public void openPartnersWindow()
+	{
+		System.out.println("okkk");
+	}
+
 
 
 
