@@ -22,11 +22,6 @@
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="txtPassword" fx:id="txtPassword" layoutY="-53.0" onMouseClicked="#cleanPasswordField" prefHeight="30.0" prefWidth="320.0" promptText="Senha" stylesheets="@application.css">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
                   <Label layoutX="101.0" layoutY="-8.0" stylesheets="@application.css" text="Esqueceu a senha ?" textFill="#b2b2b2">
                      <font>
                         <Font size="14.0" />
@@ -49,6 +44,7 @@
                         <Image url="@../resources/pictures/logo/portal_auto_center_icon.png" />
                      </image>
                   </ImageView>
+                  <PasswordField fx:id="txtPassword" layoutY="-53.0" onMouseClicked="#cleanPasswordField" prefHeight="30.0" prefWidth="321.0" promptText="Senha" />
                </children>
             </Group>
          </children>

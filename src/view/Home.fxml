@@ -14,9 +14,9 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane prefHeight="722.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Group>
+            <Group StackPane.alignment="CENTER">
                <children>
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="79.0" prefWidth="200.0" style="-fx-background-color: #1F1F1F;" />
                   <Label layoutX="-127.0" layoutY="-51.0" text="MENU" textFill="#00c853">
@@ -86,10 +86,10 @@
                         <Separator layoutX="48.0" layoutY="332.0" opacity="0.25" prefWidth="20.0" />
                      </children>
                   </Pane>
-                  <Separator prefWidth="200.0" />
+                  <Separator layoutX="-200.0" layoutY="-1.0" prefWidth="200.0" />
                   <Label />
                   <Label layoutY="-77.0" prefHeight="79.0" prefWidth="1080.0" style="-fx-background-color: #1F1F1F;" />
-                  <Separator prefHeight="3.0" prefWidth="1080.0" />
+                  <Separator layoutY="-1.0" prefHeight="3.0" prefWidth="1080.0" />
                   <Label fx:id="lblUsersName" layoutX="852.0" layoutY="-45.0" text="Caique M. Oliveira" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
@@ -103,14 +103,14 @@
                   <ComboBox layoutX="852.0" layoutY="-44.0" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: transparent;" />
                   <Separator layoutX="13.0" layoutY="-9.0" opacity="0.15" prefHeight="3.0" prefWidth="20.0" />
                   <Separator layoutX="10.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
-                  <Separator layoutX="1000.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
-                  <Separator layoutX="1044.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
-                  <ImageView fitHeight="639.0" fitWidth="1080.0" pickOnBounds="true">
+                  <Separator layoutX="1010.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
+                  <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
+                  <ImageView fitHeight="639.0" fitWidth="1080.0" layoutY="1.0" pickOnBounds="true">
                      <image>
                         <Image url="@../resources/pictures/background/graphAnalitics.jpg" />
                      </image>
                   </ImageView>
-                  <Pane layoutY="272.0" prefHeight="367.0" prefWidth="1080.0" style="-fx-background-color: rgba(0,0,0,0.8);">
+                  <Pane layoutY="273.0" prefHeight="367.0" prefWidth="1080.0" style="-fx-background-color: rgba(0,0,0,0.8);">
                      <children>
                         <ImageView fitHeight="46.0" fitWidth="185.0" layoutX="190.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>

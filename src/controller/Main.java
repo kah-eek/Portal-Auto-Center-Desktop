@@ -1,12 +1,15 @@
 package controller;
 
 import javafx.scene.control.TextField;
+
+import javafx.geometry.Rectangle2D;
+
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import utils.Utils;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 
@@ -56,11 +59,19 @@ public class Main extends Application {
 			// set scene on window
 			primaryStage.setScene(scene);
 
+			Screen screen = Screen.getPrimary();
+			Rectangle2D bounds = screen.getVisualBounds();
+
+			primaryStage.setX(bounds.getMinX());
+			primaryStage.setY(bounds.getMinY());
+			primaryStage.setWidth(bounds.getWidth());
+			primaryStage.setHeight(bounds.getHeight());
+
 			// start window on "full screen" mode
 			primaryStage.setMaximized(true);
 
 			// disable resizable option
-			primaryStage.setResizable(false);
+//			primaryStage.setResizable(false);
 
 			// set window's title
 			primaryStage.setTitle("Portal Auto Center");
