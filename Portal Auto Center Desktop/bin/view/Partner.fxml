@@ -111,7 +111,7 @@
                   <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
                   <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: #212121;">
                      <children>
-                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="418.0" prefWidth="1051.0">
+                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="364.0" prefWidth="1051.0">
                           <columns>
                             <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
                             <TableColumn fx:id="colPartnerCompanyName" prefWidth="242.0" resizable="false" text="Razão Social" />
@@ -131,6 +131,17 @@
                               <Image url="@../resources/pictures/icons/blackPlus.png" />
                            </image>
                         </ImageView>
+                        <Separator layoutX="139.0" layoutY="420.0" opacity="0.24" prefWidth="800.0" />
+                        <Button fx:id="btnUpdatePartner" layoutX="723.0" layoutY="407.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnDelete" layoutX="271.0" layoutY="410.0" mnemonicParsing="false" onAction="#deletePartner" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: rgb(183,28,28);" styleClass="btn" stylesheets="@application.css" text="EXCLUIR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </children>

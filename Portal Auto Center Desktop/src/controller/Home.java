@@ -44,7 +44,7 @@ public class Home {
 		lblTotalGastosInternos.setText(String.valueOf(Expend.getAllExpendValue()));
 
 	}
-	
+
 	@FXML public void openPartnersWindow()
 	{
 		Main.openWindow("Partner", null);

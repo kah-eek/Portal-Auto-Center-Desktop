@@ -1,7 +1,8 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
+import javax.swing.JOptionPane;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.PartnerDAO;
+import utils.Utils;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class Partner {
@@ -206,22 +208,54 @@ public class Partner {
 		return partnerDAO.getPartners();
 	}
 
+	/**
+	 * Delete the partner from DB
+	 * @param partnerId Partner's ID
+	 * @return true Partner was deleted with successful
+	 * @return false Fail on attempt to delete the partner from DB
+	 */
+	static public boolean deletePartner(int partnerId)
+	{
+		PartnerDAO partnerDAO = new PartnerDAO();
+		return partnerDAO.deletePartner(partnerId);
+	}
+
 	// ******************* CONTROLLER *******************
 	@FXML public void initialize()
 	{
-//		for(Partner partner : this.getPartners())
-//		{
-			colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
-			colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
-			colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
-			colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
-			colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
-			colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
+		colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
+		colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
+		colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
+		colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
+		colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
+		colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
 
-			ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
+		ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
 
-			tblPartners.setItems(FXCollections.observableArrayList(partners));
-//		}
+		tblPartners.setItems(FXCollections.observableArrayList(partners));
+	}
+
+	@FXML public void deletePartner()
+	{
+		// Get selected row
+		ParceiroSimplesFormatado clickedPart = tblPartners.getSelectionModel().getSelectedItem();
+
+		// Create a confirm dialog
+		int dialog = Utils.confirmDialog(null, "Deseja realmente deletar o parceiro \""+clickedPart.getRazaoSocial()+"\" ?", "Parceiro", JOptionPane.YES_NO_OPTION);
+
+		// Verify user's answer
+		if(dialog == JOptionPane.YES_OPTION)
+		{
+			if(Partner.deletePartner(clickedPart.getIdParceiro()))
+			{
+				tblPartners.getItems().remove(clickedPart);
+			}
+			else
+			{
+				Utils.showError(null, "Deletar Registro", "Falha ao tentar deletar o parceiro \""+clickedPart.getRazaoSocial()+"\"");
+			}
+		}
+
 	}
 	// **************************************************
 
