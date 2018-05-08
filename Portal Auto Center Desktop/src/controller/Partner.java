@@ -1,10 +1,24 @@
 package controller;
 
+import java.util.ArrayList;
+
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.PartnerDAO;
 
 public class Partner {
+	
+	// Get fields from window
+	@FXML TableView<Partner> tblPartners;
+	@FXML TableColumn<Partner, String> colPartnerId;
+	@FXML TableColumn<Partner, String> colPartnerCompanyName;
+	@FXML TableColumn<Partner, String> colPartnerSubscription;
+	@FXML TableColumn<Partner, String> colPartnershipDate;
+	@FXML TableColumn<Partner, String> colPartnerEmail;
+	@FXML TableColumn<Partner, String> colPartnerStatus;
 	
     // Attributes
     private int idParceiro;
@@ -15,12 +29,50 @@ public class Partner {
     private String razaoSocial;
     private String cnpj;
     private int ativo;
-    private String socorrista;
+    private int socorrista;
     private String email;
     private String telefone;
     private String celular;
     private String fotoPerfil;
     private String logParceiro;
+        
+    // Constructors
+    public Partner(){}
+    
+    public Partner
+    (
+		int idParceiro,
+		int idEndereco,
+		int idUsuario,
+		int idPlanoContratacao,
+		String nomeFantasia,
+		String razaoSocial,
+	    String cnpj,
+	    int ativo,
+	    int socorrista,
+	    String email,
+	    String telefone,
+	    String celular,
+	    String fotoPerfil,
+	    String logParceiro
+    )
+    {
+    	this.idParceiro = idParceiro;
+    	this.idEndereco = idEndereco;
+    	this.idUsuario = idUsuario;
+    	this.idPlanoContratacao = idPlanoContratacao;
+    	this.nomeFantasia = nomeFantasia;
+    	this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
+		this.ativo = ativo;
+		this.socorrista = socorrista;
+		this.email = email;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.fotoPerfil = fotoPerfil;
+		this.logParceiro = logParceiro;
+    }
+   //  ___________________________________________________><
    
 	public int getIdParceiro() {
 		return idParceiro;
@@ -70,10 +122,10 @@ public class Partner {
 	public void setAtivo(int ativo) {
 		this.ativo = ativo;
 	}
-	public String getSocorrista() {
+	public int getSocorrista() {
 		return socorrista;
 	}
-	public void setSocorrista(String socorrista) {
+	public void setSocorrista(int socorrista) {
 		this.socorrista = socorrista;
 	}
 	public String getEmail() {
@@ -140,6 +192,36 @@ public class Partner {
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.getInactivePartnersAmount();
 	}
+	
+	/**
+	 * Get all partners existents into DB
+	 * @return ArrayList<Partner> Containing all partners
+	 * @return empty ArrayList<Partner> Fail to attempt get partners into DB
+	 */
+	public ArrayList<Partner> getPartners()
+	{
+		PartnerDAO partnerDAO = new PartnerDAO();
+		return partnerDAO.getPartners();
+	}
+	
+	// ******************* CONTROLLER *******************
+	@FXML public void initialize()
+	{
+//		for(Partner partner : this.getPartners())
+//		{
+			colPartnerId.setCellValueFactory(new PropertyValueFactory<Partner,String>("idParceiro"));
+			colPartnerEmail.setCellValueFactory(new PropertyValueFactory<Partner,String>("email"));
+			colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<Partner,String>("razaoSocial"));
+			colPartnershipDate.setCellValueFactory(new PropertyValueFactory<Partner,String>("logParceiro"));
+			colPartnerStatus.setCellValueFactory(new PropertyValueFactory<Partner,String>("ativo"));
+			colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<Partner,String>("idPlanoContratacao"));
+			
+			ArrayList<Partner> partners = this.getPartners();
+			
+			tblPartners.setItems(FXCollections.observableArrayList(partners));
+//		}
+	}
+	// **************************************************
 		
 
 }
