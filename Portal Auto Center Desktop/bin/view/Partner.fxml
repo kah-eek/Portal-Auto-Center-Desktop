@@ -113,12 +113,12 @@
                      <children>
                         <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="418.0" prefWidth="1051.0">
                           <columns>
-                            <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="id" />
-                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="242.0" text="Razão Social" />
-                            <TableColumn fx:id="colPartnerSubscription" prefWidth="136.0" text="Plano" />
-                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="169.0" text="Início da Parceria" />
-                            <TableColumn fx:id="colPartnerEmail" prefWidth="382.0" text="E-mail" />
-                            <TableColumn fx:id="colPartnerStatus" minWidth="0.0" prefWidth="91.0" text="Ativo" />
+                            <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
+                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="242.0" resizable="false" text="Razão Social" />
+                            <TableColumn fx:id="colPartnerSubscription" prefWidth="136.0" resizable="false" text="Plano" />
+                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="169.0" resizable="false" text="Início da Parceria" />
+                            <TableColumn fx:id="colPartnerEmail" prefWidth="382.0" resizable="false" text="E-mail" />
+                            <TableColumn fx:id="colPartnerStatus" minWidth="0.0" prefWidth="82.0" resizable="false" text="Ativo" />
                           </columns>
                         </TableView>
                         <Button layoutX="964.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">

@@ -1,0 +1,21 @@
+package viewmodel;
+
+public class ParceiroSimplesFormatado {
+
+	private int id_parceiro;
+	private String nome_fantasia;
+	String razao_social;
+	String cnpj;
+	private int id_endereco;
+	String ativo;
+	String socorrista;
+	String email;
+	String telefone;
+	String foto_perfil;
+	String celular;
+	String log_parceiro;
+	private int id_usuario;
+	private int id_plano_contratacao;
+	String plano;
+
+}

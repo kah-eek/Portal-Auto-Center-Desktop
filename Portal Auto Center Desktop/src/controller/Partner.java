@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -8,18 +9,19 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.PartnerDAO;
+import viewmodel.ParceiroSimplesFormatado;
 
 public class Partner {
-	
+
 	// Get fields from window
-	@FXML TableView<Partner> tblPartners;
-	@FXML TableColumn<Partner, String> colPartnerId;
-	@FXML TableColumn<Partner, String> colPartnerCompanyName;
-	@FXML TableColumn<Partner, String> colPartnerSubscription;
-	@FXML TableColumn<Partner, String> colPartnershipDate;
-	@FXML TableColumn<Partner, String> colPartnerEmail;
-	@FXML TableColumn<Partner, String> colPartnerStatus;
-	
+	@FXML TableView<ParceiroSimplesFormatado> tblPartners;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnerId;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnerCompanyName;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnerSubscription;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnershipDate;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnerEmail;
+	@FXML TableColumn<ParceiroSimplesFormatado, String> colPartnerStatus;
+
     // Attributes
     private int idParceiro;
     private int idEndereco;
@@ -35,10 +37,10 @@ public class Partner {
     private String celular;
     private String fotoPerfil;
     private String logParceiro;
-        
+
     // Constructors
     public Partner(){}
-    
+
     public Partner
     (
 		int idParceiro,
@@ -73,7 +75,7 @@ public class Partner {
 		this.logParceiro = logParceiro;
     }
    //  ___________________________________________________><
-   
+
 	public int getIdParceiro() {
 		return idParceiro;
 	}
@@ -158,8 +160,8 @@ public class Partner {
 	public void setLogParceiro(String logParceiro) {
 		this.logParceiro = logParceiro;
 	}
-	   
-	  
+
+
 	/**
 	 * Get employee amount existents into DB
 	 * @return int Employee amount
@@ -170,7 +172,7 @@ public class Partner {
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.getPartnersAmount();
 	}
-   
+
 	/**
 	 * Get active partners amount existents into DB
 	 * @return int Partner amount
@@ -181,7 +183,7 @@ public class Partner {
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.getActivePartnersAmount();
 	}
-   
+
 	/**
 	 * Get inactive partners amount existents into DB
 	 * @return int Partner amount
@@ -192,36 +194,36 @@ public class Partner {
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.getInactivePartnersAmount();
 	}
-	
+
 	/**
 	 * Get all partners existents into DB
-	 * @return ArrayList<Partner> Containing all partners
-	 * @return empty ArrayList<Partner> Fail to attempt get partners into DB
+	 * @return ArrayList<ParceiroSimplesFormatado> Containing all partners
+	 * @return empty ArrayList<ParceiroSimplesFormatado> Fail to attempt get partners into DB
 	 */
-	public ArrayList<Partner> getPartners()
+	public ArrayList<ParceiroSimplesFormatado> getPartners()
 	{
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.getPartners();
 	}
-	
+
 	// ******************* CONTROLLER *******************
 	@FXML public void initialize()
 	{
 //		for(Partner partner : this.getPartners())
 //		{
-			colPartnerId.setCellValueFactory(new PropertyValueFactory<Partner,String>("idParceiro"));
-			colPartnerEmail.setCellValueFactory(new PropertyValueFactory<Partner,String>("email"));
-			colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<Partner,String>("razaoSocial"));
-			colPartnershipDate.setCellValueFactory(new PropertyValueFactory<Partner,String>("logParceiro"));
-			colPartnerStatus.setCellValueFactory(new PropertyValueFactory<Partner,String>("ativo"));
-			colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<Partner,String>("idPlanoContratacao"));
-			
-			ArrayList<Partner> partners = this.getPartners();
-			
+			colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
+			colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
+			colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
+			colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
+			colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
+			colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
+
+			ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
+
 			tblPartners.setItems(FXCollections.observableArrayList(partners));
 //		}
 	}
 	// **************************************************
-		
+
 
 }

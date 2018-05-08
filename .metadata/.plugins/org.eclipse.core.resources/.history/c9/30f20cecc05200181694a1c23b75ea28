@@ -1,0 +1,150 @@
+package viewmodel;
+
+public class ParceiroSimplesFormatado {
+
+	private int idParceiro;
+	private String nomeFantasia;
+	private String cnpj;
+	private int idEndereco;
+	private String ativo;
+	private String socorrista;
+	private String email;
+	private String telefone;
+	private String foto_perfil;
+	private String celular;
+	private String log_parceiro;
+	private int idUsuario;
+	private int id_plano_contratacao;
+	private String plano;
+
+    // Default constructor
+	public ParceiroSimplesFormatado
+	(
+		int idParceiro,
+		String nomeFantasia,
+		String razaoSocial,
+		String cnpj,
+		int idEndereco,
+		String ativo,
+		String socorrista,
+		String email,
+		String telefone,
+		String foto_perfil,
+		String celular,
+		String log_parceiro,
+		int idUsuario,
+		int idPlanoContratacao,
+		String plano
+	)
+	{
+		this.idParceiro = idParceiro;
+		this.nomeFantasia = nomeFantasia;
+		this.nomeFantasia = nomeFantasia;
+		this.cnpj = cnpj;
+		this.idEndereco = idEndereco;
+		this.ativo = ativo;
+		this.socorrista = socorrista;
+		this.email = email;
+		this.telefone = telefone;
+		this.foto_perfil = foto_perfil;
+		this.celular = celular;
+		this.log_parceiro = log_parceiro;
+		this.idUsuario = idUsuario;
+		this.id_plano_contratacao = id_plano_contratacao;
+		this.plano = plano;
+	}
+
+	public int getidParceiro() {
+		return idParceiro;
+	}
+	public void setidParceiro(int idParceiro) {
+		this.idParceiro = idParceiro;
+	}
+	public String getnomeFantasia() {
+		return nomeFantasia;
+	}
+	public void setnomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+	public String getnomeFantasia() {
+		return nomeFantasia;
+	}
+	public void setnomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+	public String getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+	public int getidEndereco() {
+		return idEndereco;
+	}
+	public void setidEndereco(int idEndereco) {
+		this.idEndereco = idEndereco;
+	}
+	public String getAtivo() {
+		return ativo;
+	}
+	public void setAtivo(String ativo) {
+		this.ativo = ativo;
+	}
+	public String getSocorrista() {
+		return socorrista;
+	}
+	public void setSocorrista(String socorrista) {
+		this.socorrista = socorrista;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getFoto_perfil() {
+		return foto_perfil;
+	}
+	public void setFoto_perfil(String foto_perfil) {
+		this.foto_perfil = foto_perfil;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+	public String getLog_parceiro() {
+		return log_parceiro;
+	}
+	public void setLog_parceiro(String log_parceiro) {
+		this.log_parceiro = log_parceiro;
+	}
+	public int getidUsuario() {
+		return idUsuario;
+	}
+	public void setidUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public int getId_plano_contratacao() {
+		return id_plano_contratacao;
+	}
+	public void setId_plano_contratacao(int id_plano_contratacao) {
+		this.id_plano_contratacao = id_plano_contratacao;
+	}
+	public String getPlano() {
+		return plano;
+	}
+	public void setPlano(String plano) {
+		this.plano = plano;
+	}
+
+
+
+}
