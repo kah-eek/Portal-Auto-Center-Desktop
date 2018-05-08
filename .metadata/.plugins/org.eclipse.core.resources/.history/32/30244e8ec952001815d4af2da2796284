@@ -246,7 +246,6 @@ public class Partner {
 		// Verify user's answer
 		if(dialog == JOptionPane.YES_OPTION)
 		{
-			// Check if partner was deleted
 			if(Partner.deletePartner(clickedPart.getIdParceiro()))
 			{
 				tblPartners.getItems().remove(clickedPart);
