@@ -18,143 +18,263 @@
          <children>
             <Group StackPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="-200.0" prefHeight="663.0" prefWidth="495.0" style="-fx-background-color: #282828;">
+                  <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="-200.0" layoutY="-76.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resources/pictures/background/business.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="-200.0" prefHeight="645.0" prefWidth="1280.0" style="-fx-background-color: rgba(40,40,40,0.95);">
                      <children>
-                        <ScrollPane prefHeight="669.0" prefWidth="495.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="669.0" prefWidth="479.0" styleClass="background" stylesheets="@application.css">
-                                 <children>
-                                    <TextField layoutX="88.0" layoutY="31.0" prefHeight="25.0" prefWidth="352.0" promptText="Nome Fantasia" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="44.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Separator layoutX="88.0" layoutY="70.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <Separator layoutX="86.0" layoutY="136.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="86.0" layoutY="97.0" prefHeight="25.0" prefWidth="352.0" promptText="Razão Social" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <Separator layoutX="86.0" layoutY="204.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="86.0" layoutY="165.0" prefHeight="25.0" prefWidth="352.0" promptText="CNPJ" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <Separator layoutX="86.0" layoutY="267.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="86.0" layoutY="228.0" prefHeight="25.0" prefWidth="352.0" promptText="E-mail" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <Separator layoutX="86.0" layoutY="332.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="86.0" layoutY="293.0" prefHeight="25.0" prefWidth="352.0" promptText="Telefone" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField layoutX="86.0" layoutY="360.0" prefHeight="25.0" prefWidth="352.0" promptText="Telefone" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Separator layoutX="86.0" layoutY="399.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <Separator layoutX="86.0" layoutY="465.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="86.0" layoutY="426.0" prefHeight="25.0" prefWidth="352.0" promptText="Celular" styleClass="transparent" stylesheets="@application.css">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Separator layoutX="86.0" layoutY="532.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ComboBox layoutX="86.0" layoutY="507.0" prefHeight="25.0" prefWidth="352.0" promptText="Plano" styleClass="background" stylesheets="@application.css" />
-                                    <ComboBox layoutX="86.0" layoutY="571.0" prefHeight="25.0" prefWidth="352.0" promptText="Ativo" styleClass="background" stylesheets="@application.css" />
-                                    <Separator layoutX="86.0" layoutY="596.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="42.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/pictures/icons/business.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Separator layoutX="86.0" layoutY="652.0" prefHeight="3.0" prefWidth="352.0" />
-                                    <ComboBox layoutX="86.0" layoutY="627.0" prefHeight="25.0" prefWidth="352.0" promptText="Socorrista" styleClass="background" stylesheets="@application.css" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </ScrollPane>
-                     </children>
-                  </Pane>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="92.0" layoutY="116.0" promptText="Razão Social">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="39.0" layoutY="14.0" opacity="0.5" text="Dados Gerais" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="92.0" layoutY="173.0" promptText="Nome Fantasia">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="92.0" layoutY="228.0" promptText="CNPJ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="92.0" layoutY="281.0" promptText="E-mail">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="122.0" layoutY="561.0" opacity="0.5" text="Socorrista" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="92.0" layoutY="596.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="187.0" layoutY="596.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="187.0" layoutY="523.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="92.0" layoutY="523.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <Label layoutX="141.0" layoutY="487.0" opacity="0.5" text="Ativo" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="92.0" layoutY="335.0" promptText="Telefone">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="92.0" layoutY="386.0" promptText="Celular">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox layoutX="92.0" layoutY="444.0" prefHeight="25.0" prefWidth="175.0" promptText="Plano" />
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutX="67.0" layoutY="550.0" opacity="0.38" prefWidth="200.0" />
+                        <Separator layoutX="67.0" layoutY="630.0" opacity="0.38" prefWidth="200.0" />
+                        <Separator layoutX="307.0" layoutY="16.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
+                        <Separator layoutX="13.0" layoutY="50.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
+                        <Separator layoutX="7.0" layoutY="57.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <Separator layoutX="653.0" layoutY="59.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <Separator layoutX="659.0" layoutY="52.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
+                        <Label layoutX="685.0" layoutY="16.0" opacity="0.5" text="Dados Usuário" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="738.0" layoutY="118.0" promptText="Nome de Usuario">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <PasswordField layoutX="738.0" layoutY="173.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox layoutX="738.0" layoutY="230.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
+                        <Separator layoutX="725.0" layoutY="341.0" opacity="0.38" prefWidth="200.0" />
+                        <Label layoutX="799.0" layoutY="278.0" opacity="0.5" text="Ativo" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="750.0" layoutY="314.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="845.0" layoutY="314.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="408.0" layoutY="117.0" promptText="Logradouro">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="355.0" layoutY="15.0" opacity="0.5" text="Dados de Endereço" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="329.0" layoutY="51.0" opacity="0.38" prefHeight="3.0" prefWidth="253.0" />
+                        <Separator layoutX="323.0" layoutY="58.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <Separator layoutX="633.0" layoutY="16.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
+                        <TextField layoutX="408.0" layoutY="172.0" promptText="Número">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="408.0" layoutY="227.0" promptText="Cidade">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="408.0" layoutY="334.0" promptText="CEP">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox layoutX="408.0" layoutY="282.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="408.0" layoutY="385.0" promptText="Bairro">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="408.0" layoutY="441.0" promptText="Complemento">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="999.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/profile/perfil.jpeg" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <Separator layoutX="-200.0" layoutY="-1.0" prefWidth="200.0" />
-                  <Label />
-                  <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="495.0" style="-fx-background-color: #1F1F1F;" />
-                  <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="4.0" prefWidth="495.0" />
-                  <Label layoutX="-158.0" layoutY="-74.0" text="Cadastrar Parceiro" textFill="WHITE">
+                  <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #1F1F1F;" />
+                  <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="1280.0" />
+                  <Label layoutX="243.0" layoutY="-74.0" text="Cadastrar Parceiro" textFill="WHITE">
                      <font>
                         <Font size="51.0" />
                      </font>
                   </Label>
                   <Separator layoutX="-185.0" layoutY="-9.0" opacity="0.15" prefHeight="3.0" prefWidth="20.0" />
                   <Separator layoutX="-188.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
-                  <Separator layoutX="232.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
-                  <Separator layoutX="276.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
+                  <Separator layoutX="1021.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
+                  <Separator layoutX="1065.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
                </children>
             </Group>
          </children>
       </StackPane>
-      <TextField layoutX="113.0" layoutY="752.0" prefHeight="25.0" prefWidth="352.0" promptText="Celular" styleClass="transparent" stylesheets="@application.css">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="69.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/pictures/icons/business.png" />
-         </image>
-      </ImageView>
-      <Separator layoutX="113.0" layoutY="791.0" prefHeight="3.0" prefWidth="352.0" />
    </children>
 </AnchorPane>
