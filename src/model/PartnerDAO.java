@@ -9,6 +9,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSetInternalMethods;
 import com.mysql.jdbc.ResultSetMetaData;
+import com.mysql.jdbc.Statement;
 
 import controller.MySql;
 import controller.Partner;
@@ -240,6 +241,79 @@ public class PartnerDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return deleted;
+		}
+	}
+
+	/**
+	 * Insert a new partner into DB
+	 * @param partnerObj Object that will inserted into DB
+	 * @return long Last record's ID
+	 * @return long -1 Fail in try to get last record's ID from database
+	 */
+	public long insertPartner(Partner partnerObj)
+	{
+		// Keep the result came from DB
+		long recordId = -1;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "INSERT INTO "+
+						"tbl_parceiro "+
+					"("+
+						"nome_fantasia, "+
+					    "razao_social, "+
+					    "cnpj, "+
+					    "id_endereco, "+
+					    "socorrista, "+
+					    "email, "+
+					    "telefone, "+
+					    "foto_perfil, "+
+					    "celular, "+
+					    "id_usuario, "+
+					    "id_plano_contratacao "+
+					") "+
+					"VALUES "+
+					"( "+
+						"?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"+
+					")";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, partnerObj.getNomeFantasia());
+			stmt.setString(2, partnerObj.getRazaoSocial());
+			stmt.setString(3, partnerObj.getCnpj());
+			stmt.setInt(4, partnerObj.getIdEndereco());
+			stmt.setInt(5, partnerObj.getSocorrista());
+			stmt.setString(6, partnerObj.getEmail());
+			stmt.setString(7, partnerObj.getTelefone());
+			stmt.setString(8, partnerObj.getFotoPerfil());
+			stmt.setString(9, partnerObj.getCelular());
+			stmt.setInt(10, partnerObj.getIdUsuario());
+			stmt.setInt(11, partnerObj.getIdPlanoContratacao());
+
+			// Execute the query
+			ResultSet id = stmt.getGeneratedKeys();
+
+			// Verify if DB returns the last inserted ID
+			if(id.next())
+			{
+				// Keep last inserted id in variable to return it
+				recordId = id.getLong(1);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return recordId;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return recordId;
 		}
 	}
 

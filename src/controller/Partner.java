@@ -232,6 +232,18 @@ public class Partner {
 		return partnerDAO.deletePartner(partnerId);
 	}
 
+	/**
+	 * Insert a new partner into DB
+	 * @param partnerObj Object that will inserted into DB
+	 * @return long Last record's ID
+	 * @return long -1 Fail in try to get last record's ID from database
+	 */
+	public long insertPartner(Partner partnerObj)
+	{
+		PartnerDAO partnerDAO = new PartnerDAO();
+		return partnerDAO.insertPartner(partnerObj);
+	}
+
 	// ******************* CONTROLLER *******************
 	@FXML public void initialize()
 	{
