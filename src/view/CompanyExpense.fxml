@@ -104,7 +104,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="37.0" layoutY="-60.0" text="Despesas &gt; Salários" textFill="WHITE">
+                  <Label layoutX="37.0" layoutY="-60.0" text="Despesas &gt; Empresa" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -116,20 +116,47 @@
                   <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
                   <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: #212121;">
                      <children>
-                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="408.0" prefWidth="1051.0">
+                        <Separator layoutX="103.0" layoutY="424.0" opacity="0.24" prefHeight="3.0" prefWidth="871.0" />
+                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="360.0" prefWidth="1051.0">
                           <columns>
                             <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
-                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="301.0" resizable="false" text="Funcionário" />
-                            <TableColumn fx:id="colPartnerSubscription" prefWidth="223.0" resizable="false" text="Salário" />
-                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="196.0" resizable="false" text="Pago" />
-                            <TableColumn fx:id="colPartnerEmail" prefWidth="300.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
+                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="187.0" resizable="false" text="Categoria" />
+                            <TableColumn fx:id="colPartnerSubscription" prefWidth="215.0" resizable="false" text="Valor" />
+                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="174.0" resizable="false" text="Pago" />
+                            <TableColumn fx:id="colPartnerEmail" minWidth="0.0" prefWidth="221.0" resizable="false" sortType="DESCENDING" text="Vencimento" />
+                            <TableColumn fx:id="colPartnerEmail" prefWidth="223.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnUpdatePartner" layoutX="862.0" layoutY="-13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR PAGAMENTO">
+                        <Button layoutX="929.0" layoutY="-28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="942.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/blackPlus.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnUpdatePartner" alignment="CENTER_RIGHT" layoutX="744.0" layoutY="411.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR PAGAMENTO" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
+                        <Button fx:id="btnDelete" layoutX="165.0" layoutY="414.0" mnemonicParsing="false" onAction="#deletePartner" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: rgb(183,28,28);" styleClass="btn" stylesheets="@application.css" text="EXCLUIR" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnUpdatePartner1" layoutX="472.0" layoutY="411.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="751.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/flash.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
