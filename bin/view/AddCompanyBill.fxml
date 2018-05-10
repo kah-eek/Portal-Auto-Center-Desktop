@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="314.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="450.0" prefWidth="495.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group StackPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="525.0" fitWidth="500.0" layoutX="-200.0" layoutY="-76.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resources/pictures/background/money.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="-200.0" prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: rgba(40,40,40,0.95);">
+                     <children>
+                        <Label layoutX="231.0" layoutY="296.0" opacity="0.5" text="Paga" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <RadioButton layoutX="141.0" layoutY="342.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="310.0" layoutY="342.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <TextField layoutX="87.0" layoutY="163.0" prefHeight="35.0" prefWidth="350.0" promptText="Valor">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <DatePicker layoutX="87.0" layoutY="232.0" prefHeight="35.0" prefWidth="350.0" promptText="Data de Nascimento" />
+                        <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="25.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/list.png" />
+                           </image>
+                        </ImageView>
+                        <ComboBox layoutX="87.0" layoutY="87.0" prefHeight="35.0" prefWidth="350.0" promptText="Categoria" />
+                        <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="29.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/money.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="29.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/calendar.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+                  <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="500.0" style="-fx-background-color: #1F1F1F;" />
+                  <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="500.0" />
+                  <Label layoutX="-67.0" layoutY="-51.0" text="Cadastrar Despesa Interna" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-185.0" layoutY="-9.0" opacity="0.15" prefHeight="3.0" prefWidth="20.0" />
+                  <Separator layoutX="-188.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
+                  <Separator layoutX="237.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
+                  <Separator layoutX="281.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
+                  <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="-165.0" layoutY="-60.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/pictures/icons/arrowBack.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
