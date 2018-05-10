@@ -88,6 +88,11 @@
                         </ImageView>
                         <Separator layoutX="48.0" layoutY="294.0" opacity="0.25" prefWidth="20.0" />
                         <Separator layoutX="48.0" layoutY="332.0" opacity="0.25" prefWidth="20.0" />
+                        <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="21.0" layoutY="580.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/pictures/icons/arrowBack.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Separator layoutX="-200.0" layoutY="-1.0" prefWidth="200.0" />

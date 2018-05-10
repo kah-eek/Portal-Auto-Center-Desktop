@@ -268,6 +268,11 @@
                   <Separator layoutX="-188.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
                   <Separator layoutX="1021.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
                   <Separator layoutX="1065.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
+                  <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="-155.0" layoutY="-50.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/pictures/icons/arrowBack.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Group>
          </children>
