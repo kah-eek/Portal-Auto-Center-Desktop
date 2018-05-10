@@ -25,104 +25,27 @@
                   </ImageView>
                   <Pane layoutX="-200.0" prefHeight="645.0" prefWidth="1280.0" style="-fx-background-color: rgba(40,40,40,0.95);">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/business.png" />
-                           </image>
-                        </ImageView>
-                        <TextField layoutX="92.0" layoutY="116.0" promptText="Nome">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
                         <Label layoutX="39.0" layoutY="14.0" opacity="0.5" text="Dados Gerais" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="92.0" layoutY="173.0" promptText="CPF">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/business.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/business.png" />
-                           </image>
-                        </ImageView>
-                        <TextField layoutX="92.0" layoutY="228.0" promptText="RG">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/email.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="143.0" layoutY="560.0" opacity="0.5" text="Sexo" textFill="WHITE">
+                        <Label layoutX="142.0" layoutY="545.0" opacity="0.5" text="Sexo" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="72.0" layoutY="596.0" mnemonicParsing="false" text="Feminino" textFill="WHITE">
+                        <RadioButton layoutX="71.0" layoutY="581.0" mnemonicParsing="false" text="Feminino" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="192.0" layoutY="596.0" mnemonicParsing="false" text="Masculino" textFill="WHITE">
+                        <RadioButton layoutX="191.0" layoutY="581.0" mnemonicParsing="false" text="Masculino" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="187.0" layoutY="523.0" mnemonicParsing="false" text="Não" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </RadioButton>
-                        <RadioButton layoutX="92.0" layoutY="523.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </RadioButton>
-                        <Label layoutX="141.0" layoutY="487.0" opacity="0.5" text="Ativo" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/call.png" />
-                           </image>
-                        </ImageView>
-                        <TextField layoutX="92.0" layoutY="335.0" promptText="Salário">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="92.0" layoutY="386.0" promptText="Celular">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/smartphone.png" />
-                           </image>
-                        </ImageView>
-                        <ComboBox layoutX="92.0" layoutY="444.0" prefHeight="25.0" prefWidth="175.0" promptText="Cargo" />
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/subscription.png" />
-                           </image>
-                        </ImageView>
-                        <Separator layoutX="67.0" layoutY="550.0" opacity="0.38" prefWidth="200.0" />
-                        <Separator layoutX="67.0" layoutY="630.0" opacity="0.38" prefWidth="200.0" />
+                        <Separator layoutX="66.0" layoutY="615.0" opacity="0.38" prefWidth="200.0" />
                         <Separator layoutX="307.0" layoutY="16.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
                         <Separator layoutX="13.0" layoutY="50.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
                         <Separator layoutX="7.0" layoutY="57.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
@@ -251,15 +174,124 @@
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="999.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/profile/perfil.jpeg" />
+                              <Image url="@../resources/pictures/profile/smile_face.jpeg" />
                            </image>
                         </ImageView>
-                        <DatePicker layoutX="91.0" layoutY="281.0" prefHeight="30.0" prefWidth="175.0" promptText="Data de Nascimento" />
+                        <ScrollPane hbarPolicy="NEVER" layoutX="9.0" layoutY="62.0" prefHeight="474.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="284.0" style="-fx-background-color: transparent; -fx-background: transparent;" stylesheets="@application.css">
+                                 <children>
+                                    <DatePicker layoutX="75.0" layoutY="220.0" prefHeight="30.0" prefWidth="175.0" promptText="Data de Nascimento" />
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/work.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ComboBox layoutX="76.0" layoutY="383.0" prefHeight="25.0" prefWidth="175.0" promptText="Cargo" />
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/smartphone.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="325.0" promptText="Celular">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField layoutX="76.0" layoutY="274.0" promptText="Salário">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/money.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/email.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="167.0" promptText="RG">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/business.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/business.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="112.0" promptText="CPF">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField layoutX="76.0" layoutY="55.0" promptText="Nome">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/profile.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="429.0" promptText="E-mail">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/email.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/identity.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="480.0" promptText="CNH">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField layoutX="76.0" layoutY="535.0" promptText="PIS">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/identity.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/pictures/icons/identity.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField layoutX="76.0" layoutY="590.0" promptText="Certificado de Reservista">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
                      </children></Pane>
                   <Separator layoutX="-200.0" layoutY="-1.0" prefWidth="200.0" />
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #1F1F1F;" />
                   <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="1280.0" />
-                  <Label layoutX="235.0" layoutY="-74.0" text="Cadastrar Parceiro" textFill="WHITE">
+                  <Label layoutX="195.0" layoutY="-74.0" text="Cadastrar Funcionário" textFill="WHITE">
                      <font>
                         <Font size="51.0" />
                      </font>
