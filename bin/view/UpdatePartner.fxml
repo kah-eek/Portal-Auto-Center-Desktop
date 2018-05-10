@@ -264,7 +264,7 @@
                   <Separator layoutX="-200.0" layoutY="-1.0" prefWidth="200.0" />
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #1F1F1F;" />
                   <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="1280.0" />
-                  <Label layoutX="235.0" layoutY="-74.0" text="Cadastrar Parceiro" textFill="WHITE">
+                  <Label layoutX="244.0" layoutY="-74.0" text="Atualizar Parceiro" textFill="WHITE">
                      <font>
                         <Font size="51.0" />
                      </font>
