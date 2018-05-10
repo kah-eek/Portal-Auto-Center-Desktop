@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="640.0" fitWidth="1080.0" layoutY="-1.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../resources/pictures/background/money.jpg" />
+                        <Image url="@../resources/pictures/background/planning.jpg" />
                      </image></ImageView>
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="79.0" prefWidth="200.0" style="-fx-background-color: #1F1F1F;" />
                   <Label layoutX="-127.0" layoutY="-51.0" text="MENU" textFill="#00c853">
