@@ -28,7 +28,7 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 
 		// open main window
-		Main.openWindow("AddPartner", null);
+		Main.openWindow("Main", null);
 
 	}
 
@@ -60,19 +60,19 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 
 			// Set maximized manually
-			Screen screen = Screen.getPrimary();
-			Rectangle2D bounds = screen.getVisualBounds();
-
-			primaryStage.setX(bounds.getMinX());
-			primaryStage.setY(bounds.getMinY());
-			primaryStage.setWidth(bounds.getWidth());
-			primaryStage.setHeight(bounds.getHeight());
+//			Screen screen = Screen.getPrimary();
+//			Rectangle2D bounds = screen.getVisualBounds();
+//
+//			primaryStage.setX(bounds.getMinX());
+//			primaryStage.setY(bounds.getMinY());
+//			primaryStage.setWidth(bounds.getWidth());
+//			primaryStage.setHeight(bounds.getHeight());
 
 			// start window on "full screen" mode
-			primaryStage.setMaximized(true);
+//			primaryStage.setMaximized(true);
 
 			// disable resizable option
-//			primaryStage.setResizable(false);
+			primaryStage.setResizable(false);
 
 			// set window's title
 			primaryStage.setTitle("Portal Auto Center");

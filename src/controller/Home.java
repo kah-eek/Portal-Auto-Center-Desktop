@@ -45,9 +45,26 @@ public class Home {
 
 	}
 
+	// Open windows when click on "button"
 	@FXML public void openPartnersWindow()
 	{
-		Main.openWindow("Partner", null);
+		Main.openWindow("Partner", new Partner(employee));
 	}
+
+	@FXML public void openEmployeeWindow()
+	{
+		Main.openWindow("Employee", new Employee(employee));
+	}
+
+	@FXML public void openCompanyExpenseWIndow()
+	{
+		Main.openWindow("CompanyExpense", null);
+	}
+
+	@FXML public void openEmployeeWageWindow()
+	{
+		Main.openWindow("EmployeeWage", new EmployeeWage(employee));
+	}
+	// ***************************************************
 
 }

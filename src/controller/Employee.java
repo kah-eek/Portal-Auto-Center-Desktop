@@ -1,9 +1,11 @@
 package controller;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import model.EmployeeDAO;
 
 public class Employee {
-		
+
   // Attributes
   private int idFuncionarioPac;
   private String nome;
@@ -22,6 +24,21 @@ public class Employee {
   private String certificadoReservista;
   private String logFuncionarioPac;
   private int idUsuario;
+
+  //Global employee on application
+  private Employee employee;
+
+  // Get fields from window
+  @FXML Label lblUsersName;
+
+  // Default constructor
+  public Employee(Employee employeeObj)
+  {
+	  this.employee = employeeObj;
+  }
+
+  public Employee(){}
+  // ***************************************
 
   public void setIdUsuario(int idUsuario) {
 	this.idUsuario = idUsuario;
@@ -123,18 +140,40 @@ public class Employee {
     this.logFuncionarioPac = logFuncionarioPac;
   }
 
-  
+
   /**
-	 * Get employee's informations from DB
-	 * @param userId Employee's user id to find it in DB
-	 * @return Employee Employee object with employee's data came from DB
-	 * @return null Fail to get employee's informations from DB
-	 */
-	public Employee getEmployeesInformation(int userId)
-	{
-		EmployeeDAO employeeDAO = new EmployeeDAO();
-		return employeeDAO.getEmployeesInformation(userId);
-	}
-  
+  * Get employee's informations from DB
+  * @param userId Employee's user id to find it in DB
+  * @return Employee Employee object with employee's data came from DB
+  * @return null Fail to get employee's informations from DB
+  */
+  public Employee getEmployeesInformation(int userId)
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.getEmployeesInformation(userId);
+  }
+
+  //Open windows when click on "button"
+  @FXML public void openHomeWindow()
+  {
+	Main.openWindow("Home", new Home(employee));
+  }
+
+  @FXML public void openPartnersWindow()
+  {
+	Main.openWindow("Partner", new Partner(employee));
+  }
+
+  @FXML public void openCompanyExpenseWIndow()
+  {
+	Main.openWindow("CompanyExpense", new CompanyExpense(employee));
+  }
+
+  @FXML public void openEmployeeWageWindow()
+  {
+	Main.openWindow("EmployeeWage", new EmployeeWage(employee));
+  }
+  // ***************************************************
+
 
 }

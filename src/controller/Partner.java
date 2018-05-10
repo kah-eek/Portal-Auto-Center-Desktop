@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -14,6 +15,12 @@ import utils.Utils;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class Partner {
+
+	// Global employee on application
+	private Employee employee;
+
+	// Get fields from window
+	@FXML Label lblUsersName;
 
 	// Get fields from window
 	@FXML TableView<ParceiroSimplesFormatado> tblPartners;
@@ -75,6 +82,11 @@ public class Partner {
 		this.celular = celular;
 		this.fotoPerfil = fotoPerfil;
 		this.logParceiro = logParceiro;
+    }
+
+    public Partner(Employee employeeObj)
+    {
+    	this.employee = employeeObj;
     }
    //  ___________________________________________________><
 
@@ -223,16 +235,20 @@ public class Partner {
 	// ******************* CONTROLLER *******************
 	@FXML public void initialize()
 	{
-		colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
-		colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
-		colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
-		colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
-		colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
-		colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
+		// Set some data into some field
+//		colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
+//		colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
+//		colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
+//		colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
+//		colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
+//		colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
+//
+//		ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
+//
+//		tblPartners.setItems(FXCollections.observableArrayList(partners));
 
-		ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
-
-		tblPartners.setItems(FXCollections.observableArrayList(partners));
+		// Show employee's name
+		lblUsersName.setText(employee.getNome());
 	}
 
 	@FXML public void deletePartner()
@@ -257,6 +273,32 @@ public class Partner {
 			}
 		}
 
+	}
+
+	// Open windows when click on "button"
+	@FXML public void openHomeWindow()
+	{
+		Main.openWindow("Home", new Home(employee));
+	}
+
+	@FXML public void openPartnersWindow()
+	{
+		Main.openWindow("Partner", null);
+	}
+
+	@FXML public void openEmployeeWindow()
+	{
+		Main.openWindow("Employee", new Employee(employee));
+	}
+
+	@FXML public void openCompanyExpenseWindow()
+	{
+		Main.openWindow("CompanyExpense", new CompanyExpense(employee));
+	}
+
+	@FXML public void openEmployeeWageWindow()
+	{
+		Main.openWindow("EmployeeWage", new EmployeeWage(employee));
 	}
 	// **************************************************
 

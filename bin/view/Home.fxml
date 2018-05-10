@@ -26,7 +26,7 @@
                   </Label>
                   <Pane layoutX="-200.0" prefHeight="639.0" prefWidth="200.0" style="-fx-background-color: #282828;">
                      <children>
-                        <Label layoutX="58.0" layoutY="190.0" text="Funcionários" textFill="WHITE">
+                        <Label fx:id="lblEmployees" layoutX="58.0" layoutY="190.0" onMouseClicked="#openEmployeeWindow" text="Funcionários" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -46,18 +46,18 @@
                               <Image url="@../resources/pictures/icons/payment.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="56.0" layoutY="237.0" text="Despesas" textFill="WHITE">
+                        <Label layoutX="56.0" layoutY="237.0" opacity="0.6" text="Despesas" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="81.0" layoutY="285.0" text="Empresa" textFill="WHITE">
+                        <Label layoutX="81.0" layoutY="285.0" onMouseClicked="#openCompanyExpenseWIndow" text="Empresa" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
                         <Separator layoutX="45.0" layoutY="282.0" opacity="0.25" orientation="VERTICAL" prefHeight="70.0" />
-                        <Label layoutX="84.0" layoutY="323.0" text="Salários" textFill="WHITE">
+                        <Label layoutX="84.0" layoutY="323.0" onMouseClicked="#openEmployeeWageWindow" text="Salários" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -67,7 +67,7 @@
                               <Image url="@../resources/pictures/icons/work.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="57.0" layoutY="139.0" onMouseClicked="#openPartnersWindow" text="Parceiros" textFill="WHITE">
+                        <Label fx:id="lblPartner" layoutX="57.0" layoutY="139.0" onMouseClicked="#openPartnersWindow" text="Parceiros" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
