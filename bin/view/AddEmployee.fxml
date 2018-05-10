@@ -287,7 +287,7 @@
                               </AnchorPane>
                           </content>
                         </ScrollPane>
-                        <Button layoutY="620.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="1280.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="CADASTRAR">
+                        <Button layoutY="615.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="1280.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="CADASTRAR">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
