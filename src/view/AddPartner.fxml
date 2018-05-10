@@ -27,7 +27,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="92.0" layoutY="116.0" promptText="Razão Social">
@@ -47,12 +47,12 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="92.0" layoutY="228.0" promptText="CNPJ">
@@ -67,7 +67,7 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/email.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="122.0" layoutY="561.0" opacity="0.5" text="Socorrista" textFill="WHITE">
@@ -102,7 +102,7 @@
                         </Label>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/call.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="92.0" layoutY="335.0" promptText="Telefone">
@@ -117,13 +117,13 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/smartphone.png" />
                            </image>
                         </ImageView>
                         <ComboBox layoutX="92.0" layoutY="444.0" prefHeight="25.0" prefWidth="175.0" promptText="Plano" />
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="49.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/subscription.png" />
                            </image>
                         </ImageView>
                         <Separator layoutX="67.0" layoutY="550.0" opacity="0.38" prefWidth="200.0" />
@@ -145,12 +145,12 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/account.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/key.png" />
                            </image>
                         </ImageView>
                         <PasswordField layoutX="738.0" layoutY="173.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
@@ -160,7 +160,7 @@
                         </PasswordField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="695.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/group.png" />
                            </image>
                         </ImageView>
                         <ComboBox layoutX="738.0" layoutY="230.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
@@ -182,7 +182,7 @@
                         </RadioButton>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="408.0" layoutY="117.0" promptText="Logradouro">
@@ -205,12 +205,12 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/city.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="408.0" layoutY="227.0" promptText="Cidade">
@@ -225,18 +225,18 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <ComboBox layoutX="408.0" layoutY="282.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <TextField layoutX="408.0" layoutY="385.0" promptText="Bairro">
@@ -251,7 +251,7 @@
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/pictures/icons/dashboard.png" />
+                              <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="999.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
