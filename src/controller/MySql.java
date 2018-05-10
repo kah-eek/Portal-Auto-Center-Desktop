@@ -9,7 +9,7 @@ import com.mysql.jdbc.Connection;
 
 public class MySql {
 
-	private final String HOST = "jdbc:mysql://localhost/db_auto_center";
+	private final String HOST = "jdbc:mysql://localhost/db_auto_center?useSSL=false";
 	private final String USERNAME = "root";
 	private final String PASSWORD = "bcd127";
 

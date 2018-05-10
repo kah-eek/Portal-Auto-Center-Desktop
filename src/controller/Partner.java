@@ -276,6 +276,11 @@ public class Partner {
 	}
 
 	// Open windows when click on "button"
+	@FXML public void openAddPartner()
+	{
+		Main.openWindow("AddPartner", new AddPartner(employee));
+	}
+
 	@FXML public void openHomeWindow()
 	{
 		Main.openWindow("Home", new Home(employee));
