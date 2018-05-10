@@ -65,7 +65,7 @@
                      </children></Pane>
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="500.0" style="-fx-background-color: #1F1F1F;" />
                   <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="500.0" />
-                  <Label layoutX="-96.0" layoutY="-53.0" text="Cadastrar Despesa Interna" textFill="WHITE">
+                  <Label layoutX="-97.0" layoutY="-54.0" text="Atualizar Despesa Interna" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
