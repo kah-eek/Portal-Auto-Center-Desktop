@@ -1,5 +1,6 @@
 use db_auto_center;
 
+DESCRIBE tbl_usuario;
 SELECT * FROM tbl_conta_pac;
 SELECT * FROM tbl_categoria_conta_pac;
 SELECT * FROM tbl_pagamento_funcionario_pac;

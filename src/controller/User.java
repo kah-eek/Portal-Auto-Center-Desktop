@@ -72,6 +72,12 @@ public class User {
 		this.idNivelUsuario = idNivelUsuario;
 		this.ativo = ativo;
 	}
+	public User(String usuario, String senha, int idNivelUsuario)
+	{
+		this.usuario = usuario;
+		this.senha = senha;
+		this.idNivelUsuario = idNivelUsuario;
+	}
 	
 	/**
 	 * Get user's informations from DB
@@ -84,6 +90,18 @@ public class User {
 	{
 		UserDAO userDAO = new UserDAO();
 		return userDAO.getUser(username, password);
+	}
+	
+	/**
+	 * Insert a new user into DB
+	 * @param userObj Object that will inserted into DB
+	 * @return long Last record's ID
+	 * @return long -1 Fail in try to get last record's ID from database
+	 */
+	public long insertUser(User userObj)
+	{
+		UserDAO userDAO = new UserDAO();
+		return userDAO.insertUser(userObj);
 	}
 
 }
