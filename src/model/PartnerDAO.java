@@ -228,8 +228,6 @@ public class PartnerDAO {
 			// Execute the query
 			int rows = stmt.executeUpdate();
 
-			System.out.println(rows);
-
 			// Verify if record has succeed on delete
 			if(rows == 1) deleted = true;
 

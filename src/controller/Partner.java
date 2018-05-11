@@ -248,16 +248,16 @@ public class Partner {
 	@FXML public void initialize()
 	{
 		// Set some data into some field
-//		colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
-//		colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
-//		colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
-//		colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
-//		colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
-//		colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
-//
-//		ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
-//
-//		tblPartners.setItems(FXCollections.observableArrayList(partners));
+		colPartnerId.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("idParceiro"));
+		colPartnerEmail.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("email"));
+		colPartnerCompanyName.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("razaoSocial"));
+		colPartnershipDate.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("logParceiro"));
+		colPartnerStatus.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("ativo"));
+		colPartnerSubscription.setCellValueFactory(new PropertyValueFactory<ParceiroSimplesFormatado,String>("plano"));
+
+		ArrayList<ParceiroSimplesFormatado> partners = this.getPartners();
+
+		tblPartners.setItems(FXCollections.observableArrayList(partners));
 
 		// Show employee's name
 		lblUsersName.setText(employee.getNome());

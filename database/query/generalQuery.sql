@@ -6,4 +6,6 @@ SELECT * FROM tbl_pagamento_funcionario_pac;
 SELECT * FROM tbl_funcionario_pac;
 SELECT * FROM tbl_cargo_funcionario_pac;
 
+SELECT * FROM view_parceiro_simples_formatado;
+
 SELECT * FROM view_total_despesas_internas;
