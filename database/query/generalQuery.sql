@@ -1,12 +1,8 @@
 use db_auto_center;
 
+DESCRIBE tbl_endereco;
+DESCRIBE tbl_parceiro;
 DESCRIBE tbl_usuario;
-SELECT * FROM tbl_conta_pac;
-SELECT * FROM tbl_categoria_conta_pac;
-SELECT * FROM tbl_pagamento_funcionario_pac;
-SELECT * FROM tbl_funcionario_pac;
-SELECT * FROM tbl_cargo_funcionario_pac;
-
-SELECT * FROM view_parceiro_simples_formatado;
-
-SELECT * FROM view_total_despesas_internas;
+SELECT * FROM tbl_endereco;
+SELECT * FROM tbl_usuario;
+SELECT * FROM tbl_parceiro;
