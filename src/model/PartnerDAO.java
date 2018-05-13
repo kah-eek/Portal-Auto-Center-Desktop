@@ -16,9 +16,83 @@ import controller.Address;
 import controller.MySql;
 import controller.Partner;
 import controller.User;
+import viewmodel.ParceiroDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class PartnerDAO {
+	
+	/**
+	 * Get all informations about one partner
+	 * @param partnerID Partner's ID that it will be achieve into DB
+	 * @return ParceiroDetalhado Partner containing all data
+	 * @return null Fail in try to get the partner's data into DB
+	 */
+	public ParceiroDetalhado getFullPartnerById(int partnerID)
+	{
+		ParceiroDetalhado fullPartner = null;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "SELECT * FROM view_parceiro_detalhado WHERE id_parceiro = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setInt(1, partnerID);
+
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+
+			// Verify if rs has records inside itself
+			while(rs.next())
+			{
+				fullPartner = new ParceiroDetalhado
+				(
+					rs.getInt("id_parceiro"),
+					rs.getString("nome_fantasia"), 
+					rs.getString("cnpj"), 
+					rs.getString("razao_social"), 
+					rs.getInt("id_endereco"), 
+					rs.getString("parceiro_ativo"), 
+					rs.getString("foto_perfil"), 
+					rs.getString("email"), 
+					rs.getInt("socorrista"), 
+					rs.getString("telefone"), 
+					rs.getString("celular"), 
+					rs.getString("log_parceiro"), 
+					rs.getInt("id_usuario"), 
+					rs.getInt("id_plano_contratacao"), 
+					rs.getString("usuario"), 
+					rs.getString("senha"), 
+					rs.getString("log"), 
+					rs.getInt("ativo"), 
+					rs.getInt("id_nivel_usuario"), 
+					rs.getString("nivel"), 
+					rs.getString("logradouro"), 
+					rs.getString("numero"), 
+					rs.getString("cidade"), 
+					rs.getInt("id_estado"), 
+					rs.getString("cep"), 
+					rs.getString("bairro"), 
+					rs.getString("complemento"), 
+					rs.getString("estado")
+				);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return fullPartner;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return fullPartner;
+		}
+	}
 
 	/**
 	 * Get all partners existents into DB

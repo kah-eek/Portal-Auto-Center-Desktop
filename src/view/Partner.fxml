@@ -132,7 +132,7 @@
                            </image>
                         </ImageView>
                         <Separator layoutX="139.0" layoutY="420.0" opacity="0.24" prefWidth="800.0" />
-                        <Button fx:id="btnUpdatePartner" layoutX="723.0" layoutY="407.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
+                        <Button fx:id="btnUpdatePartner" layoutX="723.0" layoutY="407.0" mnemonicParsing="false" onAction="#updatePartner" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>

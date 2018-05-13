@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.PartnerDAO;
 import utils.Utils;
+import viewmodel.ParceiroDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class Partner {
@@ -199,7 +200,18 @@ public class Partner {
 	public void setLogParceiro(String logParceiro) {
 		this.logParceiro = logParceiro;
 	}
-
+	
+	/**
+	 * Get all informations about one partner
+	 * @param partnerID Partner's ID that it will be achieve into DB
+	 * @return ParceiroDetalhado Partner containing all data
+	 * @return null Fail in try to get the partner's data into DB
+	 */
+	static public ParceiroDetalhado getFullPartnerById(int partnerID)
+	{
+		PartnerDAO partnerDAO = new PartnerDAO();
+		return partnerDAO.getFullPartnerById(partnerID);
+	}
 
 	/**
 	 * Get employee amount existents into DB
@@ -290,28 +302,51 @@ public class Partner {
 		lblUsersName.setText(employee.getNome());
 	}
 
+	/**
+	 * Delete selected partner
+	 */
 	@FXML public void deletePartner()
 	{
 		// Get selected row
-		ParceiroSimplesFormatado clickedPart = tblPartners.getSelectionModel().getSelectedItem();
-
-		// Create a confirm dialog
-		int dialog = Utils.confirmDialog(null, "Deseja realmente deletar o parceiro \""+clickedPart.getRazaoSocial()+"\" ?", "Parceiro", JOptionPane.YES_NO_OPTION);
-
-		// Verify user's answer
-		if(dialog == JOptionPane.YES_OPTION)
+		ParceiroSimplesFormatado clickedPartner = tblPartners.getSelectionModel().getSelectedItem();
+		
+		// Check if one row was selected
+		if(clickedPartner != null)  // Row was selected
 		{
-			// Check if partner was deleted
-			if(Partner.deletePartner(clickedPart.getIdParceiro()))
+			// Create a confirm dialog
+			int dialog = Utils.confirmDialog(null, "Deseja realmente deletar o parceiro \""+clickedPartner.getRazaoSocial()+"\" ?", "Parceiro", JOptionPane.YES_NO_OPTION);
+
+			// Verify user's answer
+			if(dialog == JOptionPane.YES_OPTION)
 			{
-				tblPartners.getItems().remove(clickedPart);
-			}
-			else
-			{
-				Utils.showError(null, "Deletar Registro", "Falha ao tentar deletar o parceiro \""+clickedPart.getRazaoSocial()+"\"");
+				// Check if partner was deleted
+				if(Partner.deletePartner(clickedPartner.getIdParceiro()))
+				{
+					tblPartners.getItems().remove(clickedPartner);
+				}
+				else
+				{
+					Utils.showError(null, "Deletar Registro", "Falha ao tentar deletar o parceiro \""+clickedPartner.getRazaoSocial()+"\"");
+				}
 			}
 		}
 
+	}
+	
+	/**
+	 * Update selected partner 
+	 */
+	@FXML public void updatePartner()
+	{
+		// Get selected row
+		ParceiroSimplesFormatado clickedPartner = tblPartners.getSelectionModel().getSelectedItem();
+		
+		// Check if one row was selected
+		if(clickedPartner != null)  // Row was selected
+		{		
+			// Open update partner window to see partner's data
+			Main.openWindow("UpdatePartner", new UpdatePartner(employee, Partner.getFullPartnerById(clickedPartner.getIdParceiro())));
+		}
 	}
 
 	// Open windows when click on "button"
@@ -323,11 +358,6 @@ public class Partner {
 	@FXML public void openHomeWindow()
 	{
 		Main.openWindow("Home", new Home(employee));
-	}
-
-	@FXML public void openPartnersWindow()
-	{
-		Main.openWindow("Partner", null);
 	}
 
 	@FXML public void openEmployeeWindow()

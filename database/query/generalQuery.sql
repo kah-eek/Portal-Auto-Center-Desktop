@@ -1,3 +1,3 @@
 use db_auto_center;
 
-SELECT * FROM tbl_plano_contratacao;
+SELECT * FROM view_parceiro_detalhado WHERE id_parceiro = 1;
