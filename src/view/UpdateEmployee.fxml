@@ -35,12 +35,12 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="71.0" layoutY="540.0" mnemonicParsing="false" text="Feminino" textFill="WHITE">
+                        <RadioButton fx:id="rbtSexoF" layoutX="71.0" layoutY="540.0" mnemonicParsing="false" text="Feminino" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="191.0" layoutY="540.0" mnemonicParsing="false" text="Masculino" textFill="WHITE">
+                        <RadioButton fx:id="rbtSexoM" layoutX="191.0" layoutY="540.0" mnemonicParsing="false" text="Masculino" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -56,7 +56,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="738.0" layoutY="118.0" promptText="Nome de Usuario">
+                        <TextField fx:id="txtNomeUsuario" layoutX="738.0" layoutY="118.0" promptText="Nome de Usuario">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -71,7 +71,7 @@
                               <Image url="@../resources/pictures/icons/key.png" />
                            </image>
                         </ImageView>
-                        <PasswordField layoutX="738.0" layoutY="173.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
+                        <PasswordField fx:id="txtSenha" layoutX="738.0" layoutY="173.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -81,19 +81,19 @@
                               <Image url="@../resources/pictures/icons/group.png" />
                            </image>
                         </ImageView>
-                        <ComboBox layoutX="738.0" layoutY="230.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
+                        <ComboBox fx:id="cbxNivelUsuario" layoutX="738.0" layoutY="230.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
                         <Separator layoutX="725.0" layoutY="341.0" opacity="0.38" prefWidth="200.0" />
                         <Label layoutX="799.0" layoutY="278.0" opacity="0.5" text="Ativo" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="750.0" layoutY="314.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                        <RadioButton fx:id="rbnUsuarioAtivoS" layoutX="750.0" layoutY="314.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="845.0" layoutY="314.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                        <RadioButton fx:id="rbnUsuarioAtivoN" layoutX="845.0" layoutY="314.0" mnemonicParsing="false" text="Não" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -103,7 +103,7 @@
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="408.0" layoutY="117.0" promptText="Logradouro">
+                        <TextField fx:id="txtLogradouro" layoutX="408.0" layoutY="117.0" promptText="Logradouro">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -116,7 +116,7 @@
                         <Separator layoutX="329.0" layoutY="51.0" opacity="0.38" prefHeight="3.0" prefWidth="253.0" />
                         <Separator layoutX="323.0" layoutY="58.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
                         <Separator layoutX="633.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
-                        <TextField layoutX="408.0" layoutY="172.0" promptText="Número">
+                        <TextField fx:id="txtNumero" layoutX="408.0" layoutY="172.0" promptText="Número">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -131,12 +131,12 @@
                               <Image url="@../resources/pictures/icons/city.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="408.0" layoutY="227.0" promptText="Cidade">
+                        <TextField fx:id="txtCidade" layoutX="408.0" layoutY="227.0" promptText="Cidade">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField layoutX="408.0" layoutY="334.0" promptText="CEP">
+                        <TextField fx:id="txtCep" layoutX="408.0" layoutY="334.0" promptText="CEP">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -146,7 +146,7 @@
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <ComboBox layoutX="408.0" layoutY="282.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
+                        <ComboBox fx:id="cbxEstado" layoutX="408.0" layoutY="282.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
                         <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="365.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
@@ -157,12 +157,12 @@
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField layoutX="408.0" layoutY="385.0" promptText="Bairro">
+                        <TextField fx:id="txtBairro" layoutX="408.0" layoutY="385.0" promptText="Bairro">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField layoutX="408.0" layoutY="441.0" promptText="Complemento">
+                        <TextField fx:id="txtComplemento" layoutX="408.0" layoutY="441.0" promptText="Complemento">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -181,24 +181,24 @@
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="284.0" style="-fx-background-color: transparent; -fx-background: transparent;" stylesheets="@application.css">
                                  <children>
-                                    <DatePicker layoutX="75.0" layoutY="217.0" prefHeight="30.0" prefWidth="175.0" promptText="Data de Nascimento" />
+                                    <DatePicker fx:id="dpDtNasc" layoutX="75.0" layoutY="217.0" prefHeight="30.0" prefWidth="175.0" promptText="Data de Nascimento" />
                                     <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/pictures/icons/work.png" />
                                        </image>
                                     </ImageView>
-                                    <ComboBox layoutX="76.0" layoutY="380.0" prefHeight="25.0" prefWidth="175.0" promptText="Cargo" />
+                                    <ComboBox fx:id="cbxCargo" layoutX="76.0" layoutY="380.0" prefHeight="25.0" prefWidth="175.0" promptText="Cargo" />
                                     <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="33.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/pictures/icons/smartphone.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="322.0" promptText="Celular">
+                                    <TextField fx:id="txtCelular" layoutX="76.0" layoutY="322.0" promptText="Celular">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </TextField>
-                                    <TextField layoutX="76.0" layoutY="271.0" promptText="Salário">
+                                    <TextField fx:id="txtSalario" layoutX="76.0" layoutY="271.0" promptText="Salário">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -213,7 +213,7 @@
                                           <Image url="@../resources/pictures/icons/email.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="164.0" promptText="RG">
+                                    <TextField fx:id="txtRg" layoutX="76.0" layoutY="164.0" promptText="RG">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -228,12 +228,12 @@
                                           <Image url="@../resources/pictures/icons/business.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="109.0" promptText="CPF">
+                                    <TextField fx:id="txtCpf" layoutX="76.0" layoutY="109.0" promptText="CPF">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </TextField>
-                                    <TextField layoutX="76.0" layoutY="52.0" promptText="Nome">
+                                    <TextField fx:id="txtNome" layoutX="76.0" layoutY="52.0" promptText="Nome">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -243,7 +243,7 @@
                                           <Image url="@../resources/pictures/icons/profile.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="426.0" promptText="E-mail">
+                                    <TextField fx:id="txtEmail" layoutX="76.0" layoutY="426.0" promptText="E-mail">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -258,12 +258,12 @@
                                           <Image url="@../resources/pictures/icons/identity.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="477.0" promptText="CNH">
+                                    <TextField fx:id="txtCnh" layoutX="76.0" layoutY="477.0" promptText="CNH">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </TextField>
-                                    <TextField layoutX="76.0" layoutY="532.0" promptText="PIS">
+                                    <TextField fx:id="txtPis" layoutX="76.0" layoutY="532.0" promptText="PIS">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -278,7 +278,7 @@
                                           <Image url="@../resources/pictures/icons/identity.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="76.0" layoutY="587.0" promptText="Certificado de Reservista">
+                                    <TextField fx:id="txtCertificadoReservista" layoutX="76.0" layoutY="587.0" promptText="Certificado de Reservista">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

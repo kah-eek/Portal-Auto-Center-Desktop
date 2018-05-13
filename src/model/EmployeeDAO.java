@@ -8,10 +8,89 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import controller.MySql;
+import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
+import viewmodel.ParceiroDetalhado;
 import controller.Employee;
 
 public class EmployeeDAO {
+	
+	/**
+	 * Get all informations about one employee
+	 * @param employeeId Employee's ID that it will be achieve into DB
+	 * @return FuncionarioDetalhado Employee containing all data
+	 * @return null Fail in try to get the employee's data into DB
+	 */
+	public FuncionarioDetalhado getFullEmployeeById(int employeeId)
+	{
+		FuncionarioDetalhado fullEmployee = null;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "SELECT * FROM view_funcionario_detalhado WHERE id_funcionario_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setInt(1, employeeId);
+
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+
+			// Verify if rs has records inside itself
+			while(rs.next())
+			{
+				fullEmployee = new FuncionarioDetalhado
+				(
+						rs.getInt("id_funcionario_pac"), 
+						rs.getString("nome"), 
+						rs.getString("cpf"), 
+						rs.getString("rg"), 
+						rs.getInt("id_endereco"), 
+						rs.getString("dt_nascimento"), 
+						rs.getInt("id_cargo_funcionario_pac"), 
+						rs.getString("salario"), 
+						rs.getString("sexo").charAt(0), 
+						rs.getString("celular"), 
+						rs.getString("email"), 
+						rs.getString("foto"), 
+						rs.getString("cnh"), 
+						rs.getString("pis"), 
+						rs.getString("certificado_reservista"), 
+						rs.getString("log_funcionario_pac"), 
+						rs.getInt("id_usuario"), 
+						rs.getString("cargo"), 
+						rs.getString("logradouro"), 
+						rs.getString("numero"), 
+						rs.getString("cidade"), 
+						rs.getInt("id_estado"), 
+						rs.getString("cep"), 
+						rs.getString("bairro"), 
+						rs.getString("complemento"), 
+						rs.getString("estado"), 
+						rs.getString("usuario"), 
+						rs.getString("senha"), 
+						rs.getInt("id_nivel_usuario"), 
+						rs.getString("log"), 
+						rs.getString("nivel"),
+						rs.getInt("usuario_ativo")
+				);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return fullEmployee;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return fullEmployee;
+		}
+	}
 	
 	/**
 	 * Get employees' basic informations from DB

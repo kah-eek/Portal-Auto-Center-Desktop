@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
 import utils.Utils;
+import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
 import viewmodel.ParceiroSimplesFormatado;
 
@@ -212,6 +213,34 @@ public class Employee {
 
 	// Show employee's name
 	lblUsersName.setText(employee.getNome());
+  }
+  
+  /**
+  * Get all informations about one employee
+  * @param employeeId Employee's ID that it will be achieve into DB
+  * @return FuncionarioDetalhado Employee containing all data
+  * @return null Fail in try to get the employee's data into DB
+  */
+  static public FuncionarioDetalhado getFullEmployeeById(int employeeId)
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.getFullEmployeeById(employeeId);
+  }
+ 
+  /**
+   * Update selected employee
+   */
+  @FXML public void updateEmployee()
+  {
+	// Get selected row
+	FuncionarioSimplesFormatado clickedEmployee = tblEmployees.getSelectionModel().getSelectedItem();
+	
+	// Check if one row was selected
+	if(clickedEmployee != null)  // Row was selected
+	{		
+		// Open update partner window to see partner's data
+		Main.openWindow("UpdateEmployee", new UpdateEmployee(employee, Employee.getFullEmployeeById(clickedEmployee.getIdFuncionarioPac())));
+	}
   }
   
   /**
