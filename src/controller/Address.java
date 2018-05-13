@@ -12,6 +12,51 @@ public class Address {
 	private String cep;
 	private String bairro;
 	private String complemento;
+	
+	// Default constructor
+	public Address
+	(
+		int idEndereco,
+		String logradouro,
+		String numero,
+		String cidade,
+		int idEstado,
+		String cep,
+		String bairro,
+		String complemento
+	)
+	{
+		this.idEndereco = idEndereco;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.cidade = cidade;
+		this.idEstado = idEstado;
+		this.cep = cep;
+		this.bairro = bairro;
+		this.complemento = complemento;
+	}
+	
+	// No idEndereco
+	public Address
+	(
+		String logradouro,
+		String numero,
+		String cidade,
+		int idEstado,
+		String cep,
+		String bairro,
+		String complemento
+	)
+	{
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.cidade = cidade;
+		this.idEstado = idEstado;
+		this.cep = cep;
+		this.bairro = bairro;
+		this.complemento = complemento;
+	}
+	// **********************************************
 
 	public int getIdEndereco() {
 		return idEndereco;

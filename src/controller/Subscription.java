@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.SubscriptionDAO;
 
 public class Subscription {
@@ -9,6 +11,16 @@ public class Subscription {
 	private String plano;
 	private float valor;
 	private String descricao;
+	
+	// Default constructor
+	public Subscription(int idPlanoContratacao, String plano, float valor, String descricao)
+	{
+		this.idPlanoContratacao = idPlanoContratacao;
+		this.plano = plano;
+		this.valor = valor;
+		this.descricao = descricao;
+	}
+	// *********************************************
 	
 	public int getIdPlanoContratacao() {
 		return idPlanoContratacao;
@@ -44,6 +56,17 @@ public class Subscription {
 	{
 		SubscriptionDAO subscriptionDAO = new SubscriptionDAO();
 		return subscriptionDAO.getAllProfitValue();
+	}
+	
+	/**
+	 * Get all existing plans into DB
+	 * @return ArraLis<SubscriptionPlan> List containing all plans existing into DB 
+	 * @return ArraLis<SubscriptionPlan> Empty Fail in try to get list containing all plans existing into DB 
+	 */
+	static public ArrayList<Subscription> getPartnerPlans()
+	{
+		SubscriptionDAO subscriptionDAO = new SubscriptionDAO();
+		return subscriptionDAO.getPartnerPlans();
 	}
 	
 	

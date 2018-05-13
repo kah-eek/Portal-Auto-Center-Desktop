@@ -88,6 +88,31 @@ public class Partner {
     {
     	this.employee = employeeObj;
     }
+    
+    // No idParceiro, idEndereco, logParceiro, ativo and idUsuario
+    public Partner
+    (
+    	String nomeFantasia,		
+		String razaoSocial,
+	    String cnpj,
+	    int socorrista,
+	    String email,
+	    String telefone,
+	    String celular,
+	    String fotoPerfil,
+	    int idPlanoContratacao
+    )
+    {
+    	this.idPlanoContratacao = idPlanoContratacao;
+    	this.nomeFantasia = nomeFantasia;
+    	this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
+		this.socorrista = socorrista;
+		this.email = email;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.fotoPerfil = fotoPerfil;
+    }
    //  ___________________________________________________><
 
 	public int getIdParceiro() {
@@ -234,14 +259,16 @@ public class Partner {
 
 	/**
 	 * Insert a new partner into DB
-	 * @param partnerObj Object that will inserted into DB
-	 * @return long Last record's ID
-	 * @return long -1 Fail in try to get last record's ID from database
+	 * @param addressObj Address object that will inserted into DB
+	 * @param userObj User object that will inserted into DB
+	 * @param partnerObj Partner object that will inserted into DB
+	 * @return int Last partner's record ID
+	 * @return itn -1 Fail in try to insert some data into database
 	 */
-	public long insertPartner(Partner partnerObj)
+	public int insertPartner(Address addressObj, User userObj, Partner partnerObj)
 	{
 		PartnerDAO partnerDAO = new PartnerDAO();
-		return partnerDAO.insertPartner(partnerObj);
+		return partnerDAO.insertPartner(addressObj, userObj, partnerObj);
 	}
 
 	// ******************* CONTROLLER *******************

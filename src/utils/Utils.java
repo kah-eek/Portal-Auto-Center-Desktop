@@ -27,6 +27,17 @@ public class Utils {
 	{
 		JOptionPane.showMessageDialog(window, message, title, JOptionPane.WARNING_MESSAGE);
 	}
+	
+	/**
+	 * Show one information message
+	 * @param window Window where it will appear the message
+	 * @param message Message that it will shown to user
+	 * @param title Message's title
+	 */
+	public static void showInfo(Component window, String message, String title)
+	{
+		JOptionPane.showMessageDialog(window, message, title, JOptionPane.INFORMATION_MESSAGE);
+	}
 
 	/**
 	 * Show one confirm message

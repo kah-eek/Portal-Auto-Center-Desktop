@@ -5,14 +5,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSetInternalMethods;
 import com.mysql.jdbc.ResultSetMetaData;
 import com.mysql.jdbc.Statement;
 
+import controller.Address;
 import controller.MySql;
 import controller.Partner;
+import controller.User;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class PartnerDAO {
@@ -244,64 +247,67 @@ public class PartnerDAO {
 
 	/**
 	 * Insert a new partner into DB
-	 * @param partnerObj Object that will inserted into DB
-	 * @return long Last record's ID
-	 * @return long -1 Fail in try to get last record's ID from database
+	 * @param addressObj Address object that will inserted into DB
+	 * @param userObj User object that will inserted into DB
+	 * @param partnerObj Partner object that will inserted into DB
+	 * @return int Last partner's record ID
+	 * @return itn -1 Fail in try to insert some data into database
 	 */
-	public long insertPartner(Partner partnerObj)
+	public int insertPartner(Address addressObj, User userObj, Partner partnerObj)
 	{
 		// Keep the result came from DB
-		long recordId = -1;
+		int recordId = -1;
 
 		// Open connection to DB
 		MySql db = new MySql();
 		Connection con = db.openConnection();
 
 		// Select into DB
-		String sql = "INSERT INTO "+
-						"tbl_parceiro "+
-					"("+
-						"nome_fantasia, "+
-					    "razao_social, "+
-					    "cnpj, "+
-					    "id_endereco, "+
-					    "socorrista, "+
-					    "email, "+
-					    "telefone, "+
-					    "foto_perfil, "+
-					    "celular, "+
-					    "id_usuario, "+
-					    "id_plano_contratacao "+
-					") "+
-					"VALUES "+
-					"( "+
-						"?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"+
-					")";
+		String sql = "{CALL sp_insert_parceiro" + 
+					 "("+
+					 "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"+
+					 ")}";
 
 		try {
 
 			// Create the statement
-			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, partnerObj.getNomeFantasia());
-			stmt.setString(2, partnerObj.getRazaoSocial());
-			stmt.setString(3, partnerObj.getCnpj());
-			stmt.setInt(4, partnerObj.getIdEndereco());
-			stmt.setInt(5, partnerObj.getSocorrista());
-			stmt.setString(6, partnerObj.getEmail());
-			stmt.setString(7, partnerObj.getTelefone());
-			stmt.setString(8, partnerObj.getFotoPerfil());
-			stmt.setString(9, partnerObj.getCelular());
-			stmt.setInt(10, partnerObj.getIdUsuario());
-			stmt.setInt(11, partnerObj.getIdPlanoContratacao());
+			CallableStatement stmt = (CallableStatement) con.prepareCall(sql);
+			
+			stmt.registerOutParameter(20, java.sql.Types.INTEGER);
+			
+			// Address
+			stmt.setString(1, addressObj.getLogradouro());
+			stmt.setString(2, addressObj.getNumero());
+			stmt.setString(3, addressObj.getCidade());
+			stmt.setInt(4, addressObj.getIdEstado());
+			stmt.setString(5, addressObj.getCep());
+			stmt.setString(6, addressObj.getBairro());
+			stmt.setString(7, addressObj.getComplemento());
+			
+			// User
+			stmt.setString(8, userObj.getUsuario());
+			stmt.setString(9, userObj.getSenha());
+			stmt.setInt(10, userObj.getIdNivelUsuario());
+			
+			// Partner
+			stmt.setString(11, partnerObj.getNomeFantasia());
+			stmt.setString(12, partnerObj.getRazaoSocial());
+			stmt.setString(13, partnerObj.getCnpj());
+			stmt.setInt(14, partnerObj.getSocorrista());
+			stmt.setString(15, partnerObj.getEmail());
+			stmt.setString(16, partnerObj.getTelefone());
+			stmt.setString(17, partnerObj.getFotoPerfil());
+			stmt.setString(18, partnerObj.getCelular());
+			stmt.setInt(19, partnerObj.getIdPlanoContratacao());
 
 			// Execute the query
-			ResultSet id = stmt.getGeneratedKeys();
+			ResultSet rs = stmt.executeQuery();
 
-			// Verify if DB returns the last inserted ID
-			if(id.next())
+			// Verify if procedure returns one record
+			if(rs.next())// Returns one
 			{
-				// Keep last inserted id in variable to return it
-				recordId = id.getLong(1);
+				// Keep record in variable to return it 
+				recordId = rs.getInt(1);
 			}
 
 			// close connection to DB

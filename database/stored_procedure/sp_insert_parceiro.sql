@@ -27,7 +27,7 @@ CREATE PROCEDURE sp_insert_parceiro (
     IN _id_plano_contratacao INT,
 	
     /* RESPONSE DO INSERT */
-    OUT response TINYINT(1))
+    OUT response INT)
 BEGIN 
 	
    /* VARIAVEIS A SEREM UTILIZADAS */
