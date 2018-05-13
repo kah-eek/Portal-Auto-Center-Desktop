@@ -66,6 +66,47 @@ public class EmployeeDAO {
 	}
 	
 	/**
+	 * Delete the employee from DB
+	 * @param employeeId Employee's ID
+	 * @return true Employee was deleted with successful
+	 * @return false Fail on attempt to delete the employee from DB
+	 */
+	public boolean deleteEmployee(int employeeId)
+	{
+		// Keep the result came from DB
+		boolean deleted = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "DELETE FROM tbl_funcionario_pac WHERE id_funcionario_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setInt(1, employeeId);
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on delete
+			if(rows == 1) deleted = true;
+
+			// close connection to DB
+			con.close();
+
+			return deleted;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return deleted;
+		}
+	}
+	
+	/**
 	 * Get employee's informations from DB
 	 * @param userId Employee's user id to find it in DB
 	 * @return Employee Employee object with employee's data came from DB

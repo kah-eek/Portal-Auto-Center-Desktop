@@ -2,6 +2,8 @@ package controller;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
+import utils.Utils;
 import viewmodel.FuncionarioSimplesFormatado;
 import viewmodel.ParceiroSimplesFormatado;
 
@@ -156,6 +159,18 @@ public class Employee {
   public void setLogFuncionarioPac(String logFuncionarioPac) {
     this.logFuncionarioPac = logFuncionarioPac;
   }
+  
+  /**
+  * Delete the employee from DB
+  * @param employeeId Employee's ID
+  * @return true Employee was deleted with successful
+  * @return false Fail on attempt to delete the employee from DB
+  */
+  static public boolean deleteEmployee(int employeeId)
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.deleteEmployee(employeeId);
+  }
 
 
   /**
@@ -197,6 +212,36 @@ public class Employee {
 
 	// Show employee's name
 	lblUsersName.setText(employee.getNome());
+  }
+  
+  /**
+   * Delete employee
+   */
+  @FXML public void deleteEmployee()
+  {
+	  // Get selected row
+	  FuncionarioSimplesFormatado clickedEmployee =  tblEmployees.getSelectionModel().getSelectedItem();
+	  
+	// Check if one row was selected
+	if(clickedEmployee != null)  // Row was selected
+	{
+		// Create a confirm dialog
+		int dialog = Utils.confirmDialog(null, "Deseja realmente deletar o funcionário \""+clickedEmployee.getNome()+"\" ?", "Funcionário", JOptionPane.YES_NO_OPTION);
+
+		// Verify user's answer
+		if(dialog == JOptionPane.YES_OPTION)
+		{
+			// Check if employee was deleted
+			if(Employee.deleteEmployee(clickedEmployee.getIdFuncionarioPac()))
+			{
+				tblEmployees.getItems().remove(clickedEmployee);
+			}
+			else
+			{
+				Utils.showError(null, "Deletar Registro", "Falha ao tentar deletar o funcionário \""+clickedEmployee.getNome()+"\"");
+			}
+		}
+	}
   }
 
   //Open windows when click on "button"
