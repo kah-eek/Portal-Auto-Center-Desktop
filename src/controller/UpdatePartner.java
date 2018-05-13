@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import utils.Utils;
 import viewmodel.ParceiroDetalhado;
 
 public class UpdatePartner {
@@ -31,6 +32,8 @@ public class UpdatePartner {
 	@FXML ComboBox<String> cbxPlanoContratacao;
 	@FXML RadioButton rbnUsuarioAtivoS;
 	@FXML RadioButton rbnUsuarioAtivoN;
+	@FXML RadioButton rbtParceiroAtivoS;
+	@FXML RadioButton rbtParceiroAtivoN;
 	@FXML TextField txtLogradouro;
 	@FXML TextField txtNumero;
 	@FXML TextField txtCidade;
@@ -93,22 +96,21 @@ public class UpdatePartner {
 		txtNomeFantasia.setText(fullPartner.getNomeFantasia());
 		txtRazaoSocial.setText(fullPartner.getRazaoSocial());
 		txtCnpj.setText(fullPartner.getCnpj());
-		txtEmail.setText(fullPartner.getEmail());
-		
-		if(fullPartner.getSocorrista() == 1)
-		{
-			rbtSocorristaS.setSelected(true);
-		}
-		else 
-		{
-			rbtSocorristaN.setSelected(true);
-		}
-				
+		txtEmail.setText(fullPartner.getEmail());				
 		txtTelefone.setText(fullPartner.getTelefone());
 //		imgFotoPerfil.setText(fullPartner.getFotoPerfil());
 		txtCelular.setText(fullPartner.getCelular());
-		
 		cbxPlanoContratacao.getSelectionModel().select(fullPartner.getIdPlanoContratacao()-1);
+		txtLogradouro.setText(fullPartner.getLogradouro());
+		txtNumero.setText(fullPartner.getNumero());
+		txtCidade.setText(fullPartner.getCidade());
+		cbxEstado.getSelectionModel().select(fullPartner.getIdEndereco()-1);
+		txtCep.setText(fullPartner.getCep());
+		txtBairro.setText(fullPartner.getBairro());
+		txtComplemento.setText(fullPartner.getComplemento());
+		txtUsuario.setText(fullPartner.getUsuario());
+		txtSenha.setText(fullPartner.getSenha());
+		cbxNivelUsuario.getSelectionModel().select(fullPartner.getIdNivelUsuario());
 		
 		if(fullPartner.getAtivo() == 1)
 		{ 
@@ -119,18 +121,99 @@ public class UpdatePartner {
 			rbnUsuarioAtivoN.setSelected(true);
 		}
 		
-		txtLogradouro.setText(fullPartner.getLogradouro());
-		txtNumero.setText(fullPartner.getNumero());
-		txtCidade.setText(fullPartner.getCidade());
+		if(fullPartner.getSocorrista() == 1)
+		{
+			rbtSocorristaS.setSelected(true);
+		}
+		else 
+		{
+			rbtSocorristaN.setSelected(true);
+		}
 		
-		cbxEstado.getSelectionModel().select(fullPartner.getIdEndereco()-1);
+		if(fullPartner.getParceiroAtivo() == 1)
+		{ 
+			rbtParceiroAtivoS.setSelected(true);
+		}
+		else
+		{
+			rbtParceiroAtivoN.setSelected(true);
+		}
+	}
+	
+	/**
+	 * Update partner
+	 */
+	@FXML public void updatePartner()
+	{
+		// Create address object that it will updated into DB
+		Address address = new Address(
+				fullPartner.getIdEndereco(),
+				txtLogradouro.getText(),
+				txtNumero.getText(),
+				txtCidade.getText(),
+				cbxEstado.getSelectionModel().getSelectedIndex()+1,
+				txtCep.getText(),
+				txtBairro.getText(),
+				txtComplemento.getText()
+		);
 		
-		txtCep.setText(fullPartner.getCep());
-		txtBairro.setText(fullPartner.getBairro());
-		txtComplemento.setText(fullPartner.getComplemento());
-		txtUsuario.setText(fullPartner.getUsuario());
-		txtSenha.setText(fullPartner.getSenha());
-		cbxNivelUsuario.getSelectionModel().select(fullPartner.getIdNivelUsuario());
+		int activeUser = rbnUsuarioAtivoN.isSelected() ? 0 : 1; 
+		
+		// Create user object that it will updated into DB
+		User user = new User
+		(
+			fullPartner.getIdUsuario(),
+			txtUsuario.getText(), 
+			txtSenha.getText(), 
+			cbxNivelUsuario.getSelectionModel().getSelectedIndex()+1,
+			activeUser
+		);
+		
+		// Verify which option about "Socorrista" it will be set
+		int socorrista = rbtSocorristaN.isSelected() ? 0 : 1;
+		
+		// Verify which option about "Ativo" (Partner) it will be set
+		int ativo = rbtParceiroAtivoS.isSelected() ? 1 : 0;
+				
+		// Create partner object that it will updated into DB
+		Partner partner = new Partner(
+				fullPartner.getIdParceiro(),
+				cbxPlanoContratacao.getSelectionModel().getSelectedIndex()+1,
+				txtNomeFantasia.getText(),
+				txtRazaoSocial.getText(),
+				txtCnpj.getText(),
+				ativo,
+				socorrista,
+				txtEmail.getText(),
+				txtTelefone.getText(),
+				txtCelular.getText(),
+				"path"
+		);
+		
+		// DEBBUG
+		/*
+		System.out.println(address.updateAddress(address)); 
+		System.out.println(user.updateUser(user));
+		System.out.println(partner.updatePartner(partner));
+		*/
+		
+		// Verify if the updates was succeed
+		if
+		(
+			address.updateAddress(address) && 
+			user.updateUser(user) &&
+			partner.updatePartner(partner)
+		)
+		{ // Successful
+			Utils.showInfo(null, "Parceiro atualizado com sucesso !", "Atualizar Parceiro");
+			
+			// Return to partner window
+			Main.openWindow("Partner", new Partner(employee));
+		}
+		else // Fail
+		{
+			Utils.showError(null, "Atualizar Parceiro", "Falha ao tentar atualziar o parceiro :(");
+		}
 	}
 	
 	/**

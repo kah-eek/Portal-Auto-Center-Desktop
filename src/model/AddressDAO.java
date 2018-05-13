@@ -9,6 +9,7 @@ import com.mysql.jdbc.Statement;
 
 import controller.Address;
 import controller.MySql;
+import controller.User;
 
 public class AddressDAO {
 
@@ -74,6 +75,65 @@ public class AddressDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return recordId;
+		}
+	}
+	
+	/**
+	 * Update the address in DB
+	 * @param addressObj Address that will be updated into DB
+	 * @return true Address was updated with successful
+	 * @return false Fail on attempt to updated the address from DB
+	 */
+	public boolean updateAddress(Address addressObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "+
+					 "tbl_endereco "+
+				     "SET "+
+					     "logradouro = ?, "+
+					     "numero = ?, "+
+					     "cidade = ?, "+
+					     "id_estado = ?, "+
+					     "cep = ?, "+
+					     "bairro = ?, "+
+					     "complemento = ? "+
+					  "WHERE id_endereco = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			
+			stmt.setString(1, addressObj.getLogradouro());
+			stmt.setString(2, addressObj.getNumero());
+			stmt.setString(3, addressObj.getCidade());
+			stmt.setInt(4, addressObj.getIdEstado());
+			stmt.setString(5, addressObj.getCep());
+			stmt.setString(6, addressObj.getBairro());
+			stmt.setString(7, addressObj.getComplemento());
+			stmt.setInt(8, addressObj.getIdEndereco());
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
 		}
 	}
 

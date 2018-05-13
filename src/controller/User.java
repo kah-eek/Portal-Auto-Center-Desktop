@@ -78,6 +78,14 @@ public class User {
 		this.senha = senha;
 		this.idNivelUsuario = idNivelUsuario;
 	}
+	public User(int idUsuario, String usuario, String senha, int idNivelUsuario, int ativo)
+	{
+		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.idNivelUsuario = idNivelUsuario;
+		this.ativo = ativo;
+	}
 	
 	/**
 	 * Get user's informations from DB
@@ -102,6 +110,18 @@ public class User {
 	{
 		UserDAO userDAO = new UserDAO();
 		return userDAO.insertUser(userObj);
+	}
+	
+	/**
+	 * Update the user in DB
+	 * @param userObj User that will be updated into DB
+	 * @return true User was updated with successful
+	 * @return false Fail on attempt to updated the user from DB
+	 */
+	public boolean updateUser(User userObj)
+	{
+		UserDAO userDAO = new UserDAO();
+		return userDAO.updateUser(userObj);
 	}
 
 }

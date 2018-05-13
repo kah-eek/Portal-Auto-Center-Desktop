@@ -118,4 +118,16 @@ public class Address {
 		AddressDAO addressDAO = new AddressDAO();
 		return addressDAO.insertAddress(addressObj);
 	}
+	
+	/**
+	 * Update the address in DB
+	 * @param addressObj Address that will be updated into DB
+	 * @return true Address was updated with successful
+	 * @return false Fail on attempt to updated the address from DB
+	 */
+	public boolean updateAddress(Address addressObj)
+	{
+		AddressDAO addressDAO = new AddressDAO();
+		return addressDAO.updateAddress(addressObj);
+	}
 }

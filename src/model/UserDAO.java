@@ -9,6 +9,7 @@ import com.mysql.jdbc.Statement;
 
 import controller.Employee;
 import controller.MySql;
+import controller.Partner;
 import controller.User;
 
 public class UserDAO {
@@ -122,6 +123,59 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return recordId;
+		}
+	}
+	
+	/**
+	 * Update the user in DB
+	 * @param userObj User that will be updated into DB
+	 * @return true User was updated with successful
+	 * @return false Fail on attempt to updated the user from DB
+	 */
+	public boolean updateUser(User userObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "+
+					 "tbl_usuario "+
+				     "SET "+
+					     "usuario = ?, "+
+					     "senha = ?, "+
+					     "id_nivel_usuario = ?, "+
+					     "ativo = ? "+
+					  "WHERE id_usuario = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			
+			stmt.setString(1, userObj.getUsuario());
+			stmt.setString(2, userObj.getSenha());
+			stmt.setInt(3, userObj.getIdNivelUsuario());
+			stmt.setInt(4, userObj.getAtivo());
+			stmt.setInt(5, userObj.getIdUsuario());
+			
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
 		}
 	}
 

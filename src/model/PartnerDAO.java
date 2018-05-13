@@ -57,7 +57,7 @@ public class PartnerDAO {
 					rs.getString("cnpj"), 
 					rs.getString("razao_social"), 
 					rs.getInt("id_endereco"), 
-					rs.getString("parceiro_ativo"), 
+					rs.getInt("parceiro_ativo"), 
 					rs.getString("foto_perfil"), 
 					rs.getString("email"), 
 					rs.getInt("socorrista"), 
@@ -316,6 +316,71 @@ public class PartnerDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return deleted;
+		}
+	}
+	
+	/**
+	 * Update the partner in DB
+	 * @param partnerObj Partner that will be updated into DB
+	 * @return true Partner was updated with successful
+	 * @return false Fail on attempt to updated the partner from DB
+	 */
+	public boolean updatePartner(Partner partnerObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "+
+					 "tbl_parceiro "+
+				     "SET "+
+					     "nome_fantasia = ?, "+
+					     "razao_social = ?, "+
+					     "cnpj = ?, "+
+					     "ativo = ?, "+
+					     "socorrista = ?, "+
+					     "email = ?, "+
+					     "telefone = ?, "+
+					     "foto_perfil = ?, "+
+					     "celular = ?, "+
+					     "id_plano_contratacao = ? "+
+					  "WHERE id_parceiro = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			
+			stmt.setString(1, partnerObj.getNomeFantasia());
+			stmt.setString(2, partnerObj.getRazaoSocial());
+			stmt.setString(3, partnerObj.getCnpj());
+			stmt.setInt(4, partnerObj.getAtivo());
+			stmt.setInt(5, partnerObj.getSocorrista());
+			stmt.setString(6, partnerObj.getEmail());
+			stmt.setString(7, partnerObj.getTelefone());
+			stmt.setString(8, partnerObj.getFotoPerfil());
+			stmt.setString(9, partnerObj.getCelular());
+			stmt.setInt(10, partnerObj.getIdPlanoContratacao());
+			stmt.setInt(11, partnerObj.getIdParceiro());
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
 		}
 	}
 

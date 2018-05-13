@@ -7,7 +7,7 @@ public class ParceiroDetalhado {
 	private String cnpj; 
 	private String razaoSocial; 
 	private int idEndereco; 
-	private String parceiroAtivo; 
+	private int parceiroAtivo; 
 	private String fotoPerfil; 
 	private String email; 
 	private int socorrista; 
@@ -39,7 +39,7 @@ public class ParceiroDetalhado {
 		String cnpj, 
 		String razaoSocial, 
 		int idEndereco,
-		String parceiroAtivo,
+		int parceiroAtivo,
 		String fotoPerfil, 
 		String email, 
 		int socorrista, 
@@ -135,11 +135,11 @@ public class ParceiroDetalhado {
 		this.idEndereco = idEndereco;
 	}
 
-	public String getParceiroAtivo() {
+	public int getParceiroAtivo() {
 		return parceiroAtivo;
 	}
 
-	public void setParceiroAtivo(String parceiroAtivo) {
+	public void setParceiroAtivo(int parceiroAtivo) {
 		this.parceiroAtivo = parceiroAtivo;
 	}
 

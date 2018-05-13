@@ -84,6 +84,34 @@ public class Partner {
 		this.fotoPerfil = fotoPerfil;
 		this.logParceiro = logParceiro;
     }
+    
+    public Partner
+    (
+		int idParceiro,
+		int idPlanoContratacao,
+		String nomeFantasia,
+		String razaoSocial,
+	    String cnpj,
+	    int ativo,
+	    int socorrista,
+	    String email,
+	    String telefone,
+	    String celular,
+	    String fotoPerfil
+    )
+    {
+    	this.idParceiro = idParceiro;
+    	this.idPlanoContratacao = idPlanoContratacao;
+    	this.nomeFantasia = nomeFantasia;
+    	this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
+		this.ativo = ativo;
+		this.socorrista = socorrista;
+		this.email = email;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.fotoPerfil = fotoPerfil;
+    }
 
     public Partner(Employee employeeObj)
     {
@@ -267,6 +295,18 @@ public class Partner {
 	{
 		PartnerDAO partnerDAO = new PartnerDAO();
 		return partnerDAO.deletePartner(partnerId);
+	}
+	
+	/**
+	 * Update the partner in DB
+	 * @param partnerObj Partner that will be updated into DB
+	 * @return true Partner was updated with successful
+	 * @return false Fail on attempt to updated the partner from DB
+	 */
+	public boolean updatePartner(Partner partnerObj)
+	{
+		PartnerDAO partnerDAO = new PartnerDAO();
+		return partnerDAO.updatePartner(partnerObj);
 	}
 
 	/**
