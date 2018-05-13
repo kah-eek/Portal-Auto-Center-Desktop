@@ -2,14 +2,68 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import controller.MySql;
+import viewmodel.FuncionarioSimplesFormatado;
 import controller.Employee;
 
 public class EmployeeDAO {
+	
+	/**
+	 * Get employees' basic informations from DB
+	 * @return ArrayList<FuncionarioSimplesFormatado> List containing all of employees existing into DB
+	 * @return ArrayList<FuncionarioSimplesFormatado> Empty list. Fail to get employees' basic informations from DB
+	 */
+	public ArrayList<FuncionarioSimplesFormatado> getEmployees()
+	{
+		ArrayList<FuncionarioSimplesFormatado> employees = new ArrayList<>();
+		
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "SELECT * FROM view_funcionario_simples_formatado";
+
+		try {
+			
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+				
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+			
+			// Verify if rs has records inside itself
+			while(rs.next())
+			{		
+				FuncionarioSimplesFormatado employee = new FuncionarioSimplesFormatado
+				(
+					rs.getInt("id_funcionario_pac"),
+					rs.getString("nome"),
+					rs.getInt("id_cargo_funcionario_pac"),
+					rs.getString("data_adimissao"),
+					rs.getString("email"),
+					rs.getString("celular"),
+					rs.getString("cargo")
+				);
+				
+				employees.add(employee);
+			}
+			
+			// close connection to DB
+			con.close();
+			
+			return employees;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return employees;
+		}
+	}
 	
 	/**
 	 * Get employee's informations from DB

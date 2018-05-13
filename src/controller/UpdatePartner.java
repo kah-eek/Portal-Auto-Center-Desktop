@@ -112,6 +112,7 @@ public class UpdatePartner {
 		txtSenha.setText(fullPartner.getSenha());
 		cbxNivelUsuario.getSelectionModel().select(fullPartner.getIdNivelUsuario());
 		
+		// Verify if partner's user is active
 		if(fullPartner.getAtivo() == 1)
 		{ 
 			rbnUsuarioAtivoS.setSelected(true);
@@ -121,6 +122,7 @@ public class UpdatePartner {
 			rbnUsuarioAtivoN.setSelected(true);
 		}
 		
+		// Verify if partner is "socorrista"
 		if(fullPartner.getSocorrista() == 1)
 		{
 			rbtSocorristaS.setSelected(true);
@@ -130,6 +132,7 @@ public class UpdatePartner {
 			rbtSocorristaN.setSelected(true);
 		}
 		
+		// Verify if partner is active
 		if(fullPartner.getParceiroAtivo() == 1)
 		{ 
 			rbtParceiroAtivoS.setSelected(true);

@@ -111,14 +111,14 @@
                   <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
                   <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: #212121;">
                      <children>
-                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="364.0" prefWidth="1051.0">
+                        <TableView fx:id="tblEmployees" layoutX="13.0" layoutY="30.0" prefHeight="364.0" prefWidth="1051.0">
                           <columns>
-                            <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
-                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="242.0" resizable="false" text="Nome" />
-                            <TableColumn fx:id="colPartnerSubscription" prefWidth="136.0" resizable="false" text="Cargo" />
-                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="169.0" resizable="false" text="Data Admissão" />
-                            <TableColumn fx:id="colPartnerEmail" prefWidth="286.0" resizable="false" text="E-mail" />
-                            <TableColumn fx:id="colPartnerStatus" minWidth="0.0" prefWidth="178.0" resizable="false" text="Celular" />
+                            <TableColumn fx:id="colEmployeeId" prefWidth="30.0" text="ID" />
+                            <TableColumn fx:id="colEmployeeName" prefWidth="242.0" resizable="false" text="Nome" />
+                            <TableColumn fx:id="colEmployeeRole" prefWidth="136.0" resizable="false" text="Cargo" />
+                            <TableColumn fx:id="colAdimissionDate" minWidth="0.0" prefWidth="169.0" resizable="false" text="Data Admissão" />
+                            <TableColumn fx:id="colEmployeeEmail" prefWidth="286.0" resizable="false" text="E-mail" />
+                            <TableColumn fx:id="colEmployeeCellphone" minWidth="0.0" prefWidth="178.0" resizable="false" text="Celular" />
                           </columns>
                         </TableView>
                         <Button layoutX="964.0" layoutY="-25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">

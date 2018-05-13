@@ -1,8 +1,16 @@
 package controller;
 
+import java.util.ArrayList;
+
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
+import viewmodel.FuncionarioSimplesFormatado;
+import viewmodel.ParceiroSimplesFormatado;
 
 public class Employee {
 
@@ -27,6 +35,15 @@ public class Employee {
 
   //Global employee on application
   private Employee employee;
+  
+  //Get fields from window
+  @FXML TableView<FuncionarioSimplesFormatado> tblEmployees;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeId;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeName;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colAdimissionDate;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeRole;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeEmail;
+  @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeCellphone;
 
   // Get fields from window
   @FXML Label lblUsersName;
@@ -151,6 +168,35 @@ public class Employee {
   {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.getEmployeesInformation(userId);
+  }
+  
+  /**
+  * Get employees' basic informations from DB
+  * @return ArrayList<FuncionarioSimplesFormatado> List containing all of employees existing into DB
+  * @return ArrayList<FuncionarioSimplesFormatado> Empty list. Fail to get employees' basic informations from DB
+  */
+  public ArrayList<FuncionarioSimplesFormatado> getEmployees()
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.getEmployees();
+  }
+  
+  @FXML public void initialize()
+  {
+	// Set some data into some field
+	colEmployeeId.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("idFuncionarioPac"));
+	colEmployeeEmail.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("email"));
+	colEmployeeName.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("nome"));
+	colEmployeeRole.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("cargo"));
+	colAdimissionDate.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("dataAdmissao"));
+	colEmployeeCellphone.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("celular"));
+
+	ArrayList<FuncionarioSimplesFormatado> employees = this.getEmployees();
+
+	tblEmployees.setItems(FXCollections.observableArrayList(employees));
+
+	// Show employee's name
+	lblUsersName.setText(employee.getNome());
   }
 
   //Open windows when click on "button"
