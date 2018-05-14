@@ -64,6 +64,38 @@ public class Employee {
   
   public Employee
   (
+	String nome, 
+	String cpf, 
+	String rg, 
+	int idCargoFuncionarioPac,
+	char sexo, 
+	String celular, 
+	String email, 
+	String foto, 
+	String cnh,
+	String pis, 
+	String certificadoReservista,
+	float salario,
+	String dtNascimento
+  ) 
+  {
+	this.nome = nome;
+	this.cpf = cpf;
+	this.rg = rg;
+	this.dtNascimento = dtNascimento;
+	this.idCargoFuncionarioPac = idCargoFuncionarioPac;
+	this.salario = salario;
+	this.sexo = sexo;
+	this.celular = celular;
+	this.email = email;
+	this.foto = foto;
+	this.cnh = cnh;
+	this.pis = pis;
+	this.certificadoReservista = certificadoReservista;
+  }
+  
+  public Employee
+  (
 	int idFuncionarioPac, 
 	String nome, 
 	String cpf, 
@@ -224,6 +256,20 @@ public class Employee {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.updateEmployee(employeeObj);
   }
+  
+  /**
+  * Insert a new employee into DB
+  * @param addressObj Address object that will inserted into DB
+  * @param userObj User object that will inserted into DB
+  * @param employeeObj Employee object that will inserted into DB
+  * @return int Last employee's record ID
+  * @return itn -1 Fail in try to insert some data into database
+  */
+  public int insertEmployee(Address addressObj, User userObj, Employee employeeObj)
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.insertEmployee(addressObj, userObj, employeeObj);	
+  }
 
 
   /**
@@ -277,6 +323,14 @@ public class Employee {
   {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.getFullEmployeeById(employeeId);
+  }
+  
+  /**
+   * Open window to add new employee
+   */
+  @FXML public void addEmployee()
+  {
+	  Main.openWindow("AddEmployee", new AddEmployee(employee));
   }
  
   /**

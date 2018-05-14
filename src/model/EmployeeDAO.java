@@ -4,14 +4,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import controller.MySql;
 import controller.Partner;
+import controller.User;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
 import viewmodel.ParceiroDetalhado;
+import controller.Address;
 import controller.Employee;
 
 public class EmployeeDAO {
@@ -314,6 +317,86 @@ public class EmployeeDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return employee;
+		}
+	}
+	
+	/**
+	 * Insert a new employee into DB
+	 * @param addressObj Address object that will inserted into DB
+	 * @param userObj User object that will inserted into DB
+	 * @param employeeObj Employee object that will inserted into DB
+	 * @return int Last employee's record ID
+	 * @return itn -1 Fail in try to insert some data into database
+	 */
+	public int insertEmployee(Address addressObj, User userObj, Employee employeeObj)
+	{
+		// Keep the result came from DB
+		int recordId = -1;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "{CALL sp_insert_funcionario" + 
+					 "("+
+					 "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?"+
+					 ")}";
+
+		try {
+
+			// Create the statement
+			CallableStatement stmt = (CallableStatement) con.prepareCall(sql);
+			
+			stmt.registerOutParameter(24, java.sql.Types.INTEGER);
+			
+			// Address
+			stmt.setString(1, addressObj.getLogradouro());
+			stmt.setString(2, addressObj.getNumero());
+			stmt.setString(3, addressObj.getCidade());
+			stmt.setInt(4, addressObj.getIdEstado());
+			stmt.setString(5, addressObj.getCep());
+			stmt.setString(6, addressObj.getBairro());
+			stmt.setString(7, addressObj.getComplemento());
+			
+			// User
+			stmt.setString(8, userObj.getUsuario());
+			stmt.setString(9, userObj.getSenha());
+			stmt.setInt(10, userObj.getIdNivelUsuario());
+			
+			// Employee
+			stmt.setString(11, employeeObj.getNome());
+			stmt.setString(12, employeeObj.getCpf());
+			stmt.setString(13, employeeObj.getRg());
+			stmt.setString(14, employeeObj.getDtNascimento());
+			stmt.setInt(15, employeeObj.getIdCargoFuncionarioPac());
+			stmt.setFloat(16, employeeObj.getSalario());
+			stmt.setString(17, String.valueOf(employeeObj.getSexo()));
+			stmt.setString(18, employeeObj.getCelular());
+			stmt.setString(19, employeeObj.getEmail());
+			stmt.setString(20, employeeObj.getFoto());
+			stmt.setString(21, employeeObj.getCnh());
+			stmt.setString(22, employeeObj.getPis());
+			stmt.setString(23, employeeObj.getCertificadoReservista());
+
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+
+			// Verify if procedure returns one record
+			if(rs.next())// Returns one
+			{
+				// Keep record in variable to return it 
+				recordId = rs.getInt(1);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return recordId;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return recordId;
 		}
 	}
 
