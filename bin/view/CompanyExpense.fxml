@@ -118,7 +118,7 @@
                             <TableColumn fx:id="colCategory" prefWidth="227.0" resizable="false" text="Categoria" />
                             <TableColumn fx:id="colValue" prefWidth="273.0" resizable="false" text="Valor" />
                             <TableColumn fx:id="colDue" minWidth="0.0" prefWidth="224.0" resizable="false" sortType="DESCENDING" text="Vencimento" />
-                            <TableColumn fx:id="colDue" prefWidth="296.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
+                            <TableColumn fx:id="colPayed" prefWidth="296.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
                           </columns>
                         </TableView>
                         <Button layoutX="929.0" layoutY="-28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.CompanyExpenseDAO;
 import viewmodel.ContaPacFormatado;
 import viewmodel.FuncionarioSimplesFormatado;
 
@@ -15,12 +16,12 @@ public class CompanyExpense {
 
 	// Global employee on application
 	private Employee employee;
-	
-	
+
+
 
 	// Get fields from window
 	@FXML Label lblUsersName;
-	
+
 	//Get fields from window
 	@FXML TableView<ContaPacFormatado> tblCompanyExpense;
     @FXML TableColumn<ContaPacFormatado, String> colExpenseId;
@@ -35,21 +36,31 @@ public class CompanyExpense {
 		this.employee = employeeObj;
 	}
 
+	/**
+	 * Get all bills existing into DB
+	 * @return ArrayList<ContaPacFormatado> Containing all bills
+	 * @return empty ArrayList<ContaPacFormatado> Fail to attempt get bills into DB
+	 */
+	public ArrayList<ContaPacFormatado> getBills()
+	{
+		CompanyExpenseDAO companyExpenseDAO = new CompanyExpenseDAO();
+		return companyExpenseDAO.getBills();
+	}
+
 	// Set some data into some field
 	@FXML public void initialize()
 	{
 		// Set some data into some field
-		colEmployeeId.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("idFuncionarioPac"));
-		colEmployeeEmail.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("email"));
-		colEmployeeName.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("nome"));
-		colEmployeeRole.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("cargo"));
-		colAdimissionDate.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("dataAdmissao"));
-		colEmployeeCellphone.setCellValueFactory(new PropertyValueFactory<FuncionarioSimplesFormatado,String>("celular"));
+		colCategory.setCellValueFactory(new PropertyValueFactory<ContaPacFormatado,String>("categoria"));
+		colDue.setCellValueFactory(new PropertyValueFactory<ContaPacFormatado,String>("vencimento"));
+		colExpenseId.setCellValueFactory(new PropertyValueFactory<ContaPacFormatado,String>("idContaPac"));
+		colPayed.setCellValueFactory(new PropertyValueFactory<ContaPacFormatado,String>("paga"));
+		colValue.setCellValueFactory(new PropertyValueFactory<ContaPacFormatado,String>("valor"));
 
-		ArrayList<FuncionarioSimplesFormatado> employees = this.getEmployees();
+		ArrayList<ContaPacFormatado> bills = this.getBills();
 
-		tblEmployees.setItems(FXCollections.observableArrayList(employees));
-		
+		tblCompanyExpense.setItems(FXCollections.observableArrayList(bills));
+
 		// Show employee's name
 		lblUsersName.setText(employee.getNome());
 	}
