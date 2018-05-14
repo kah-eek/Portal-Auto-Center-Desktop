@@ -1,5 +1,6 @@
 package controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -21,8 +22,8 @@ public class Employee {
   // Attributes
   private int idFuncionarioPac;
   private String nome;
-  private int cpf;
-  private int rg;
+  private String cpf;
+  private String rg;
   private int idEndereco;
   private String dtNascimento;
   private int idCargoFuncionarioPac;
@@ -39,8 +40,9 @@ public class Employee {
 
   //Global employee on application
   private Employee employee;
-  
-  //Get fields from window
+ // *****************************************************
+
+//Get fields from window
   @FXML TableView<FuncionarioSimplesFormatado> tblEmployees;
   @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeId;
   @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeName;
@@ -59,6 +61,40 @@ public class Employee {
   }
 
   public Employee(){}
+  
+  public Employee
+  (
+	int idFuncionarioPac, 
+	String nome, 
+	String cpf, 
+	String rg, 
+	int idCargoFuncionarioPac,
+	char sexo, 
+	String celular, 
+	String email, 
+	String foto, 
+	String cnh,
+	String pis, 
+	String certificadoReservista,
+	float salario,
+	String dtNascimento
+  ) 
+  {
+	this.idFuncionarioPac = idFuncionarioPac;
+	this.nome = nome;
+	this.cpf = cpf;
+	this.rg = rg;
+	this.dtNascimento = dtNascimento;
+	this.idCargoFuncionarioPac = idCargoFuncionarioPac;
+	this.salario = salario;
+	this.sexo = sexo;
+	this.celular = celular;
+	this.email = email;
+	this.foto = foto;
+	this.cnh = cnh;
+	this.pis = pis;
+	this.certificadoReservista = certificadoReservista;
+  }
   // ***************************************
 
   public void setIdUsuario(int idUsuario) {
@@ -70,22 +106,26 @@ public class Employee {
   public void setIdFuncionarioPac(int idFuncionarioPac) {
 	this.idFuncionarioPac = idFuncionarioPac;
   }
+  public int getIdFuncionarioPac()
+  {
+	  return idFuncionarioPac;
+  }
   public String getNome() {
     return nome;
   }
   public void setNome(String nome) {
     this.nome = nome;
   }
-  public int getCpf() {
+  public String getCpf() {
     return cpf;
   }
-  public void setCpf(int cpf) {
+  public void setCpf(String cpf) {
     this.cpf = cpf;
   }
-  public int getRg() {
+  public String getRg() {
     return rg;
   }
-  public void setRg(int rg) {
+  public void setRg(String rg) {
     this.rg = rg;
   }
   public int getIdEndereco() {
@@ -171,6 +211,18 @@ public class Employee {
   {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.deleteEmployee(employeeId);
+  }
+  
+  /**
+  * Update the employee in DB
+  * @param employeeObj Employee that will be updated into DB
+  * @return true Employee was updated with successful
+  * @return false Fail on attempt to updated the employee from DB
+  */
+  public boolean updateEmployee(Employee employeeObj)
+  {
+	  EmployeeDAO employeeDAO = new EmployeeDAO();
+	  return employeeDAO.updateEmployee(employeeObj);
   }
 
 
@@ -294,6 +346,6 @@ public class Employee {
 	Main.openWindow("EmployeeWage", new EmployeeWage(employee));
   }
   // ***************************************************
-
+  
 
 }

@@ -8,6 +8,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import controller.MySql;
+import controller.Partner;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
 import viewmodel.ParceiroDetalhado;
@@ -186,6 +187,77 @@ public class EmployeeDAO {
 	}
 	
 	/**
+	 * Update the employee in DB
+	 * @param employeeObj Employee that will be updated into DB
+	 * @return true Employee was updated with successful
+	 * @return false Fail on attempt to updated the employee from DB
+	 */
+	public boolean updateEmployee(Employee employeeObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "
+					+ "tbl_funcionario_pac "
+					+ "SET "
+						+ "nome = ?, "
+						+ "cpf = ?, "
+						+ "rg = ?, "
+						+ "dt_nascimento = ?, "
+						+ "id_cargo_funcionario_pac = ?, "
+						+ "salario = ?, "
+						+ "sexo = ?, "
+						+ "celular = ?, "
+						+ "email = ?, "
+						+ "foto = ?, "
+						+ "cnh = ?, "
+						+ "pis = ?, "
+						+ "certificado_reservista = ? "
+					+"WHERE id_funcionario_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			
+			stmt.setString(1, employeeObj.getNome());
+			stmt.setString(2, employeeObj.getCpf());
+			stmt.setString(3, employeeObj.getRg());
+			stmt.setString(4, employeeObj.getDtNascimento());
+			stmt.setInt(5, employeeObj.getIdCargoFuncionarioPac());
+			stmt.setFloat(6, employeeObj.getSalario());
+			stmt.setString(7, String.valueOf(employeeObj.getSexo()));
+			stmt.setString(8, employeeObj.getCelular());
+			stmt.setString(9, employeeObj.getEmail());
+			stmt.setString(10, employeeObj.getFoto());
+			stmt.setString(11, employeeObj.getCnh());
+			stmt.setString(12, employeeObj.getPis());
+			stmt.setString(13, employeeObj.getCertificadoReservista());
+			stmt.setInt(14, employeeObj.getIdFuncionarioPac());
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
+		}
+	}
+	
+	/**
 	 * Get employee's informations from DB
 	 * @param userId Employee's user id to find it in DB
 	 * @return Employee Employee object with employee's data came from DB
@@ -218,8 +290,8 @@ public class EmployeeDAO {
 				employee = new Employee();
 								
 				employee.setNome(rs.getString("nome"));
-				employee.setCpf(rs.getInt("cpf"));
-				employee.setRg(rs.getInt("rg"));
+				employee.setCpf(rs.getString("cpf"));
+				employee.setRg(rs.getString("rg"));
 				employee.setIdEndereco(rs.getInt("id_endereco"));
 				employee.setDtNascimento(rs.getString("dt_nascimento"));
 				employee.setIdCargoFuncionarioPac(rs.getInt("id_cargo_funcionario_pac"));

@@ -110,7 +110,7 @@ public class UpdatePartner {
 		txtComplemento.setText(fullPartner.getComplemento());
 		txtUsuario.setText(fullPartner.getUsuario());
 		txtSenha.setText(fullPartner.getSenha());
-		cbxNivelUsuario.getSelectionModel().select(fullPartner.getIdNivelUsuario());
+		cbxNivelUsuario.getSelectionModel().select(fullPartner.getIdNivelUsuario()-1);
 		
 		// Verify if partner's user is active
 		if(fullPartner.getAtivo() == 1)

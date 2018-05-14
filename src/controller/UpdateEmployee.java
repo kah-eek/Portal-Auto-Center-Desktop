@@ -2,6 +2,7 @@ package controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +14,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.util.converter.LocalDateStringConverter;
+import utils.Utils;
 import viewmodel.FuncionarioDetalhado;
+import viewmodel.ParceiroSimplesFormatado;
 
 public class UpdateEmployee {
 	
@@ -64,6 +67,18 @@ public class UpdateEmployee {
 	
 	@FXML public void initialize()
 	{
+		// Create a list that will fill the user's levels
+		ObservableList<String> levels = FXCollections.observableArrayList();
+		
+		for(UserLevel level : UserLevel.getUserLevels())
+		{
+			levels.add(level.getNivel());
+		}
+		
+		// Set list into combo box
+		cbxNivelUsuario.setItems(levels);
+		// __________________________________________________________><
+		
 		// Create a list that will fill the states list
 		ObservableList<String> states = FXCollections.observableArrayList();
 		
@@ -87,19 +102,7 @@ public class UpdateEmployee {
 		// Set list into combo box
 		cbxCargo.setItems(roles);
 		// __________________________________________________________><
-		
-		// Create a list that will fill the user's levels
-		ObservableList<String> levels = FXCollections.observableArrayList();
-		
-		for(UserLevel level : UserLevel.getUserLevels())
-		{
-			levels.add(level.getNivel());
-		}
-		
-		// Set list into combo box
-		cbxNivelUsuario.setItems(levels);
-		// __________________________________________________________><
-		
+				
 		// Setting data into fields
 		txtNome.setText(fullEmployee.getNome());
 		txtCpf.setText(fullEmployee.getCpf());
@@ -121,7 +124,7 @@ public class UpdateEmployee {
 		txtComplemento.setText(fullEmployee.getComplemento());
 		txtNomeUsuario.setText(fullEmployee.getUsuario());
 		txtSenha.setText(fullEmployee.getSenha());
-		cbxNivelUsuario.getSelectionModel().select(fullEmployee.getIdNivelUsuario());
+		cbxNivelUsuario.getSelectionModel().select(fullEmployee.getIdNivelUsuario()-1);
 		cbxCargo.getSelectionModel().select(fullEmployee.getCargo());
 
 		// Verify if partner's user is active
@@ -142,6 +145,84 @@ public class UpdateEmployee {
 		else
 		{
 			rbtSexoF.setSelected(true);
+		}
+	}
+	
+	/**
+	 * Update employee
+	 */
+	@FXML public void updateEmployee()
+	{
+		// Create address object that it will updated into DB
+		Address address = new Address(
+				fullEmployee.getIdEndereco(),
+				txtLogradouro.getText(),
+				txtNumero.getText(),
+				txtCidade.getText(),
+				cbxEstado.getSelectionModel().getSelectedIndex()+1,
+				txtCep.getText(),
+				txtBairro.getText(),
+				txtComplemento.getText()
+		);
+		
+		int activeUser = rbnUsuarioAtivoN.isSelected() ? 0 : 1; 
+		
+		// Create user object that it will updated into DB
+		User user = new User
+		(
+			fullEmployee.getIdUsuario(),
+			txtNomeUsuario.getText(), 
+			txtSenha.getText(), 
+			cbxNivelUsuario.getSelectionModel().getSelectedIndex()+1,
+			activeUser
+		);
+				
+		char employeeSex = rbtSexoF.isSelected() ? 'F' : 'M';
+		
+		LocalDate date = dpDtNasc.getValue();
+		
+		// Create employee object that it will updated into DB
+		Employee employee = new Employee
+		(								
+				fullEmployee.getIdFuncionarioPac(), 
+				txtNome.getText(), 
+				txtCpf.getText(), 
+				txtRg.getText(), 
+				cbxCargo.getSelectionModel().getSelectedIndex()+1, 
+				employeeSex,
+				txtCelular.getText(), 
+				txtEmail.getText(), 
+				"path", 
+				txtCnh.getText(),
+				txtPis.getText(), 
+				txtCertificadoReservista.getText(),
+				Float.parseFloat(txtSalario.getText()),
+				date.toString()
+		);
+		
+		// DEBBUG
+		/*
+		System.out.println(address.updateAddress(address)); 
+		System.out.println(user.updateUser(user));
+		System.out.println(partner.updatePartner(partner));
+		*/
+		
+		// Verify if the updates was succeed
+		if
+		(
+			address.updateAddress(address) && 
+			user.updateUser(user) &&
+			employee.updateEmployee(employee)
+		)
+		{ // Successful
+			Utils.showInfo(null, "Funcionário atualizado com sucesso !", "Atualizar Funcionário");
+			
+			// Return to partner window
+			Main.openWindow("Employee", new Employee(employee));
+		}
+		else // Fail
+		{
+			Utils.showError(null, "Atualizar Funcionário", "Falha ao tentar atualziar o funcionário :(");
 		}
 	}
 
