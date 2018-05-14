@@ -1,6 +1,5 @@
 package controller;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -15,7 +14,6 @@ import model.EmployeeDAO;
 import utils.Utils;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
-import viewmodel.ParceiroSimplesFormatado;
 
 public class Employee {
 
@@ -42,7 +40,7 @@ public class Employee {
   private Employee employee;
  // *****************************************************
 
-//Get fields from window
+ //Get fields from window
   @FXML TableView<FuncionarioSimplesFormatado> tblEmployees;
   @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeId;
   @FXML TableColumn<FuncionarioSimplesFormatado, String> colEmployeeName;

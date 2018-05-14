@@ -112,14 +112,13 @@
                   <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: #212121;">
                      <children>
                         <Separator layoutX="103.0" layoutY="424.0" opacity="0.24" prefHeight="3.0" prefWidth="871.0" />
-                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="360.0" prefWidth="1051.0">
+                        <TableView fx:id="tblCompanyExpense" layoutX="13.0" layoutY="30.0" prefHeight="360.0" prefWidth="1051.0">
                           <columns>
-                            <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
-                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="187.0" resizable="false" text="Categoria" />
-                            <TableColumn fx:id="colPartnerSubscription" prefWidth="215.0" resizable="false" text="Valor" />
-                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="174.0" resizable="false" text="Pago" />
-                            <TableColumn fx:id="colPartnerEmail" minWidth="0.0" prefWidth="221.0" resizable="false" sortType="DESCENDING" text="Vencimento" />
-                            <TableColumn fx:id="colPartnerEmail" prefWidth="223.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
+                            <TableColumn fx:id="colExpenseId" prefWidth="30.0" text="ID" />
+                            <TableColumn fx:id="colCategory" prefWidth="227.0" resizable="false" text="Categoria" />
+                            <TableColumn fx:id="colValue" prefWidth="273.0" resizable="false" text="Valor" />
+                            <TableColumn fx:id="colDue" minWidth="0.0" prefWidth="224.0" resizable="false" sortType="DESCENDING" text="Vencimento" />
+                            <TableColumn fx:id="colDue" prefWidth="296.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
                           </columns>
                         </TableView>
                         <Button layoutX="929.0" layoutY="-28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">

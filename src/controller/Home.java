@@ -58,7 +58,7 @@ public class Home {
 
 	@FXML public void openCompanyExpenseWIndow()
 	{
-		Main.openWindow("CompanyExpense", null);
+		Main.openWindow("CompanyExpense", new CompanyExpense(employee));
 	}
 
 	@FXML public void openEmployeeWageWindow()
