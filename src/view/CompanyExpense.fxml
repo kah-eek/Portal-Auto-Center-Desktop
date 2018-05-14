@@ -136,7 +136,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnDelete" layoutX="165.0" layoutY="414.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: rgb(183,28,28);" styleClass="btn" stylesheets="@application.css" text="EXCLUIR" textFill="WHITE">
+                        <Button fx:id="btnDelete" layoutX="165.0" layoutY="414.0" mnemonicParsing="false" onAction="#deleteBill" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: rgb(183,28,28);" styleClass="btn" stylesheets="@application.css" text="EXCLUIR" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>

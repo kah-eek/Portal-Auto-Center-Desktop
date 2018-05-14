@@ -65,4 +65,45 @@ public class CompanyExpenseDAO {
 		}
 	}
 
+	/**
+	 * Delete the bill from DB
+	 * @param billId Bill's ID
+	 * @return true Bill was deleted with successful
+	 * @return false Fail on attempt to delete the bill from DB
+	 */
+	public boolean deleteBill(int billId)
+	{
+		// Keep the result came from DB
+		boolean deleted = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "DELETE FROM tbl_conta_pac WHERE id_conta_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setInt(1, billId);
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on delete
+			if(rows == 1) deleted = true;
+
+			// close connection to DB
+			con.close();
+
+			return deleted;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return deleted;
+		}
+	}
+
 }
