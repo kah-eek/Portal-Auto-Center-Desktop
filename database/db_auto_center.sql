@@ -529,7 +529,7 @@ CREATE TABLE `tbl_endereco` (
   PRIMARY KEY (`id_endereco`),
   KEY `fk_tbl_endereco_id_estado_idx` (`id_estado`),
   CONSTRAINT `fk_tbl_endereco_id_estado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`)
-) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -538,7 +538,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (1,'Rua Flamingo','8452','São Paulo',1,'01000452','Jardim Paulista',''),(96,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(97,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(98,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(99,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(100,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(101,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(102,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(103,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(104,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(105,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(106,'aaaaa','000','Osasco',3,'06286180','Mutinga','aaaa'),(107,'aaaaa','000','Osasco',5,'06286180','Mutinga','aaaa'),(108,'aaaaa','000','Osasco',2,'06286180','Mutinga','aaaa'),(109,'asddasd','56156','Osasco',2,'06286120','Mutinga','sdasa'),(110,'asd','56156','Osasco',1,'06286120','Mutinga','asdas'),(111,'sadasdas','561561','Osasco',1,'06286120','asdas','dasda'),(112,'asdas','1561','Osasco',1,'06286120','Mutinga','asdasd'),(113,'as','561','Osasco',1,'06286120','Mutinga',''),(114,'t','1','Osasco',1,'06286120','Mutinga','t'),(115,'asd','56.12','Osasco',1,'06286120','Mutinga','asdd'),(116,'fdas','45616','Osasco',1,'06286120','Mutinga','sdf'),(117,'dasfd','56.1','Osasco',1,'06286120','Mutinga',''),(118,'asdf','5616','Osasco',2,'06286120','Mutinga','asdf'),(119,'aqf','561','Osasco',1,'06286120','Mutinga','asdf'),(120,'asdfas','56165','Osasco',1,'06286120','Mutinga',''),(121,'asdfad','56156','Osasco',1,'06286120','Mutinga','adfdas'),(122,'asfdasd','58185','Osasco',1,'06286120','Mutinga','ascdsa'),(123,'asfdasd','58185','Osasco',1,'06286120','Mutinga','ascdsa'),(124,'Rua Castro Alves','245','São Paulo',1,'14521452','Jardim Vitápolis','Casa 03');
+INSERT INTO `tbl_endereco` VALUES (1,'Rua FlamingoUp','9999','São PauloU',1,'99999','Jardim PaulistaU','U'),(96,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(97,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(98,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(99,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(100,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(101,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(102,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(103,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(104,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(105,'aaaaa','000','Osasco',1,'06286180','Mutinga','aaaa'),(106,'aaaaa','000','Osasco',3,'06286180','Mutinga','aaaa'),(107,'aaaaa','000','Osasco',5,'06286180','Mutinga','aaaa'),(108,'aaaaa','000','Osasco',2,'06286180','Mutinga','aaaa'),(109,'asddasd','56156','Osasco',2,'06286120','Mutinga','sdasa'),(110,'asd','56156','Osasco',1,'06286120','Mutinga','asdas'),(111,'sadasdas','561561','Osasco',1,'06286120','asdas','dasda'),(112,'asdas','1561','Osasco',1,'06286120','Mutinga','asdasd'),(113,'as','561','Osasco',1,'06286120','Mutinga',''),(114,'t','1','Osasco',1,'06286120','Mutinga','t'),(115,'asd','56.12','Osasco',1,'06286120','Mutinga','asdd'),(116,'fdas','45616','Osasco',1,'06286120','Mutinga','sdf'),(117,'dasfd','56.1','Osasco',1,'06286120','Mutinga',''),(118,'asdf','5616','Osasco',2,'06286120','Mutinga','asdf'),(119,'aqf','561','Osasco',1,'06286120','Mutinga','asdf'),(120,'asdfas','56165','Osasco',1,'06286120','Mutinga',''),(121,'asdfad','56156','Osasco',1,'06286120','Mutinga','adfdas'),(122,'asfdasd','58185','Osasco',1,'06286120','Mutinga','ascdsa'),(123,'asfdasd','58185','Osasco',1,'06286120','Mutinga','ascdsa'),(124,'Rua Castro Alves','245','São Paulo',1,'14521452','Jardim Vitápolis','Casa 03'),(125,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(126,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(127,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(128,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(129,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(130,'Rua Teste 1','1','A1',1,'0000000','Bairro 1','Casa 01'),(131,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(132,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(133,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(134,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(138,'b','2','b',1,'2','b','b'),(139,'c','3','c',1,'3','c','c'),(140,'d','5','d',2,'5','d','d'),(141,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(142,'Rua Carlos Alfreido','7548','Barueri',1,'14568785','Vila Velha','Casa 03'),(143,'f','4','f',2,'4','f','f'),(144,'eg','561','wegf',2,'561','sdgf','sdf');
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -698,7 +698,7 @@ CREATE TABLE `tbl_funcionario_pac` (
   CONSTRAINT `fk_tbl_funcionario_pac_id_cargo_funcionario_pac` FOREIGN KEY (`id_cargo_funcionario_pac`) REFERENCES `tbl_cargo_funcionario_pac` (`id_cargo_funcionario_pac`),
   CONSTRAINT `fk_tbl_funcionario_pac_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`),
   CONSTRAINT `tbl_funcionario_pac` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -707,7 +707,7 @@ CREATE TABLE `tbl_funcionario_pac` (
 
 LOCK TABLES `tbl_funcionario_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario_pac` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario_pac` VALUES (1,'Letícia Santos','5489489','54654',1,'1998-02-24',1,4800.00,'F','56165','leticia@pac.com.br','path','456165','45164',NULL,'2018-05-10 07:50:10',1);
+INSERT INTO `tbl_funcionario_pac` VALUES (1,'Letícia SantosUp','5489489','54654',1,'1998-02-24',1,4800.00,'F','56165','leticia@pac.com.br','path','456165','45164',NULL,'2018-05-10 07:50:10',1),(26,'Caique','12587456985','123587854',142,'1997-06-24',1,4750.00,'M','11945587140','caique@pac.com.br','path','452156','56165165','612651','2018-05-13 22:20:04',70);
 /*!40000 ALTER TABLE `tbl_funcionario_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -954,7 +954,7 @@ CREATE TABLE `tbl_parceiro` (
   CONSTRAINT `fk_tbl_parceiro_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`),
   CONSTRAINT `fk_tbl_parceiro_id_plano_contratacao` FOREIGN KEY (`id_plano_contratacao`) REFERENCES `tbl_plano_contratacao` (`id_plano_contratacao`),
   CONSTRAINT `fk_tbl_parceiro_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COMMENT='			';
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COMMENT='			';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -963,7 +963,7 @@ CREATE TABLE `tbl_parceiro` (
 
 LOCK TABLES `tbl_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_parceiro` DISABLE KEYS */;
-INSERT INTO `tbl_parceiro` VALUES (1,'Fast & Run','Fast & Run Importados LTDA','4656516565',1,0,1,'fast&run@fastrun.com.br','1145228475','','1142158745','2018-04-12 09:47:39',1,1),(15,'asdas','asdasd','12561265',96,1,1,'asdasd','5156','','4561','2018-04-21 03:56:44',33,1),(16,'asdas','asdasd','56165',97,0,1,'asdas','156156','','561256.','2018-04-21 03:57:19',34,1),(17,'sadasd','asdf','4514561',99,0,1,'asdd','156165','','56165','2018-04-21 03:59:00',35,1),(18,'sadasd','asdf','4514561',101,0,1,'asdd','156165','','56165','2018-04-21 03:59:09',36,1),(19,'asdasd','asdasd','56156',102,0,1,'asd','15665','','56165','2018-04-21 04:00:43',37,1),(20,'asdas','asds','56156',103,0,1,'xdaf','51656','','56.1256','2018-04-21 04:01:06',38,1),(21,'asdas','asd','561256',104,0,1,'asd','156165','','56156','2018-04-21 04:01:38',39,1),(22,'asdas','asd','564156',105,0,1,'asd','156156','','5616','2018-04-21 04:08:22',40,1),(23,'sadas','asdfas','1556',106,0,1,'asd','5616','','561','2018-04-21 14:17:06',41,1),(24,'adfasdas','asdas','1456156',107,0,1,'asdas','56165','','51561','2018-04-21 14:18:01',42,1),(25,'dfsdf','sdafasd','561456',108,0,1,'asd','15656','','5616','2018-04-21 14:19:59',43,1),(28,'asdas','dasd','456165',120,0,0,'asds','56156','view/pictures/parceiro/cb8dd5855b1f2a8d0f1ecab00063da9f.png','561','2018-04-21 20:18:27',55,1),(33,'Great Speed','Great Speed Importados LTDA','4986598498',99,0,1,'greatspeed@gspeed.com.br','1152145785','path','11124536528','2018-05-10 10:46:13',33,2);
+INSERT INTO `tbl_parceiro` VALUES (1,'Fast & Run','Fast & Run Importados LTDAU','99999',1,1,0,'fast&run@fastrun.com.brU','99999999','path','99999999','2018-04-12 09:47:39',1,2),(15,'asdas','asdasd','12561265',96,1,1,'asdasd','5156','','4561','2018-04-21 03:56:44',33,1),(16,'asdas','asdasd','56165',97,0,1,'asdas','156156','','561256.','2018-04-21 03:57:19',34,1),(17,'sadasd','asdf','4514561',99,0,1,'asdd','156165','','56165','2018-04-21 03:59:00',35,1),(18,'sadasd','asdf','4514561',101,0,1,'asdd','156165','','56165','2018-04-21 03:59:09',36,1),(19,'asdasd','asdasd','56156',102,0,1,'asd','15665','','56165','2018-04-21 04:00:43',37,1),(20,'asdas','asds','56156',103,0,1,'xdaf','51656','','56.1256','2018-04-21 04:01:06',38,1),(22,'Disney Company','Disney Animation LTDA.','0000000',122,1,0,'disney@animation.com','6666666','disney.png','777777','2018-04-21 04:08:22',66,2),(23,'sadas','asdfas','1556',106,0,1,'asd','5616','','561','2018-04-21 14:17:06',41,1),(24,'adfasdas','asdas','1456156',107,0,1,'asdas','56165','','51561','2018-04-21 14:18:01',42,1),(28,'asdas','dasd','456165',120,0,0,'asds','56156','view/pictures/parceiro/cb8dd5855b1f2a8d0f1ecab00063da9f.png','561','2018-04-21 20:18:27',55,1),(33,'Great Speed','Great Speed Importados LTDA','4986598498',99,0,1,'greatspeed@gspeed.com.br','1152145785','path','11124536528','2018-05-10 10:46:13',33,2),(34,'Software LTDA','Software LTDA razao SOcial','5641146541',129,0,0,'software@teste.com.br','1125452154','path','11945587140','2018-05-12 17:26:48',60,1),(35,'1 LTDA','1 LTDA razao SOcial','111111',130,0,0,'11111@teste.com.br','11111111','path','1111111','2018-05-12 17:28:46',61,1),(36,'Software LTDA','Software LTDA razao SOcial','5641146541',131,0,0,'software@teste.com.br','1125452154','path','11945587140','2018-05-12 21:13:41',62,1),(37,'Software LTDA','Software LTDA razao SOcial','5641146541',132,0,0,'software@teste.com.br','1125452154','path','11945587140','2018-05-12 21:13:52',63,1),(38,'Software LTDA','Software LTDA razao SOcial','5641146541',133,1,0,'software@teste.com.br','1125452154','path','11945587140','2018-05-12 21:14:32',64,1),(39,'Software LTDA','Software LTDA razao SOcial','5641146541',134,0,0,'software@teste.com.br','1125452154','path','11945587140','2018-05-12 21:15:04',65,1),(40,'b','b','2',138,0,1,'b','2','path','2','2018-05-12 21:40:11',66,1),(41,'c','c','3',139,0,0,'c','3','path','3','2018-05-12 21:41:27',67,1),(42,'d','d','5',140,0,1,'d','5','path','5','2018-05-12 21:43:17',68,1);
 /*!40000 ALTER TABLE `tbl_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1507,7 +1507,7 @@ CREATE TABLE `tbl_usuario` (
   PRIMARY KEY (`id_usuario`),
   KEY `fk_tbl_usuario_id_nivel_usuario_idx` (`id_nivel_usuario`),
   CONSTRAINT `fk_tbl_usuario_id_nivel_usuario` FOREIGN KEY (`id_nivel_usuario`) REFERENCES `tbl_nivel_usuario` (`id_nivel_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1516,7 +1516,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'leticia','lele','2018-04-12 09:45:06',1,1),(33,'gspeed','runrun','2018-04-21 03:56:44',2,1),(34,'aaaaaass','aaaaaaa','2018-04-21 03:57:19',2,1),(35,'aaaaaassDSDD','aaaaaaa','2018-04-21 03:59:00',2,1),(36,'aaaaaassDSDDsss','aaaaaaa','2018-04-21 03:59:09',2,1),(37,'aaaaaasadasdasdasdas','aaaaaaa','2018-04-21 04:00:43',2,1),(38,'aaaaaa\\xd\\sdsadasds','aaaaaaa','2018-04-21 04:01:06',2,1),(39,'aaaaaacdasdfasdasdas','aaaaaaa','2018-04-21 04:01:38',2,1),(40,'aaaaaaadcasdas','aaaaaaa','2018-04-21 04:08:22',2,1),(41,'aaaaaaasdasdsad','aaaaaaa','2018-04-21 14:17:06',2,1),(42,'aaaaaaczxcvdacaxdca','aaaaaaa','2018-04-21 14:18:01',2,1),(43,'aaaaaa\\xc\\szxd\\s','aaaaaaa','2018-04-21 14:19:59',2,1),(44,'aaaasasa','asdasd','2018-04-21 16:07:22',2,1),(45,'nAdm','1','2018-04-21 16:10:04',2,1),(46,'asd','asdas','2018-04-21 16:13:21',2,1),(47,'ssssdd','sadas','2018-04-21 17:07:37',2,1),(48,'das','dsad','2018-04-21 17:10:28',2,1),(49,'t','t','2018-04-21 17:11:49',2,1),(50,'asddfas','sdvsd','2018-04-21 17:47:15',2,1),(51,'sdfgsdfg','asdas','2018-04-21 17:48:26',2,1),(52,'sd','sdfvsd','2018-04-21 17:49:03',2,1),(53,'sdvgfsda','asdfawe','2018-04-21 17:49:48',2,1),(54,'dsad','fdsf','2018-04-21 17:51:40',2,1),(55,'sddff','sdffae','2018-04-21 20:18:27',2,1),(56,'afasddfas','dvfda','2018-04-22 11:36:45',2,1);
+INSERT INTO `tbl_usuario` VALUES (1,'leticia',' ','2018-04-12 09:45:06',3,1),(33,'gspeed','runrun','2018-04-21 03:56:44',2,1),(34,'aaaaaass','aaaaaaa','2018-04-21 03:57:19',2,1),(35,'aaaaaassDSDD','aaaaaaa','2018-04-21 03:59:00',2,1),(36,'aaaaaassDSDDsss','aaaaaaa','2018-04-21 03:59:09',2,1),(37,'aaaaaasadasdasdasdas','aaaaaaa','2018-04-21 04:00:43',2,1),(38,'aaaaaa\\xd\\sdsadasds','aaaaaaa','2018-04-21 04:01:06',2,1),(39,'aaaaaacdasdfasdasdas','aaaaaaa','2018-04-21 04:01:38',2,1),(40,'aaaaaaadcasdas','aaaaaaa','2018-04-21 04:08:22',2,1),(41,'aaaaaaasdasdsad','aaaaaaa','2018-04-21 14:17:06',2,1),(42,'aaaaaaczxcvdacaxdca','aaaaaaa','2018-04-21 14:18:01',2,1),(43,'aaaaaa\\xc\\szxd\\s','aaaaaaa','2018-04-21 14:19:59',2,1),(44,'aaaasasa','asdasd','2018-04-21 16:07:22',2,1),(45,'nAdm','1','2018-04-21 16:10:04',2,1),(46,'asd','asdas','2018-04-21 16:13:21',2,1),(47,'ssssdd','sadas','2018-04-21 17:07:37',2,1),(48,'das','dsad','2018-04-21 17:10:28',2,1),(49,'t','t','2018-04-21 17:11:49',2,1),(50,'asddfas','sdvsd','2018-04-21 17:47:15',2,1),(51,'sdfgsdfg','asdas','2018-04-21 17:48:26',2,1),(52,'sd','sdfvsd','2018-04-21 17:49:03',2,1),(53,'sdvgfsda','asdfawe','2018-04-21 17:49:48',2,1),(54,'dsad','fdsf','2018-04-21 17:51:40',2,1),(55,'sddff','sdffae','2018-04-21 20:18:27',2,1),(56,'afasddfas','dvfda','2018-04-22 11:36:45',2,1),(57,'caique','123','2018-05-11 20:04:27',1,1),(58,'caique','123','2018-05-12 17:25:39',1,1),(59,'caique','123','2018-05-12 17:26:34',1,1),(60,'caique','123','2018-05-12 17:26:48',1,1),(61,'user1','111','2018-05-12 17:28:46',1,1),(62,'caique','123','2018-05-12 21:13:41',1,1),(63,'caique','123','2018-05-12 21:13:52',1,1),(64,'caique','123','2018-05-12 21:14:32',2,1),(65,'caique','123','2018-05-12 21:15:04',1,1),(66,'fabio','riftuddh','2018-05-12 21:40:11',2,0),(67,'c','c','2018-05-12 21:41:27',1,1),(68,'d','d','2018-05-12 21:43:17',2,1),(69,'caique','123','2018-05-13 22:19:05',1,1),(70,'caique','123','2018-05-13 22:20:04',1,1),(71,'f','f','2018-05-13 22:37:17',1,1),(72,'WERG','WERGER','2018-05-13 22:40:21',2,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1677,6 +1677,84 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `view_conta_pac_formatado`
+--
+
+DROP TABLE IF EXISTS `view_conta_pac_formatado`;
+/*!50001 DROP VIEW IF EXISTS `view_conta_pac_formatado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_conta_pac_formatado` AS SELECT 
+ 1 AS `id_conta_pac`,
+ 1 AS `id_categoria_conta_pac`,
+ 1 AS `valor`,
+ 1 AS `vencimento`,
+ 1 AS `paga`,
+ 1 AS `categoria`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_funcionario_detalhado`
+--
+
+DROP TABLE IF EXISTS `view_funcionario_detalhado`;
+/*!50001 DROP VIEW IF EXISTS `view_funcionario_detalhado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_funcionario_detalhado` AS SELECT 
+ 1 AS `id_funcionario_pac`,
+ 1 AS `nome`,
+ 1 AS `cpf`,
+ 1 AS `rg`,
+ 1 AS `id_endereco`,
+ 1 AS `dt_nascimento`,
+ 1 AS `id_cargo_funcionario_pac`,
+ 1 AS `salario`,
+ 1 AS `sexo`,
+ 1 AS `celular`,
+ 1 AS `email`,
+ 1 AS `foto`,
+ 1 AS `cnh`,
+ 1 AS `pis`,
+ 1 AS `certificado_reservista`,
+ 1 AS `log_funcionario_pac`,
+ 1 AS `id_usuario`,
+ 1 AS `cargo`,
+ 1 AS `logradouro`,
+ 1 AS `numero`,
+ 1 AS `cidade`,
+ 1 AS `id_estado`,
+ 1 AS `cep`,
+ 1 AS `bairro`,
+ 1 AS `complemento`,
+ 1 AS `estado`,
+ 1 AS `usuario`,
+ 1 AS `senha`,
+ 1 AS `id_nivel_usuario`,
+ 1 AS `log`,
+ 1 AS `usuario_ativo`,
+ 1 AS `nivel`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_funcionario_simples_formatado`
+--
+
+DROP TABLE IF EXISTS `view_funcionario_simples_formatado`;
+/*!50001 DROP VIEW IF EXISTS `view_funcionario_simples_formatado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_funcionario_simples_formatado` AS SELECT 
+ 1 AS `id_funcionario_pac`,
+ 1 AS `nome`,
+ 1 AS `id_cargo_funcionario_pac`,
+ 1 AS `data_adimissao`,
+ 1 AS `email`,
+ 1 AS `celular`,
+ 1 AS `cargo`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `view_imagem_produto_parceiro`
 --
 
@@ -1755,6 +1833,45 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `view_parceiro_detalhado`
+--
+
+DROP TABLE IF EXISTS `view_parceiro_detalhado`;
+/*!50001 DROP VIEW IF EXISTS `view_parceiro_detalhado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_parceiro_detalhado` AS SELECT 
+ 1 AS `id_parceiro`,
+ 1 AS `nome_fantasia`,
+ 1 AS `cnpj`,
+ 1 AS `razao_social`,
+ 1 AS `id_endereco`,
+ 1 AS `parceiro_ativo`,
+ 1 AS `foto_perfil`,
+ 1 AS `email`,
+ 1 AS `socorrista`,
+ 1 AS `telefone`,
+ 1 AS `celular`,
+ 1 AS `log_parceiro`,
+ 1 AS `id_usuario`,
+ 1 AS `id_plano_contratacao`,
+ 1 AS `usuario`,
+ 1 AS `senha`,
+ 1 AS `log`,
+ 1 AS `ativo`,
+ 1 AS `id_nivel_usuario`,
+ 1 AS `nivel`,
+ 1 AS `logradouro`,
+ 1 AS `numero`,
+ 1 AS `cidade`,
+ 1 AS `id_estado`,
+ 1 AS `cep`,
+ 1 AS `bairro`,
+ 1 AS `complemento`,
+ 1 AS `estado`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `view_parceiro_formatado`
 --
 
@@ -1788,6 +1905,32 @@ SET character_set_client = utf8mb4;
  1 AS `senha`,
  1 AS `id_nivel_usuario`,
  1 AS `nivel`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_parceiro_simples`
+--
+
+DROP TABLE IF EXISTS `view_parceiro_simples`;
+/*!50001 DROP VIEW IF EXISTS `view_parceiro_simples`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_parceiro_simples` AS SELECT 
+ 1 AS `id_parceiro`,
+ 1 AS `nome_fantasia`,
+ 1 AS `razao_social`,
+ 1 AS `cnpj`,
+ 1 AS `id_endereco`,
+ 1 AS `ativo`,
+ 1 AS `socorrista`,
+ 1 AS `email`,
+ 1 AS `telefone`,
+ 1 AS `foto_perfil`,
+ 1 AS `celular`,
+ 1 AS `log_parceiro`,
+ 1 AS `id_usuario`,
+ 1 AS `plano`,
+ 1 AS `id_plano_contratacao`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1943,6 +2086,60 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `view_conta_pac_formatado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_conta_pac_formatado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_conta_pac_formatado` AS select `cnt`.`id_conta_pac` AS `id_conta_pac`,`cnt`.`id_categoria_conta_pac` AS `id_categoria_conta_pac`,`cnt`.`valor` AS `valor`,date_format(cast(`cnt`.`vencimento` as date),'%d/%m/%Y') AS `vencimento`,if((`cnt`.`paga` = 1),'Sim','Não') AS `paga`,`ctg_cnt`.`categoria` AS `categoria` from (`tbl_conta_pac` `cnt` join `tbl_categoria_conta_pac` `ctg_cnt` on((`ctg_cnt`.`id_categoria_conta_pac` = `cnt`.`id_categoria_conta_pac`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_funcionario_detalhado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_funcionario_detalhado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_funcionario_detalhado` AS select `func`.`id_funcionario_pac` AS `id_funcionario_pac`,`func`.`nome` AS `nome`,`func`.`cpf` AS `cpf`,`func`.`rg` AS `rg`,`func`.`id_endereco` AS `id_endereco`,`func`.`dt_nascimento` AS `dt_nascimento`,`func`.`id_cargo_funcionario_pac` AS `id_cargo_funcionario_pac`,`func`.`salario` AS `salario`,`func`.`sexo` AS `sexo`,`func`.`celular` AS `celular`,`func`.`email` AS `email`,`func`.`foto` AS `foto`,`func`.`cnh` AS `cnh`,`func`.`pis` AS `pis`,`func`.`certificado_reservista` AS `certificado_reservista`,`func`.`log_funcionario_pac` AS `log_funcionario_pac`,`func`.`id_usuario` AS `id_usuario`,`carg_func`.`cargo` AS `cargo`,`endr`.`logradouro` AS `logradouro`,`endr`.`numero` AS `numero`,`endr`.`cidade` AS `cidade`,`endr`.`id_estado` AS `id_estado`,`endr`.`cep` AS `cep`,`endr`.`bairro` AS `bairro`,`endr`.`complemento` AS `complemento`,`estd`.`estado` AS `estado`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`usr`.`log` AS `log`,`usr`.`ativo` AS `usuario_ativo`,`usr_nvl`.`nivel` AS `nivel` from (((((`tbl_funcionario_pac` `func` join `tbl_cargo_funcionario_pac` `carg_func` on((`carg_func`.`id_cargo_funcionario_pac` = `func`.`id_cargo_funcionario_pac`))) join `tbl_endereco` `endr` on((`endr`.`id_endereco` = `func`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endr`.`id_estado`))) join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `func`.`id_usuario`))) join `tbl_nivel_usuario` `usr_nvl` on((`usr_nvl`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_funcionario_simples_formatado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_funcionario_simples_formatado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_funcionario_simples_formatado` AS select `func`.`id_funcionario_pac` AS `id_funcionario_pac`,`func`.`nome` AS `nome`,`func`.`id_cargo_funcionario_pac` AS `id_cargo_funcionario_pac`,date_format(cast(`func`.`log_funcionario_pac` as date),'%d/%m/%Y') AS `data_adimissao`,`func`.`email` AS `email`,`func`.`celular` AS `celular`,`carg_func`.`cargo` AS `cargo` from (`tbl_funcionario_pac` `func` join `tbl_cargo_funcionario_pac` `carg_func` on((`carg_func`.`id_cargo_funcionario_pac` = `func`.`id_cargo_funcionario_pac`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `view_imagem_produto_parceiro`
 --
 
@@ -1997,6 +2194,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `view_parceiro_detalhado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_parceiro_detalhado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_parceiro_detalhado` AS select `prc`.`id_parceiro` AS `id_parceiro`,`prc`.`nome_fantasia` AS `nome_fantasia`,`prc`.`cnpj` AS `cnpj`,`prc`.`razao_social` AS `razao_social`,`prc`.`id_endereco` AS `id_endereco`,`prc`.`ativo` AS `parceiro_ativo`,`prc`.`foto_perfil` AS `foto_perfil`,`prc`.`email` AS `email`,`prc`.`socorrista` AS `socorrista`,`prc`.`telefone` AS `telefone`,`prc`.`celular` AS `celular`,`prc`.`log_parceiro` AS `log_parceiro`,`prc`.`id_usuario` AS `id_usuario`,`prc`.`id_plano_contratacao` AS `id_plano_contratacao`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`log` AS `log`,`usr`.`ativo` AS `ativo`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`nvl`.`nivel` AS `nivel`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado` from ((((`tbl_parceiro` `prc` join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `prc`.`id_usuario`))) join `tbl_nivel_usuario` `nvl` on((`nvl`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) join `tbl_endereco` `endrc` on((`endrc`.`id_endereco` = `prc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `view_parceiro_formatado`
 --
 
@@ -2010,6 +2225,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_parceiro_formatado` AS select `parc`.`id_parceiro` AS `id_parceiro`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social`,`parc`.`cnpj` AS `cnpj`,`parc`.`id_endereco` AS `id_endereco`,if((`parc`.`ativo` = 1),'Sim','Não') AS `ativo`,if((`parc`.`socorrista` = 1),'Sim','Não') AS `socorrista`,`parc`.`email` AS `email`,`parc`.`telefone` AS `telefone`,`parc`.`foto_perfil` AS `foto_perfil`,`parc`.`celular` AS `celular`,cast(`parc`.`log_parceiro` as date) AS `log_parceiro`,`parc`.`id_usuario` AS `id_usuario`,`pln_contr`.`plano` AS `plano`,`endr`.`logradouro` AS `logradouro`,`endr`.`cep` AS `cep`,`endr`.`bairro` AS `bairro`,`endr`.`cidade` AS `cidade`,`endr`.`complemento` AS `complemento`,`endr`.`numero` AS `numero`,`estd`.`estado` AS `estado`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`nvl_usr`.`nivel` AS `nivel` from (((((`tbl_parceiro` `parc` join `tbl_plano_contratacao` `pln_contr` on((`pln_contr`.`id_plano_contratacao` = `parc`.`id_plano_contratacao`))) join `tbl_endereco` `endr` on((`endr`.`id_endereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endr`.`id_estado`))) join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `parc`.`id_usuario`))) join `tbl_nivel_usuario` `nvl_usr` on((`nvl_usr`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_parceiro_simples`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_parceiro_simples`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_parceiro_simples` AS select `parc`.`id_parceiro` AS `id_parceiro`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social`,`parc`.`cnpj` AS `cnpj`,`parc`.`id_endereco` AS `id_endereco`,`parc`.`ativo` AS `ativo`,`parc`.`socorrista` AS `socorrista`,`parc`.`email` AS `email`,`parc`.`telefone` AS `telefone`,`parc`.`foto_perfil` AS `foto_perfil`,`parc`.`celular` AS `celular`,date_format(cast(`parc`.`log_parceiro` as date),'%d/%m/%Y') AS `log_parceiro`,`parc`.`id_usuario` AS `id_usuario`,`pln_contr`.`plano` AS `plano`,`pln_contr`.`id_plano_contratacao` AS `id_plano_contratacao` from (`tbl_parceiro` `parc` join `tbl_plano_contratacao` `pln_contr` on((`pln_contr`.`id_plano_contratacao` = `parc`.`id_plano_contratacao`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -2113,4 +2346,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-10 23:03:53
+-- Dump completed on 2018-05-13 23:03:39
