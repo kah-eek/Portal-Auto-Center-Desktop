@@ -49,6 +49,20 @@ public class CompanyExpense {
 
 	public CompanyExpense
 	(
+		int idCategoriaContaPac,
+		float valor,
+		String vencimento,
+		int paga
+	)
+	{
+		this.idCategoriaContaPac = idCategoriaContaPac;
+		this.valor = valor;
+		this.vencimento = vencimento;
+		this.paga = paga;
+	}
+
+	public CompanyExpense
+	(
 		int idContaPac,
 		int idCategoriaContaPac,
 		float valor,
@@ -150,6 +164,18 @@ public class CompanyExpense {
 	}
 
 	/**
+	 * Insert a new company's bill into DB
+	 * @param CompanyExpense Object that will inserted into DB
+	 * @return long Last record's ID
+	 * @return long -1 Fail in try to get last record's ID from database
+	 */
+	public long insertBill(CompanyExpense billObj)
+	{
+		CompanyExpenseDAO companyExpenseDAO = new CompanyExpenseDAO();
+		return companyExpenseDAO.insertBill(billObj);
+	}
+
+	/**
 	 * Update the company's bill in DB
 	 * @param CompanyExpense billObj that will be updated into DB
 	 * @return true Compnay's bill was updated with successful
@@ -200,6 +226,14 @@ public class CompanyExpense {
 
 		// Show employee's name
 		lblUsersName.setText(employee.getNome());
+	}
+
+	/**
+	 * Open window to add new bill
+	 */
+	@FXML public void addBill()
+	{
+		Main.openWindow("AddCompanyBill", new AddCompanyBill(employee));
 	}
 
 	/**

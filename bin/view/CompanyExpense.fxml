@@ -121,36 +121,26 @@
                             <TableColumn fx:id="colPayed" prefWidth="296.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
                           </columns>
                         </TableView>
-                        <Button layoutX="929.0" layoutY="-28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">
+                        <Button layoutX="929.0" layoutY="-28.0" mnemonicParsing="false" onAction="#addBill" prefHeight="50.0" prefWidth="50.0" styleClass="btn" stylesheets="@application.css">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="942.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="942.0" layoutY="-15.0" onMouseClicked="#addBill" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/blackPlus.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="btnUpdatePartner" alignment="CENTER_RIGHT" layoutX="744.0" layoutY="411.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="185.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR PAGAMENTO" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
                         <Button fx:id="btnDelete" layoutX="165.0" layoutY="414.0" mnemonicParsing="false" onAction="#deleteBill" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: rgb(183,28,28);" styleClass="btn" stylesheets="@application.css" text="EXCLUIR" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="472.0" layoutY="411.0" mnemonicParsing="false" onAction="#updateBill" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
+                        <Button layoutX="818.0" layoutY="411.0" mnemonicParsing="false" onAction="#updateBill" prefHeight="27.0" prefWidth="101.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="751.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/icons/flash.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </Pane>
                </children>

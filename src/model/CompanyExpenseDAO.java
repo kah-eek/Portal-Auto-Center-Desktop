@@ -7,10 +7,12 @@ import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
 
 import controller.CompanyExpense;
 import controller.Employee;
 import controller.MySql;
+import controller.User;
 import viewmodel.ContaPacFormatado;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
@@ -211,6 +213,69 @@ public class CompanyExpenseDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return companyExpense;
+		}
+	}
+
+	/**
+	 * Insert a new company's bill into DB
+	 * @param CompanyExpense Object that will inserted into DB
+	 * @return long Last record's ID
+	 * @return long -1 Fail in try to get last record's ID from database
+	 */
+	public long insertBill(CompanyExpense billObj)
+	{
+		// Keep the result came from DB
+		long recordId = -1;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "INSERT INTO "+
+					 "tbl_conta_pac "+
+					 "("+
+					 "id_categoria_conta_pac, "+
+					 "valor, "+
+					 "vencimento, "+
+					 "paga"+
+					 ") "+
+					 "VALUES (?,?,?,?)";
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			stmt.setInt(1, billObj.getIdCategoriaContaPac());
+			stmt.setFloat(2, billObj.getValor());
+			stmt.setString(3, billObj.getVencimento());
+			stmt.setInt(4, billObj.getPaga());
+
+			// Execute query
+			int rows = stmt.executeUpdate();
+
+			// Verify how many records was affected
+			if(rows > 0)
+			{
+				// Execute the query
+				ResultSet id = stmt.getGeneratedKeys();
+
+				// Verify if DB returns the last inserted ID
+				if(id.next())
+				{
+					// Keep last inserted id in variable to return it
+					recordId = id.getLong(1);
+
+				}
+			}
+
+			// close connection to DB
+			con.close();
+
+			return recordId;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return recordId;
 		}
 	}
 

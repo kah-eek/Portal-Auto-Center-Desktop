@@ -30,28 +30,31 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="141.0" layoutY="342.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                        <RadioButton fx:id="rbtPagoS" layoutX="141.0" layoutY="342.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="paga" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtPagoN" layoutX="310.0" layoutY="342.0" mnemonicParsing="false" text="Não" textFill="WHITE" toggleGroup="$paga">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="310.0" layoutY="342.0" mnemonicParsing="false" text="Não" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </RadioButton>
-                        <TextField layoutX="87.0" layoutY="163.0" prefHeight="35.0" prefWidth="350.0" promptText="Valor">
+                        <TextField fx:id="txtValor" layoutX="87.0" layoutY="163.0" prefHeight="35.0" prefWidth="350.0" promptText="Valor">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <DatePicker layoutX="87.0" layoutY="232.0" prefHeight="35.0" prefWidth="350.0" promptText="Data de Nascimento" />
+                        <DatePicker fx:id="dpDataVencimento" layoutX="87.0" layoutY="232.0" prefHeight="35.0" prefWidth="350.0" promptText="Data de Nascimento" />
                         <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="25.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/list.png" />
                            </image>
                         </ImageView>
-                        <ComboBox layoutX="87.0" layoutY="87.0" prefHeight="35.0" prefWidth="350.0" promptText="Categoria" />
+                        <ComboBox fx:id="cbxCategoria" layoutX="87.0" layoutY="87.0" prefHeight="35.0" prefWidth="350.0" promptText="Categoria" />
                         <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="29.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/money.png" />
@@ -62,7 +65,7 @@
                               <Image url="@../resources/pictures/icons/calendar.png" />
                            </image>
                         </ImageView>
-                        <Button layoutY="421.0" mnemonicParsing="false" onAction="#insertPartner" prefHeight="30.0" prefWidth="501.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="CADASTRAR">
+                        <Button layoutY="421.0" mnemonicParsing="false" onAction="#insertBill" prefHeight="30.0" prefWidth="501.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="CADASTRAR">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -79,7 +82,7 @@
                   <Separator layoutX="-188.0" layoutY="-34.0" opacity="0.15" orientation="VERTICAL" prefHeight="27.0" prefWidth="6.0" />
                   <Separator layoutX="237.0" layoutY="-60.0" opacity="0.15" prefHeight="3.0" prefWidth="43.0" />
                   <Separator layoutX="281.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
-                  <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="-165.0" layoutY="-60.0" onMouseClicked="#openEmployeeWageWindow" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="-165.0" layoutY="-60.0" onMouseClicked="#openCompanyExpense" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/pictures/icons/arrowBack.png" />
                      </image>
