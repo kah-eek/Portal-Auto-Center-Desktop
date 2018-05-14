@@ -1,5 +1,6 @@
 package model;
 
+import java.security.GeneralSecurityException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,8 +8,11 @@ import java.util.ArrayList;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+import controller.CompanyExpense;
+import controller.Employee;
 import controller.MySql;
 import viewmodel.ContaPacFormatado;
+import viewmodel.FuncionarioDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class CompanyExpenseDAO {
@@ -66,6 +70,59 @@ public class CompanyExpenseDAO {
 	}
 
 	/**
+	 * Update the company's bill in DB
+	 * @param CompanyExpense billObj that will be updated into DB
+	 * @return true Compnay's bill was updated with successful
+	 * @return false Fail on attempt to updated the compnay's bill from DB
+	 */
+	public boolean updateBill(CompanyExpense billObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "
+					+ "tbl_conta_pac "
+					+ "SET "
+						+ "id_categoria_conta_pac = ?, "
+						+ "valor = ? ,"
+						+ "vencimento = ?, "
+						+ "paga = ? "
+					+"WHERE id_conta_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+
+			stmt.setInt(1, billObj.getIdCategoriaContaPac());
+			stmt.setFloat(2, billObj.getValor());
+			stmt.setString(3, billObj.getVencimento());
+			stmt.setInt(4, billObj.getPaga());
+			stmt.setInt(5, billObj.getIdContaPac());
+
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
+		}
+	}
+
+	/**
 	 * Delete the bill from DB
 	 * @param billId Bill's ID
 	 * @return true Bill was deleted with successful
@@ -103,6 +160,57 @@ public class CompanyExpenseDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 			return deleted;
+		}
+	}
+
+	/**
+	 * Get all informations about one company's bill
+	 * @param billId Company bill's ID that it will be achieve into DB
+	 * @return CompanyExpense CompanyExpense containing all data
+	 * @return null Fail in try to get the company bill's data into DB
+	 */
+	public CompanyExpense getFullBillById(int billId)
+	{
+		CompanyExpense companyExpense = null;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "SELECT * FROM tbl_conta_pac WHERE id_conta_pac = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setInt(1, billId);
+
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+
+			// Verify if rs has records inside itself
+			while(rs.next())
+			{
+				companyExpense = new CompanyExpense
+				(
+						rs.getInt("id_conta_pac"),
+						rs.getInt("id_categoria_conta_pac"),
+						rs.getFloat("valor"),
+						rs.getString("vencimento"),
+						rs.getInt("paga"),
+						rs.getString("log_conta_pac")
+				);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return companyExpense;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return companyExpense;
 		}
 	}
 

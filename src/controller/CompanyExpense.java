@@ -21,7 +21,104 @@ public class CompanyExpense {
 	// Global employee on application
 	private Employee employee;
 
+	private int idContaPac;
+	private int idCategoriaContaPac;
+	private float valor;
+	private String vencimento;
+	private int  paga;
+	private String logContaPac;
 
+	// Default constructor
+	public CompanyExpense
+	(
+		int idContaPac,
+		int idCategoriaContaPac,
+		float valor,
+		String vencimento,
+		int paga,
+		String logContaPac
+	)
+	{
+		this.idContaPac = idContaPac;
+		this.idCategoriaContaPac = idCategoriaContaPac;
+		this.valor = valor;
+		this.vencimento = vencimento;
+		this.paga = paga;
+		this.logContaPac = logContaPac;
+	}
+
+	public CompanyExpense
+	(
+		int idContaPac,
+		int idCategoriaContaPac,
+		float valor,
+		String vencimento,
+		int paga
+	)
+	{
+		this.idContaPac = idContaPac;
+		this.idCategoriaContaPac = idCategoriaContaPac;
+		this.valor = valor;
+		this.vencimento = vencimento;
+		this.paga = paga;
+	}
+	// **************************************
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public int getIdContaPac() {
+		return idContaPac;
+	}
+
+	public void setIdContaPac(int idContaPac) {
+		this.idContaPac = idContaPac;
+	}
+
+	public int getIdCategoriaContaPac() {
+		return idCategoriaContaPac;
+	}
+
+	public void setIdCategoriaContaPac(int idCategoriaContaPac) {
+		this.idCategoriaContaPac = idCategoriaContaPac;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
+	public String getVencimento() {
+		return vencimento;
+	}
+
+	public void setVencimento(String vencimento) {
+		this.vencimento = vencimento;
+	}
+
+	public int getPaga() {
+		return paga;
+	}
+
+	public void setPaga(int paga) {
+		this.paga = paga;
+	}
+
+	public String getLogContaPac() {
+		return logContaPac;
+	}
+
+	public void setLogContaPac(String logContaPac) {
+		this.logContaPac = logContaPac;
+	}
 
 	// Get fields from window
 	@FXML Label lblUsersName;
@@ -38,6 +135,30 @@ public class CompanyExpense {
 	public CompanyExpense(Employee employeeObj)
 	{
 		this.employee = employeeObj;
+	}
+
+	/**
+	 * Get all informations about one company's bill
+	 * @param billId Company bill's ID that it will be achieve into DB
+	 * @return CompanyExpense CompanyExpense containing all data
+	 * @return null Fail in try to get the company bill's data into DB
+	 */
+	static public CompanyExpense getFullBillById(int billId)
+	{
+		CompanyExpenseDAO companyExpenseDAO = new CompanyExpenseDAO();
+		return companyExpenseDAO.getFullBillById(billId);
+	}
+
+	/**
+	 * Update the company's bill in DB
+	 * @param CompanyExpense billObj that will be updated into DB
+	 * @return true Compnay's bill was updated with successful
+	 * @return false Fail on attempt to updated the compnay's bill from DB
+	 */
+	public boolean updateBill(CompanyExpense billObj)
+	{
+		CompanyExpenseDAO companyExpenseDAO = new CompanyExpenseDAO();
+		return companyExpenseDAO.updateBill(billObj);
 	}
 
 	/**
@@ -108,6 +229,22 @@ public class CompanyExpense {
 					Utils.showError(null, "Deletar Registro", "Falha ao tentar deletar a fatura \""+clickedBill.getCategoria()+"\" ("+clickedBill.getVencimento()+")");
 				}
 			}
+		}
+	}
+
+	/**
+	 * Update selected bill
+	 */
+	@FXML public void updateBill()
+	{
+		// Get selected row
+		ContaPacFormatado clickedBill = tblCompanyExpense.getSelectionModel().getSelectedItem();
+
+		// Check if one row was selected
+		if(clickedBill != null)  // Row was selected
+		{
+			// Open update partner window to see partner's data
+			Main.openWindow("UpdateCompanyBill", new UpdateCompanyBill(employee, CompanyExpense.getFullBillById(clickedBill.getIdContaPac())));
 		}
 	}
 

@@ -30,28 +30,31 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="141.0" layoutY="342.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                        <RadioButton fx:id="rbtPagaS" layoutX="141.0" layoutY="342.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="paga" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtPagaN" layoutX="310.0" layoutY="342.0" mnemonicParsing="false" text="Não" textFill="WHITE" toggleGroup="$paga">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="310.0" layoutY="342.0" mnemonicParsing="false" text="Não" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </RadioButton>
-                        <TextField layoutX="87.0" layoutY="163.0" prefHeight="35.0" prefWidth="350.0" promptText="Valor">
+                        <TextField fx:id="txtValor" layoutX="87.0" layoutY="163.0" prefHeight="35.0" prefWidth="350.0" promptText="Valor">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <DatePicker layoutX="87.0" layoutY="232.0" prefHeight="35.0" prefWidth="350.0" promptText="Data de Nascimento" />
+                        <DatePicker fx:id="dpDataVencimento" layoutX="87.0" layoutY="232.0" prefHeight="35.0" prefWidth="350.0" promptText="Data de Nascimento" />
                         <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="25.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/list.png" />
                            </image>
                         </ImageView>
-                        <ComboBox layoutX="87.0" layoutY="87.0" prefHeight="35.0" prefWidth="350.0" promptText="Categoria" />
+                        <ComboBox fx:id="cbxCategoria" layoutX="87.0" layoutY="87.0" prefHeight="35.0" prefWidth="350.0" promptText="Categoria" />
                         <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="29.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/money.png" />
@@ -62,6 +65,11 @@
                               <Image url="@../resources/pictures/icons/calendar.png" />
                            </image>
                         </ImageView>
+                        <Button layoutY="421.0" mnemonicParsing="false" onAction="#updateBill" prefHeight="30.0" prefWidth="501.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="ATUALIZAR">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
                      </children></Pane>
                   <Label layoutX="-200.0" layoutY="-77.0" prefHeight="80.0" prefWidth="500.0" style="-fx-background-color: #1F1F1F;" />
                   <Separator layoutX="-200.0" layoutY="-1.0" prefHeight="0.0" prefWidth="500.0" />
