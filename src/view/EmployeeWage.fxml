@@ -111,16 +111,17 @@
                   <Separator layoutX="1054.0" layoutY="-60.0" opacity="0.15" orientation="VERTICAL" prefHeight="53.0" prefWidth="6.0" />
                   <Pane layoutY="180.0" prefHeight="460.0" prefWidth="1080.0" style="-fx-background-color: #212121;">
                      <children>
-                        <TableView fx:id="tblPartners" layoutX="13.0" layoutY="30.0" prefHeight="408.0" prefWidth="1051.0">
+                        <TableView fx:id="tblEmployeeWage" layoutX="13.0" layoutY="30.0" prefHeight="408.0" prefWidth="1051.0">
                           <columns>
-                            <TableColumn fx:id="colPartnerId" prefWidth="30.0" text="ID" />
-                            <TableColumn fx:id="colPartnerCompanyName" prefWidth="301.0" resizable="false" text="Funcionário" />
-                            <TableColumn fx:id="colPartnerSubscription" prefWidth="223.0" resizable="false" text="Salário" />
-                            <TableColumn fx:id="colPartnershipDate" minWidth="0.0" prefWidth="196.0" resizable="false" text="Pago" />
-                            <TableColumn fx:id="colPartnerEmail" prefWidth="300.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
+                            <TableColumn fx:id="colId" prefWidth="30.0" text="ID" />
+                            <TableColumn fx:id="colName" prefWidth="176.0" resizable="false" text="Funcionário" />
+                            <TableColumn fx:id="colWage" prefWidth="185.0" resizable="false" text="Salário" />
+                            <TableColumn fx:id="colPaied" minWidth="0.0" prefWidth="175.0" resizable="false" text="Pago" />
+                            <TableColumn fx:id="colPayMonth" minWidth="0.0" prefWidth="255.0" resizable="false" text="Mês de Pagamento" />
+                            <TableColumn fx:id="colPaidDate" prefWidth="229.0" resizable="false" sortType="DESCENDING" text="Pagamento Realizado" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnUpdatePartner" layoutX="862.0" layoutY="-13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR PAGAMENTO">
+                        <Button fx:id="btnUpdatePartner" layoutX="862.0" layoutY="-13.0" mnemonicParsing="false" onAction="#updateEmployeeWage" prefHeight="27.0" prefWidth="180.0" styleClass="btn" stylesheets="@application.css" text="ATUALIZAR PAGAMENTO">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
