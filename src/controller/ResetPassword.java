@@ -10,26 +10,34 @@ import javafx.scene.control.TextField;
 import utils.Utils;
 
 public class ResetPassword {
-	
+
 	static int userId = -1;
-	
+
 	// Get fields from window
 	@FXML TextField txtCpf;
 	@FXML PasswordField txtNovaSenha;
 	@FXML DatePicker dpDtNasc;
 	@FXML Button btnResetPassword;
-	
+
+	/**
+	 * Return to mains window
+	 */
+	@FXML public void openMainWindow()
+	{
+		Main.openWindow("Main", null);
+	}
+
 	@FXML public void checkData()
 	{
 		// Verify if text fields are empty
 		if(!txtCpf.getText().isEmpty() && !dpDtNasc.getValue().toString().isEmpty())
-		{			
-			// Create a employee object 
+		{
+			// Create a employee object
 			Employee employee = new Employee(txtCpf.getText(), dpDtNasc.getValue().toString());
-			
+
 			// Verify if exists one employee with data
 			userId = employee.existsEmployee(employee);
-			
+
 			// Active button to update password if employee exists into DB
 			if(userId != -1) // Exists it
 			{
@@ -39,10 +47,10 @@ public class ResetPassword {
 			{
 				Utils.showError(null, "Redefinição de Senha", "Funcionário não encontrado !");
 			}
-			
+
 		}
 	}
-	
+
 	@FXML public void updatePassword()
 	{
 		// Verify if new password text field is empty
@@ -57,7 +65,7 @@ public class ResetPassword {
 			{
 				// Create a new user
 				User user = new User(userId, txtNovaSenha.getText());
-				
+
 				// Verify if update of password has succeed
 				if(user.updatePassword(user)) // Successful
 				{
@@ -70,7 +78,7 @@ public class ResetPassword {
 			}
 		}
 	}
-	
+
 	@FXML public void disableResetPasswordButton()
 	{
 		btnResetPassword.setDisable(true);
