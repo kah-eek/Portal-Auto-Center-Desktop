@@ -152,12 +152,16 @@ public class EmployeeWage {
 		// Check if one row was selected
 		if(clickedWage != null)  // Row was selected
 		{
+			// Keep if employee's wage is paid
 			int paid = 0;
 			
+			// Verify wage status (if it is paid or not)
 			if(clickedWage.getPago().equals("Não")) paid = 1;
 			
+			// Verify if it is set to payment date or not
 			String dataPagamentoRealizado = paid == 1 ? LocalDateTime.now().toString() : null;
 			
+			// Create EmployeeWage object to update it into DB
 			EmployeeWage employeeWage = new EmployeeWage
 			(
 				clickedWage.getIdPagamentoFuncionarioPac(), 
@@ -167,11 +171,15 @@ public class EmployeeWage {
 				dataPagamentoRealizado
 			);
 			
-			if(employeeWage.updateWageState(employeeWage))
+			// Verify if update has succeed
+			if(employeeWage.updateWageState(employeeWage)) // Successful
 			{
 				Utils.showInfo(null, "Pagamento atualizado com sucesso", "Pagamento Funcionário");
+				
+				// Reload the window to update items into table
+				Main.openWindow("EmployeeWage", new EmployeeWage(employee));
 			}
-			else 
+			else // Fail
 			{
 				Utils.showError(null, "Pagamento Funcionário", "Falha ao tentar atualizar o pagamento selecionado :(");
 			}

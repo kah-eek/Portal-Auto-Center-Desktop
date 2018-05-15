@@ -44,10 +44,6 @@ public class EmployeeWageDAO {
 			stmt.setInt(1, employeeWageObj.getPago());
 			stmt.setString(2, employeeWageObj.getDataPagamentoRealizado());
 			stmt.setInt(3, employeeWageObj.getIdPagamentoFuncionarioPac());
-			
-			System.out.println(employeeWageObj.getPago());
-			System.out.println(employeeWageObj.getDataPagamentoRealizado());
-			System.out.println(employeeWageObj.getIdPagamentoFuncionarioPac());
 
 			// Execute the query
 			int rows = stmt.executeUpdate();
