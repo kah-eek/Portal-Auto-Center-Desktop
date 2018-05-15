@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
 import model.EmployeeWageDAO;
 import utils.Utils;
+import view.Main;
 import viewmodel.PagamentoFuncionarioDetalhadoFormatado;
 import viewmodel.ParceiroSimplesFormatado;
 

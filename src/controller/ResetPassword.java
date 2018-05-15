@@ -8,6 +8,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import utils.Utils;
+import view.Main;
 
 public class ResetPassword {
 

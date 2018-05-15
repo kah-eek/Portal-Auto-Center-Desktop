@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.util.converter.LocalDateStringConverter;
 import utils.Utils;
+import view.Main;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
 

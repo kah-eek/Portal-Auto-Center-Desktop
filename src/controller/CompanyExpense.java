@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.CompanyExpenseDAO;
 import utils.Utils;
+import view.Main;
 import viewmodel.ContaPacFormatado;
 import viewmodel.FuncionarioSimplesFormatado;
 import viewmodel.ParceiroSimplesFormatado;

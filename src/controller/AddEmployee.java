@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import model.EmployeeDAO;
 import model.PartnerDAO;
 import utils.Utils;
+import view.Main;
 
 public class AddEmployee {
 

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import model.PartnerDAO;
 import utils.Utils;
+import view.Main;
 
 public class AddPartner {
 

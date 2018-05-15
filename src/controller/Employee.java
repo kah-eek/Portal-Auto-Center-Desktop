@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
 import utils.Utils;
+import view.Main;
 import viewmodel.FuncionarioDetalhado;
 import viewmodel.FuncionarioSimplesFormatado;
 

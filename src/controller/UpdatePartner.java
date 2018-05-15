@@ -9,6 +9,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import utils.Utils;
+import view.Main;
 import viewmodel.ParceiroDetalhado;
 
 public class UpdatePartner {

@@ -2,6 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import view.Main;
 
 public class Home {
 

@@ -1,9 +1,13 @@
-package controller;
+package view;
 
 import javafx.scene.control.TextField;
 
 import javafx.geometry.Rectangle2D;
-
+import controller.Authentication;
+import controller.Employee;
+import controller.Home;
+import controller.ResetPassword;
+import controller.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +49,7 @@ public class Main extends Application {
 		try {
 
 			// try to load XML file
-			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../view/"+xmlFile+".fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(xmlFile+".fxml"));
 
 			// Verify if is to set controller into FXML file
 			if(controller != null)

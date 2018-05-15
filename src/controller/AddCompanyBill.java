@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import model.CompanyExpenseDAO;
 import model.EmployeeDAO;
 import utils.Utils;
+import view.Main;
 
 public class AddCompanyBill {
 
