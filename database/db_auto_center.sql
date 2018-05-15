@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	8.0.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `tbl_acao_nivel_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_acao_nivel_usuario` (
   `id_acoes_nivel` int(11) NOT NULL AUTO_INCREMENT,
   `id_nivel_usuario` int(11) NOT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_acao_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_acao_usuario` (
   `id_acao_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `acao` varchar(120) NOT NULL,
@@ -72,7 +72,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_anuncio_parceiro` (
   `id_anuncio_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_parceiro` int(11) NOT NULL,
@@ -101,7 +101,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio_produto_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_anuncio_produto_parceiro` (
   `id_anuncio_produto` int(11) NOT NULL AUTO_INCREMENT,
   `id_produto` int(11) NOT NULL,
@@ -128,7 +128,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_anuncio_veiculo_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_anuncio_veiculo_parceiro` (
   `id_anuncio_veiculo_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_veiculo_parceiro` int(11) NOT NULL,
@@ -155,7 +155,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cargo_funcionario_pac`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_cargo_funcionario_pac` (
   `id_cargo_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `cargo` varchar(280) NOT NULL,
@@ -179,7 +179,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_categoria_conta_pac`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_categoria_conta_pac` (
   `id_categoria_conta_pac` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(180) NOT NULL,
@@ -203,7 +203,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_categoria_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_categoria_produto` (
   `id_categoria_produto` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(380) NOT NULL,
@@ -227,7 +227,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_categoria_topico_forum`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_categoria_topico_forum` (
   `id_categoria_topico_forum` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(80) NOT NULL,
@@ -250,7 +250,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_click_anuncio_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_click_anuncio_parceiro` (
   `id_click_anuncio_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_anuncio_parceiro` int(11) NOT NULL,
@@ -277,7 +277,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(250) NOT NULL,
@@ -312,7 +312,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_comentario_post`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_comentario_post` (
   `id_comentario_post` int(11) NOT NULL AUTO_INCREMENT,
   `id_post_rede_social` int(11) NOT NULL,
@@ -342,7 +342,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_comentario_topico_forum`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_comentario_topico_forum` (
   `id_comentario_forum` int(11) NOT NULL AUTO_INCREMENT,
   `id_topico_forum` int(11) NOT NULL,
@@ -373,7 +373,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_compatibilidade_produto_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_compatibilidade_produto_veiculo` (
   `id_compatibilidade_produto_veiculo` int(11) NOT NULL AUTO_INCREMENT,
   `id_veiculo` int(11) NOT NULL,
@@ -401,7 +401,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_conta_pac`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_conta_pac` (
   `id_conta_pac` int(11) NOT NULL AUTO_INCREMENT,
   `id_categoria_conta_pac` int(11) NOT NULL,
@@ -431,7 +431,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_controle_abastecimento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_controle_abastecimento` (
   `id_controle_abastecimento` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipo_combustivel` int(11) NOT NULL,
@@ -463,7 +463,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_cor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_cor` (
   `id_cor` int(11) NOT NULL AUTO_INCREMENT,
   `cor` varchar(80) NOT NULL,
@@ -487,7 +487,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_curtir_post`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_curtir_post` (
   `id_curtir_post` int(11) NOT NULL AUTO_INCREMENT,
   `id_post_rede_social` int(11) NOT NULL,
@@ -516,7 +516,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_endereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_endereco` (
   `id_endereco` int(11) NOT NULL AUTO_INCREMENT,
   `logradouro` varchar(210) NOT NULL,
@@ -548,7 +548,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_estado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_estado` (
   `id_estado` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(180) NOT NULL,
@@ -572,7 +572,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fabricante`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_fabricante` (
   `id_fabricante` int(11) NOT NULL AUTO_INCREMENT,
   `fabricante` varchar(180) NOT NULL,
@@ -596,7 +596,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fabricante_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_fabricante_produto` (
   `id_fabricante_produto` int(11) NOT NULL AUTO_INCREMENT,
   `fabricante` varchar(320) NOT NULL,
@@ -620,7 +620,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_fale_conosco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(280) NOT NULL,
@@ -645,7 +645,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_feedback_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_feedback_cliente` (
   `id_feedback_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
@@ -672,7 +672,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_funcionario_pac`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_funcionario_pac` (
   `id_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(210) NOT NULL,
@@ -717,7 +717,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_imagem_produto_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_imagem_produto_parceiro` (
   `id_imagem_produto_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_produto` int(11) NOT NULL,
@@ -745,7 +745,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_imagem_veiculo_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_imagem_veiculo_cliente` (
   `id_imagem_veiculo_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_veiculo_cliente` int(11) NOT NULL,
@@ -771,7 +771,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_imagem_veiculo_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_imagem_veiculo_parceiro` (
   `id_imagem_veiculo_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_veiculo_parceiro` int(11) NOT NULL,
@@ -799,7 +799,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_modelo_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_modelo_produto` (
   `id_modelo_produto` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(380) NOT NULL,
@@ -829,7 +829,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_modelo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_modelo_veiculo` (
   `id_modelo_veiculo` int(11) NOT NULL AUTO_INCREMENT,
   `id_fabricante` int(11) NOT NULL,
@@ -856,7 +856,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_modo_pagamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_modo_pagamento` (
   `id_modo_pagamento` int(11) NOT NULL AUTO_INCREMENT,
   `modo` varchar(180) NOT NULL,
@@ -879,7 +879,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_nivel_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_nivel_usuario` (
   `id_nivel_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nivel` varchar(45) NOT NULL,
@@ -903,16 +903,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pagamento_funcionario_pac`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_pagamento_funcionario_pac` (
   `id_pagamento_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario_pac` int(11) NOT NULL,
   `pago` tinyint(1) NOT NULL DEFAULT '0',
-  `log_pagamento_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mes_pagamento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_pagamento_realizado` datetime DEFAULT NULL,
   PRIMARY KEY (`id_pagamento_funcionario_pac`),
   KEY `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac_idx` (`id_funcionario_pac`),
   CONSTRAINT `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac` FOREIGN KEY (`id_funcionario_pac`) REFERENCES `tbl_funcionario_pac` (`id_funcionario_pac`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=459 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -921,7 +922,7 @@ CREATE TABLE `tbl_pagamento_funcionario_pac` (
 
 LOCK TABLES `tbl_pagamento_funcionario_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_pagamento_funcionario_pac` DISABLE KEYS */;
-INSERT INTO `tbl_pagamento_funcionario_pac` VALUES (11,1,0,'2018-05-14 11:17:49'),(12,26,0,'2018-05-14 11:17:49'),(14,1,0,'2018-05-14 11:17:59'),(15,26,0,'2018-05-14 11:17:59'),(17,1,0,'2018-05-14 11:18:09'),(18,26,0,'2018-05-14 11:18:09'),(20,1,0,'2018-05-14 11:18:19'),(21,26,0,'2018-05-14 11:18:19'),(23,1,0,'2018-05-14 11:18:29'),(24,26,0,'2018-05-14 11:18:29'),(26,1,0,'2018-05-14 11:18:39'),(27,26,0,'2018-05-14 11:18:39'),(29,1,0,'2018-05-14 11:18:49'),(30,26,0,'2018-05-14 11:18:49'),(32,1,0,'2018-05-14 11:18:59'),(33,26,0,'2018-05-14 11:18:59'),(35,1,0,'2018-05-14 11:19:09'),(36,26,0,'2018-05-14 11:19:09'),(38,1,0,'2018-05-14 11:19:19'),(39,26,0,'2018-05-14 11:19:19'),(41,1,0,'2018-05-14 11:19:29'),(42,26,0,'2018-05-14 11:19:29'),(44,1,0,'2018-05-14 11:19:39'),(45,26,0,'2018-05-14 11:19:39'),(47,1,0,'2018-05-14 11:19:49'),(48,26,0,'2018-05-14 11:19:49'),(50,1,0,'2018-05-14 11:19:51'),(51,26,0,'2018-05-14 11:19:51'),(53,1,0,'2018-05-14 11:20:23'),(54,26,0,'2018-05-14 11:20:23'),(56,1,0,'2018-05-14 11:20:28'),(57,26,0,'2018-05-14 11:20:28'),(59,1,0,'2018-05-14 11:20:33'),(60,26,0,'2018-05-14 11:20:33'),(62,1,0,'2018-05-14 11:20:38'),(63,26,0,'2018-05-14 11:20:38'),(65,1,0,'2018-05-14 11:20:43'),(66,26,0,'2018-05-14 11:20:43'),(68,1,0,'2018-05-14 11:20:48'),(69,26,0,'2018-05-14 11:20:48'),(71,1,0,'2018-05-14 11:20:53'),(72,26,0,'2018-05-14 11:20:53'),(74,1,0,'2018-05-14 11:20:58'),(75,26,0,'2018-05-14 11:20:58'),(77,1,0,'2018-05-14 11:21:03'),(78,26,0,'2018-05-14 11:21:03'),(80,1,0,'2018-05-14 11:21:08'),(81,26,0,'2018-05-14 11:21:08'),(83,1,0,'2018-05-14 11:21:13'),(84,26,0,'2018-05-14 11:21:13'),(86,1,0,'2018-05-14 11:21:18'),(87,26,0,'2018-05-14 11:21:18'),(89,1,0,'2018-05-14 11:21:23'),(90,26,0,'2018-05-14 11:21:23'),(92,1,0,'2018-05-14 11:21:28'),(93,26,0,'2018-05-14 11:21:28');
+INSERT INTO `tbl_pagamento_funcionario_pac` VALUES (402,1,0,'2018-05-14 23:45:36',NULL),(403,26,0,'2018-05-14 23:45:36',NULL),(405,1,0,'2018-05-14 23:47:36',NULL),(406,26,0,'2018-05-14 23:47:36',NULL),(408,1,0,'2018-05-14 23:49:36',NULL),(409,26,0,'2018-05-14 23:49:36',NULL),(411,1,0,'2018-05-14 23:51:36',NULL),(412,26,0,'2018-05-14 23:51:36',NULL),(414,1,0,'2018-05-14 23:53:36',NULL),(415,26,0,'2018-05-14 23:53:36',NULL),(417,1,0,'2018-05-14 23:55:36',NULL),(418,26,0,'2018-05-14 23:55:36',NULL),(420,1,0,'2018-05-14 23:57:36',NULL),(421,26,0,'2018-05-14 23:57:36',NULL),(423,1,0,'2018-05-14 23:59:36',NULL),(424,26,0,'2018-05-14 23:59:36',NULL),(426,1,0,'2018-05-15 00:01:36',NULL),(427,26,0,'2018-05-15 00:01:36',NULL),(429,1,0,'2018-05-15 00:03:36',NULL),(430,26,0,'2018-05-15 00:03:36',NULL),(432,1,0,'2018-05-15 00:05:36',NULL),(433,26,0,'2018-05-15 00:05:36',NULL),(435,1,0,'2018-05-15 00:07:37',NULL),(436,26,0,'2018-05-15 00:07:37',NULL),(438,1,0,'2018-05-15 00:09:36',NULL),(439,26,0,'2018-05-15 00:09:36',NULL),(441,1,0,'2018-05-15 00:11:36',NULL),(442,26,0,'2018-05-15 00:11:36',NULL),(444,1,0,'2018-05-15 00:13:36',NULL),(445,26,0,'2018-05-15 00:13:36',NULL),(447,1,0,'2018-05-15 00:15:36',NULL),(448,26,0,'2018-05-15 00:15:36',NULL),(450,1,0,'2018-05-15 00:17:36',NULL),(451,26,0,'2018-05-15 00:17:36',NULL),(453,1,0,'2018-05-15 00:19:36',NULL),(454,26,0,'2018-05-15 00:19:36',NULL),(456,1,0,'2018-05-15 00:21:36',NULL),(457,26,0,'2018-05-15 00:21:36',NULL);
 /*!40000 ALTER TABLE `tbl_pagamento_funcionario_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -931,7 +932,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_parceiro` (
   `id_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `nome_fantasia` varchar(280) NOT NULL,
@@ -973,7 +974,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_pedido` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) NOT NULL,
@@ -1003,7 +1004,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pergunta_chatbot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_pergunta_chatbot` (
   `id_pergunta_chatbot` int(11) NOT NULL AUTO_INCREMENT,
   `pergunta` varchar(800) NOT NULL,
@@ -1026,7 +1027,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_pergunta_resposta_chatbot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_pergunta_resposta_chatbot` (
   `id_pergunta_resposta_chatbot` int(11) NOT NULL AUTO_INCREMENT,
   `id_pergunta` int(11) NOT NULL,
@@ -1054,7 +1055,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_plano_contratacao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_plano_contratacao` (
   `id_plano_contratacao` int(11) NOT NULL AUTO_INCREMENT,
   `plano` varchar(120) NOT NULL,
@@ -1080,7 +1081,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_post_rede_social`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_post_rede_social` (
   `id_post_rede_social` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
@@ -1108,7 +1109,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_produto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   `id_modelo_produto` int(11) NOT NULL,
@@ -1149,7 +1150,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_resposta_chatbot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_resposta_chatbot` (
   `id_resposta_chatbot` int(11) NOT NULL AUTO_INCREMENT,
   `resposta` varchar(1500) NOT NULL,
@@ -1172,7 +1173,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_seguir_rede_social`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_seguir_rede_social` (
   `id_seguir_rede_social` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_seguidor` int(11) NOT NULL,
@@ -1201,7 +1202,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_situacao_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_situacao_pedido` (
   `id_situacao_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
@@ -1230,7 +1231,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_sobre_cliente_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_sobre_cliente_parceiro` (
   `id_sobre_cliente_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `imagem` varchar(300) NOT NULL,
@@ -1258,7 +1259,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_sobre_empresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_sobre_empresa` (
   `id_sobre_empresa` int(11) NOT NULL AUTO_INCREMENT,
   `imagem` varchar(480) NOT NULL,
@@ -1286,7 +1287,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_socorrista_socorro_ja`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_socorrista_socorro_ja` (
   `id_socorrista_socorro_ja` int(11) NOT NULL AUTO_INCREMENT,
   `id_parceiro` int(11) NOT NULL,
@@ -1315,7 +1316,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_socorro_ja`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_socorro_ja` (
   `id_socorro_ja` int(11) NOT NULL AUTO_INCREMENT,
   `problema` varchar(6800) NOT NULL,
@@ -1346,7 +1347,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_combustivel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_tipo_combustivel` (
   `id_tipo_combustivel` int(11) NOT NULL AUTO_INCREMENT,
   `combustivel` varchar(120) NOT NULL,
@@ -1369,7 +1370,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_descricao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_tipo_descricao` (
   `id_tipo_descricao` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(180) NOT NULL,
@@ -1392,7 +1393,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_situacao_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_tipo_situacao_pedido` (
   `id_tipo_situacao_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `situacao` varchar(120) NOT NULL,
@@ -1415,7 +1416,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_tipo_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_tipo_veiculo` (
   `id_tipo_veiculo` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(120) NOT NULL,
@@ -1439,7 +1440,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_topico_forum`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_topico_forum` (
   `id_topico_forum` int(11) NOT NULL,
   `foto` varchar(350) DEFAULT NULL,
@@ -1472,7 +1473,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_topico_sobre_empresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_topico_sobre_empresa` (
   `id_topico_sobre_empresa` int(11) NOT NULL AUTO_INCREMENT,
   `topico_sobre_empresa` varchar(120) NOT NULL,
@@ -1496,7 +1497,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(160) NOT NULL,
@@ -1526,7 +1527,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_veiculo` (
   `id_veiculo` int(11) NOT NULL AUTO_INCREMENT,
   `ano_fabricacao` year(4) NOT NULL,
@@ -1561,7 +1562,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_veiculo_cliente` (
   `id_veiculo_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) NOT NULL,
@@ -1589,7 +1590,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo_parceiro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_veiculo_parceiro` (
   `id_veiculo_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_parceiro` int(11) NOT NULL,
@@ -1618,7 +1619,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tbl_veiculo_tipo_combustivel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `tbl_veiculo_tipo_combustivel` (
   `id_veiculo_tipo_combustivel` int(11) NOT NULL AUTO_INCREMENT,
   `id_veiculo` int(11) NOT NULL,
@@ -1647,7 +1648,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `view_cliente`;
 /*!50001 DROP VIEW IF EXISTS `view_cliente`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_cliente` AS SELECT 
  1 AS `id_cliente`,
  1 AS `nome`,
@@ -1683,7 +1684,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_conta_pac_formatado`;
 /*!50001 DROP VIEW IF EXISTS `view_conta_pac_formatado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_conta_pac_formatado` AS SELECT 
  1 AS `id_conta_pac`,
  1 AS `id_categoria_conta_pac`,
@@ -1700,7 +1701,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_funcionario_detalhado`;
 /*!50001 DROP VIEW IF EXISTS `view_funcionario_detalhado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_funcionario_detalhado` AS SELECT 
  1 AS `id_funcionario_pac`,
  1 AS `nome`,
@@ -1743,7 +1744,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_funcionario_simples_formatado`;
 /*!50001 DROP VIEW IF EXISTS `view_funcionario_simples_formatado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_funcionario_simples_formatado` AS SELECT 
  1 AS `id_funcionario_pac`,
  1 AS `nome`,
@@ -1761,7 +1762,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_imagem_produto_parceiro`;
 /*!50001 DROP VIEW IF EXISTS `view_imagem_produto_parceiro`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_imagem_produto_parceiro` AS SELECT 
  1 AS `id_imagem_produto_parceiro`,
  1 AS `id_produto`,
@@ -1780,7 +1781,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_imagem_veiculo_parceiro`;
 /*!50001 DROP VIEW IF EXISTS `view_imagem_veiculo_parceiro`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_imagem_veiculo_parceiro` AS SELECT 
  1 AS `id_imagem_veiculo_parceiro`,
  1 AS `id_veiculo_parceiro`,
@@ -1794,13 +1795,31 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `view_pagamento_funcionario_detalhado_formatado`
+--
+
+DROP TABLE IF EXISTS `view_pagamento_funcionario_detalhado_formatado`;
+/*!50001 DROP VIEW IF EXISTS `view_pagamento_funcionario_detalhado_formatado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8mb4;
+/*!50001 CREATE VIEW `view_pagamento_funcionario_detalhado_formatado` AS SELECT 
+ 1 AS `id_pagamento_funcionario_pac`,
+ 1 AS `id_funcionario_pac`,
+ 1 AS `pago`,
+ 1 AS `mes_pagamento`,
+ 1 AS `data_pagamento_realizado`,
+ 1 AS `nome`,
+ 1 AS `salario`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `view_parceiro`
 --
 
 DROP TABLE IF EXISTS `view_parceiro`;
 /*!50001 DROP VIEW IF EXISTS `view_parceiro`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_parceiro` AS SELECT 
  1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
@@ -1839,7 +1858,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_parceiro_detalhado`;
 /*!50001 DROP VIEW IF EXISTS `view_parceiro_detalhado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_parceiro_detalhado` AS SELECT 
  1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
@@ -1878,7 +1897,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_parceiro_formatado`;
 /*!50001 DROP VIEW IF EXISTS `view_parceiro_formatado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_parceiro_formatado` AS SELECT 
  1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
@@ -1914,7 +1933,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_parceiro_simples`;
 /*!50001 DROP VIEW IF EXISTS `view_parceiro_simples`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_parceiro_simples` AS SELECT 
  1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
@@ -1940,7 +1959,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_parceiro_simples_formatado`;
 /*!50001 DROP VIEW IF EXISTS `view_parceiro_simples_formatado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_parceiro_simples_formatado` AS SELECT 
  1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
@@ -1966,7 +1985,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_produto`;
 /*!50001 DROP VIEW IF EXISTS `view_produto`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_produto` AS SELECT 
  1 AS `id_produto`,
  1 AS `nome`,
@@ -2001,7 +2020,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_produto_detalhado`;
 /*!50001 DROP VIEW IF EXISTS `view_produto_detalhado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_produto_detalhado` AS SELECT 
  1 AS `id_produto`,
  1 AS `id_modelo_produto`,
@@ -2050,7 +2069,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_receita_plano_contratacao`;
 /*!50001 DROP VIEW IF EXISTS `view_receita_plano_contratacao`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_receita_plano_contratacao` AS SELECT 
  1 AS `receita`*/;
 SET character_set_client = @saved_cs_client;
@@ -2062,7 +2081,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `view_total_despesas_internas`;
 /*!50001 DROP VIEW IF EXISTS `view_total_despesas_internas`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `view_total_despesas_internas` AS SELECT 
  1 AS `total_despesa`*/;
 SET character_set_client = @saved_cs_client;
@@ -2171,6 +2190,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_imagem_veiculo_parceiro` AS select 1 AS `id_imagem_veiculo_parceiro`,1 AS `id_veiculo_parceiro`,1 AS `imagem`,1 AS `ativo`,1 AS `id_parceiro`,1 AS `tipo`,1 AS `id_tipo_veiculo`,1 AS `nome_fantasia`,1 AS `razao_social` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_pagamento_funcionario_detalhado_formatado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_pagamento_funcionario_detalhado_formatado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_pagamento_funcionario_detalhado_formatado` AS select `pgm_func`.`id_pagamento_funcionario_pac` AS `id_pagamento_funcionario_pac`,`pgm_func`.`id_funcionario_pac` AS `id_funcionario_pac`,if((`pgm_func`.`pago` = 0),'Não','Sim') AS `pago`,date_format(cast(`pgm_func`.`mes_pagamento` as date),'%m/%Y') AS `mes_pagamento`,date_format(cast(`pgm_func`.`data_pagamento_realizado` as date),'%d/%m/%Y') AS `data_pagamento_realizado`,`func`.`nome` AS `nome`,`func`.`salario` AS `salario` from (`tbl_pagamento_funcionario_pac` `pgm_func` join `tbl_funcionario_pac` `func` on((`func`.`id_funcionario_pac` = `pgm_func`.`id_funcionario_pac`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -2346,4 +2383,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-14 11:21:30
+-- Dump completed on 2018-05-15  0:22:11
