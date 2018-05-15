@@ -1,7 +1,7 @@
 /*
 	VIEW DE PAGAMENTO DOS SALÁRIOS DOS FUNCIONÁRIOS DE FORMA FORMATADA PARA O USUARIO FINAL
 */
-ALTER VIEW view_pagamento_funcionario_detalhado_formatado AS 
+CREATE VIEW view_pagamento_funcionario_detalhado_formatado AS 
 
 SELECT 
 

@@ -59,23 +59,23 @@ public class Employee {
   }
 
   public Employee(){}
-  
+
   public Employee
   (
-	String nome, 
-	String cpf, 
-	String rg, 
+	String nome,
+	String cpf,
+	String rg,
 	int idCargoFuncionarioPac,
-	char sexo, 
-	String celular, 
-	String email, 
-	String foto, 
+	char sexo,
+	String celular,
+	String email,
+	String foto,
 	String cnh,
-	String pis, 
+	String pis,
 	String certificadoReservista,
 	float salario,
 	String dtNascimento
-  ) 
+  )
   {
 	this.nome = nome;
 	this.cpf = cpf;
@@ -91,34 +91,34 @@ public class Employee {
 	this.pis = pis;
 	this.certificadoReservista = certificadoReservista;
   }
-  
+
   public Employee
   (
 	String cpf,
 	String dtNascimento
-  ) 
+  )
   {
 	this.cpf = cpf;
 	this.dtNascimento = dtNascimento;
   }
-  
+
   public Employee
   (
-	int idFuncionarioPac, 
-	String nome, 
-	String cpf, 
-	String rg, 
+	int idFuncionarioPac,
+	String nome,
+	String cpf,
+	String rg,
 	int idCargoFuncionarioPac,
-	char sexo, 
-	String celular, 
-	String email, 
-	String foto, 
+	char sexo,
+	String celular,
+	String email,
+	String foto,
 	String cnh,
-	String pis, 
+	String pis,
 	String certificadoReservista,
 	float salario,
 	String dtNascimento
-  ) 
+  )
   {
 	this.idFuncionarioPac = idFuncionarioPac;
 	this.nome = nome;
@@ -240,7 +240,7 @@ public void setIdUsuario(int idUsuario) {
   public void setLogFuncionarioPac(String logFuncionarioPac) {
     this.logFuncionarioPac = logFuncionarioPac;
   }
-  
+
   /**
   * Verify id employee exists into database
   * @param employeeObj Employee object that it will be verified into DB
@@ -249,9 +249,9 @@ public void setIdUsuario(int idUsuario) {
   */
   public int existsEmployee(Employee employeeObj)
   {
-	return new EmployeeDAO().existsEmployee(employeeObj);	
+	return new EmployeeDAO().existsEmployee(employeeObj);
   }
-  
+
   /**
   * Delete the employee from DB
   * @param employeeId Employee's ID
@@ -263,7 +263,7 @@ public void setIdUsuario(int idUsuario) {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.deleteEmployee(employeeId);
   }
-  
+
   /**
   * Update the employee in DB
   * @param employeeObj Employee that will be updated into DB
@@ -275,7 +275,7 @@ public void setIdUsuario(int idUsuario) {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.updateEmployee(employeeObj);
   }
-  
+
   /**
   * Insert a new employee into DB
   * @param addressObj Address object that will inserted into DB
@@ -287,7 +287,7 @@ public void setIdUsuario(int idUsuario) {
   public int insertEmployee(Address addressObj, User userObj, Employee employeeObj)
   {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
-	  return employeeDAO.insertEmployee(addressObj, userObj, employeeObj);	
+	  return employeeDAO.insertEmployee(addressObj, userObj, employeeObj);
   }
 
 
@@ -302,7 +302,7 @@ public void setIdUsuario(int idUsuario) {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.getEmployeesInformation(userId);
   }
-  
+
   /**
   * Get employees' basic informations from DB
   * @return ArrayList<FuncionarioSimplesFormatado> List containing all of employees existing into DB
@@ -313,7 +313,7 @@ public void setIdUsuario(int idUsuario) {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.getEmployees();
   }
-  
+
   @FXML public void initialize()
   {
 	// Set some data into some field
@@ -331,7 +331,7 @@ public void setIdUsuario(int idUsuario) {
 	// Show employee's name
 	lblUsersName.setText(employee.getNome());
   }
-  
+
   /**
   * Get all informations about one employee
   * @param employeeId Employee's ID that it will be achieve into DB
@@ -343,7 +343,7 @@ public void setIdUsuario(int idUsuario) {
 	  EmployeeDAO employeeDAO = new EmployeeDAO();
 	  return employeeDAO.getFullEmployeeById(employeeId);
   }
-  
+
   /**
    * Open window to add new employee
    */
@@ -351,7 +351,7 @@ public void setIdUsuario(int idUsuario) {
   {
 	  Main.openWindow("AddEmployee", new AddEmployee(employee));
   }
- 
+
   /**
    * Update selected employee
    */
@@ -359,15 +359,15 @@ public void setIdUsuario(int idUsuario) {
   {
 	// Get selected row
 	FuncionarioSimplesFormatado clickedEmployee = tblEmployees.getSelectionModel().getSelectedItem();
-	
+
 	// Check if one row was selected
 	if(clickedEmployee != null)  // Row was selected
-	{		
+	{
 		// Open update partner window to see partner's data
 		Main.openWindow("UpdateEmployee", new UpdateEmployee(employee, Employee.getFullEmployeeById(clickedEmployee.getIdFuncionarioPac())));
 	}
   }
-  
+
   /**
    * Delete employee
    */
@@ -375,7 +375,7 @@ public void setIdUsuario(int idUsuario) {
   {
 	  // Get selected row
 	  FuncionarioSimplesFormatado clickedEmployee =  tblEmployees.getSelectionModel().getSelectedItem();
-	  
+
 	// Check if one row was selected
 	if(clickedEmployee != null)  // Row was selected
 	{
@@ -419,6 +419,6 @@ public void setIdUsuario(int idUsuario) {
 	Main.openWindow("EmployeeWage", new EmployeeWage(employee));
   }
   // ***************************************************
-  
+
 
 }

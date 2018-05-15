@@ -131,7 +131,7 @@ public class Main extends Application {
 		}
 
 	}
-	
+
 	@FXML public void openResetPasswordWindow()
 	{
 		Main.openWindow("ResetPassword", new ResetPassword());

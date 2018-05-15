@@ -19,13 +19,13 @@ import viewmodel.FuncionarioDetalhado;
 import viewmodel.ParceiroSimplesFormatado;
 
 public class UpdateEmployee {
-	
+
 	// Global employee on application
 	private Employee employee;
-	
+
 	// Partner that it will be updated
 	private FuncionarioDetalhado fullEmployee;
-	
+
 	// Get fields from window
 	@FXML TextField txtNome;
 	@FXML TextField txtCpf;
@@ -39,12 +39,12 @@ public class UpdateEmployee {
 	@FXML TextField txtCnh;
 	@FXML TextField txtPis;
 	@FXML TextField txtCertificadoReservista;
-	
+
 	@FXML RadioButton rbnUsuarioAtivoS;
 	@FXML RadioButton rbnUsuarioAtivoN;
 	@FXML RadioButton rbtSexoF;
 	@FXML RadioButton rbtSexoM;
-	
+
 	@FXML TextField txtLogradouro;
 	@FXML TextField txtNumero;
 	@FXML TextField txtCidade;
@@ -52,61 +52,61 @@ public class UpdateEmployee {
 	@FXML TextField txtCep;
 	@FXML TextField txtBairro;
 	@FXML TextField txtComplemento;
-	
+
 	@FXML TextField txtNomeUsuario;
 	@FXML PasswordField txtSenha;
 	@FXML ComboBox<String> cbxNivelUsuario;
 
-	
+
 	// Default constructor
 	public UpdateEmployee(Employee employeeObj, FuncionarioDetalhado fullEmployee)
 	{
 		this.employee = employeeObj;
 		this.fullEmployee = fullEmployee;
 	}
-	
+
 	@FXML public void initialize()
 	{
 		// Create a list that will fill the user's levels
 		ObservableList<String> levels = FXCollections.observableArrayList();
-		
+
 		for(UserLevel level : UserLevel.getUserLevels())
 		{
 			levels.add(level.getNivel());
 		}
-		
+
 		// Set list into combo box
 		cbxNivelUsuario.setItems(levels);
 		// __________________________________________________________><
-		
+
 		// Create a list that will fill the states list
 		ObservableList<String> states = FXCollections.observableArrayList();
-		
+
 		for(State state : State.getStates())
 		{
 			states.add(state.getEstado());
 		}
-		
+
 		// Set list into combo box
 		cbxEstado.setItems(states);
 		// __________________________________________________________><
-		
+
 		// Create a list that will fill the employee's roles list
 		ObservableList<String> roles = FXCollections.observableArrayList();
-		
+
 		for(Role role : Role.getRoles())
 		{
 			roles.add(role.getCargo());
 		}
-		
+
 		// Set list into combo box
 		cbxCargo.setItems(roles);
 		// __________________________________________________________><
-				
+
 		// Setting data into fields
 		txtNome.setText(fullEmployee.getNome());
 		txtCpf.setText(fullEmployee.getCpf());
-		txtEmail.setText(fullEmployee.getEmail());	
+		txtEmail.setText(fullEmployee.getEmail());
 		txtRg.setText(fullEmployee.getRg());
 		txtSalario.setText(fullEmployee.getSalario());
 		txtCnh.setText(fullEmployee.getCnh());
@@ -129,17 +129,17 @@ public class UpdateEmployee {
 
 		// Verify if partner's user is active
 		if(fullEmployee.getUsuarioAtivo() == 1)
-		{ 
+		{
 			rbnUsuarioAtivoS.setSelected(true);
 		}
 		else
 		{
 			rbnUsuarioAtivoN.setSelected(true);
 		}
-		
+
 		// Verify employee's sex
 		if(fullEmployee.getSexo() == 'M')
-		{ 
+		{
 			rbtSexoM.setSelected(true);
 		}
 		else
@@ -147,7 +147,15 @@ public class UpdateEmployee {
 			rbtSexoF.setSelected(true);
 		}
 	}
-	
+
+	/**
+	 * Return to employee window
+	 */
+	@FXML public void openEmployeeWIndow()
+    {
+		Main.openWindow("Employee", new Employee(employee));
+    }
+
 	/**
 	 * Update employee
 	 */
@@ -164,59 +172,59 @@ public class UpdateEmployee {
 				txtBairro.getText(),
 				txtComplemento.getText()
 		);
-		
-		int activeUser = rbnUsuarioAtivoN.isSelected() ? 0 : 1; 
-		
+
+		int activeUser = rbnUsuarioAtivoN.isSelected() ? 0 : 1;
+
 		// Create user object that it will updated into DB
 		User user = new User
 		(
 			fullEmployee.getIdUsuario(),
-			txtNomeUsuario.getText(), 
-			txtSenha.getText(), 
+			txtNomeUsuario.getText(),
+			txtSenha.getText(),
 			cbxNivelUsuario.getSelectionModel().getSelectedIndex()+1,
 			activeUser
 		);
-				
+
 		char employeeSex = rbtSexoF.isSelected() ? 'F' : 'M';
-		
+
 		LocalDate date = dpDtNasc.getValue();
-		
+
 		// Create employee object that it will updated into DB
 		Employee employee = new Employee
-		(								
-				fullEmployee.getIdFuncionarioPac(), 
-				txtNome.getText(), 
-				txtCpf.getText(), 
-				txtRg.getText(), 
-				cbxCargo.getSelectionModel().getSelectedIndex()+1, 
+		(
+				fullEmployee.getIdFuncionarioPac(),
+				txtNome.getText(),
+				txtCpf.getText(),
+				txtRg.getText(),
+				cbxCargo.getSelectionModel().getSelectedIndex()+1,
 				employeeSex,
-				txtCelular.getText(), 
-				txtEmail.getText(), 
-				"path", 
+				txtCelular.getText(),
+				txtEmail.getText(),
+				"path",
 				txtCnh.getText(),
-				txtPis.getText(), 
+				txtPis.getText(),
 				txtCertificadoReservista.getText(),
 				Float.parseFloat(txtSalario.getText()),
 				date.toString()
 		);
-		
+
 		// DEBBUG
 		/*
-		System.out.println(address.updateAddress(address)); 
+		System.out.println(address.updateAddress(address));
 		System.out.println(user.updateUser(user));
 		System.out.println(partner.updatePartner(partner));
 		*/
-		
+
 		// Verify if the updates was succeed
 		if
 		(
-			address.updateAddress(address) && 
+			address.updateAddress(address) &&
 			user.updateUser(user) &&
 			employee.updateEmployee(employee)
 		)
 		{ // Successful
 			Utils.showInfo(null, "Funcionário atualizado com sucesso !", "Atualizar Funcionário");
-			
+
 			// Return to partner window
 			Main.openWindow("Employee", new Employee(employee));
 		}
