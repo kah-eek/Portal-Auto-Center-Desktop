@@ -78,6 +78,11 @@ public class User {
 		this.senha = senha;
 		this.idNivelUsuario = idNivelUsuario;
 	}
+	public User(int idUsuario, String senha)
+	{
+		this.idUsuario = idUsuario;
+		this.senha = senha;
+	}
 	public User(int idUsuario, String usuario, String senha, int idNivelUsuario, int ativo)
 	{
 		this.idUsuario = idUsuario;
@@ -98,6 +103,17 @@ public class User {
 	{
 		UserDAO userDAO = new UserDAO();
 		return userDAO.getUser(username, password);
+	}
+	
+	/**
+	 * Update the user's password in DB
+	 * @param userObj User that will be updated into DB
+	 * @return true User's password was updated with successful
+	 * @return false Fail on attempt to updated the user's password from DB
+	 */
+	public boolean updatePassword(User userObj)
+	{
+		return new UserDAO().updatePassword(userObj);
 	}
 	
 	/**

@@ -20,6 +20,51 @@ import controller.Employee;
 public class EmployeeDAO {
 	
 	/**
+	 * Verify id employee exists into database
+	 * @param employeeObj Employee object that it will be verified into DB
+	 * @return int Employee's user ID
+	 * @return int -1 Fail in try to verify if employee exists into DB
+	 */
+	public int existsEmployee(Employee employeeObj)
+	{
+		int userId = -1;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "SELECT id_usuario FROM tbl_funcionario_pac WHERE dt_nascimento = ? AND cpf = ?;";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			stmt.setString(1, employeeObj.getDtNascimento());
+			stmt.setString(2, employeeObj.getCpf());
+
+			// Execute the query
+			ResultSet rs = stmt.executeQuery();
+
+			// Verify if rs has records inside itself
+			if(rs.next())
+			{
+				// Keep user's id returned from select in DB
+				userId = rs.getInt(1);
+			}
+
+			// close connection to DB
+			con.close();
+
+			return userId;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return userId;
+		}
+	}
+	
+	/**
 	 * Get all informations about one employee
 	 * @param employeeId Employee's ID that it will be achieve into DB
 	 * @return FuncionarioDetalhado Employee containing all data

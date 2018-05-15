@@ -22,7 +22,7 @@
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="101.0" layoutY="-8.0" stylesheets="@application.css" text="Esqueceu a senha ?" textFill="#b2b2b2">
+                  <Label layoutX="101.0" layoutY="-8.0" onMouseClicked="#openResetPasswordWindow" stylesheets="@application.css" text="Esqueceu a senha ?" textFill="#b2b2b2">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -94,6 +94,16 @@ public class Employee {
   
   public Employee
   (
+	String cpf,
+	String dtNascimento
+  ) 
+  {
+	this.cpf = cpf;
+	this.dtNascimento = dtNascimento;
+  }
+  
+  public Employee
+  (
 	int idFuncionarioPac, 
 	String nome, 
 	String cpf, 
@@ -127,7 +137,7 @@ public class Employee {
   }
   // ***************************************
 
-  public void setIdUsuario(int idUsuario) {
+public void setIdUsuario(int idUsuario) {
 	this.idUsuario = idUsuario;
   }
   public int getIdUsuario() {
@@ -229,6 +239,17 @@ public class Employee {
   }
   public void setLogFuncionarioPac(String logFuncionarioPac) {
     this.logFuncionarioPac = logFuncionarioPac;
+  }
+  
+  /**
+  * Verify id employee exists into database
+  * @param employeeObj Employee object that it will be verified into DB
+  * @return int Employee's user ID
+  * @return int -1 Fail in try to verify if employee exists into DB
+  */
+  public int existsEmployee(Employee employeeObj)
+  {
+	return new EmployeeDAO().existsEmployee(employeeObj);	
   }
   
   /**

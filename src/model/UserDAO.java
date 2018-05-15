@@ -178,5 +178,52 @@ public class UserDAO {
 			return updated;
 		}
 	}
+	
+	/**
+	 * Update the user's password in DB
+	 * @param userObj User that will be updated into DB
+	 * @return true User's password was updated with successful
+	 * @return false Fail on attempt to updated the user's password from DB
+	 */
+	public boolean updatePassword(User userObj)
+	{
+		// Keep the result came from DB
+		boolean updated = false;
+
+		// Open connection to DB
+		MySql db = new MySql();
+		Connection con = db.openConnection();
+
+		// Select into DB
+		String sql = "UPDATE "+
+					 "tbl_usuario "+
+				     "SET "+
+					     "senha = ? "+
+					  "WHERE id_usuario = ?";
+
+		try {
+
+			// Create the statement
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
+			
+			stmt.setString(1, userObj.getSenha());
+			stmt.setInt(2, userObj.getIdUsuario());
+			
+			// Execute the query
+			int rows = stmt.executeUpdate();
+
+			// Verify if record has succeed on update
+			if(rows >= 1) updated = true;
+
+			// close connection to DB
+			con.close();
+
+			return updated;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return updated;
+		}
+	}
 
 }

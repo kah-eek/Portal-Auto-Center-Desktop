@@ -131,7 +131,11 @@ public class Main extends Application {
 		}
 
 	}
-
+	
+	@FXML public void openResetPasswordWindow()
+	{
+		Main.openWindow("ResetPassword", new ResetPassword());
+	}
 	@FXML public void cleanUsernameField()
 	{
 		txtUsername.setStyle("-fx-background-color: #ffffff");
