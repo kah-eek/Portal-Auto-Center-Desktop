@@ -8,7 +8,7 @@ SELECT
 /* tbl_pagamento_funcionario_pac */
 pgm_func.id_pagamento_funcionario_pac, 
 pgm_func.id_funcionario_pac,
-IF(pgm_func.pago = 0, 'Nâo','Sim') AS pago,
+IF(pgm_func.pago = 0, 'Não','Sim') AS pago,
 DATE_FORMAT(DATE(pgm_func.mes_pagamento), "%m/%Y") AS mes_pagamento,
 DATE_FORMAT(DATE(pgm_func.data_pagamento_realizado),"%d/%m/%Y") AS data_pagamento_realizado,
 

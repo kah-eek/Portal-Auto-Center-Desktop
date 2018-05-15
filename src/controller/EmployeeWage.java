@@ -1,5 +1,6 @@
 package controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -10,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.EmployeeDAO;
 import model.EmployeeWageDAO;
+import utils.Utils;
 import viewmodel.PagamentoFuncionarioDetalhadoFormatado;
 import viewmodel.ParceiroSimplesFormatado;
 
@@ -17,6 +19,70 @@ public class EmployeeWage {
 	
 	// Global employee on application
 	private Employee employee;
+	
+	private int idPagamentoFuncionarioPac;
+	private int idFuncionarioPac; 
+	private int pago; 
+	private String mesPagamento; 
+	private String dataPagamentoRealizado;
+	
+	// Default constructor
+	public EmployeeWage
+	(
+		int idPagamentoFuncionarioPac, 
+		int idFuncionarioPac, 
+		int pago, 
+		String mesPagamento,
+		String dataPagamentoRealizado
+	) 
+	{
+		this.idPagamentoFuncionarioPac = idPagamentoFuncionarioPac;
+		this.idFuncionarioPac = idFuncionarioPac;
+		this.pago = pago;
+		this.mesPagamento = mesPagamento;
+		this.dataPagamentoRealizado = dataPagamentoRealizado;
+	}
+	// *****************************************************
+
+	public int getIdPagamentoFuncionarioPac() {
+		return idPagamentoFuncionarioPac;
+	}
+
+	public void setIdPagamentoFuncionarioPac(int idPagamentoFuncionarioPac) {
+		this.idPagamentoFuncionarioPac = idPagamentoFuncionarioPac;
+	}
+
+	public int getIdFuncionarioPac() {
+		return idFuncionarioPac;
+	}
+
+	public void setIdFuncionarioPac(int idFuncionarioPac) {
+		this.idFuncionarioPac = idFuncionarioPac;
+	}
+
+	public int getPago() {
+		return pago;
+	}
+
+	public void setPago(int pago) {
+		this.pago = pago;
+	}
+
+	public String getMesPagamento() {
+		return mesPagamento;
+	}
+
+	public void setMesPagamento(String mesPagamento) {
+		this.mesPagamento = mesPagamento;
+	}
+
+	public String getDataPagamentoRealizado() {
+		return dataPagamentoRealizado;
+	}
+
+	public void setDataPagamentoRealizado(String dataPagamentoRealizado) {
+		this.dataPagamentoRealizado = dataPagamentoRealizado;
+	}
 
 	// Get fields from window
 	@FXML Label lblUsersName;
@@ -44,6 +110,17 @@ public class EmployeeWage {
 	{
 		return new EmployeeWageDAO().getAllEmployeeWage();
 	}
+	
+	/**
+	 * Update the employee's wage in DB
+	 * @param employeeWageObj Employee's wage that will be updated into DB
+	 * @return true Employee's wage was updated with successful
+	 * @return false Fail on attempt to updated the employee's wage from DB
+	 */
+	public boolean updateWageState(EmployeeWage employeeWageObj)
+	{
+		return new EmployeeWageDAO().updateWageState(employeeWageObj);
+	}
 
 	// Set some data into some field
 	@FXML public void initialize()
@@ -64,10 +141,41 @@ public class EmployeeWage {
 		lblUsersName.setText(employee.getNome());
 	}
 	
-	
+	/**
+	 * Update selected employee wage state
+	 */
 	@FXML public void updateEmployeeWage()
 	{
+		// Get selected row
+		PagamentoFuncionarioDetalhadoFormatado clickedWage = tblEmployeeWage.getSelectionModel().getSelectedItem();
 		
+		// Check if one row was selected
+		if(clickedWage != null)  // Row was selected
+		{
+			int paid = 0;
+			
+			if(clickedWage.getPago().equals("Não")) paid = 1;
+			
+			String dataPagamentoRealizado = paid == 1 ? LocalDateTime.now().toString() : null;
+			
+			EmployeeWage employeeWage = new EmployeeWage
+			(
+				clickedWage.getIdPagamentoFuncionarioPac(), 
+				clickedWage.getIdFuncionarioPac(), 
+				paid, 
+				clickedWage.getMesPagamento(),
+				dataPagamentoRealizado
+			);
+			
+			if(employeeWage.updateWageState(employeeWage))
+			{
+				Utils.showInfo(null, "Pagamento atualizado com sucesso", "Pagamento Funcionário");
+			}
+			else 
+			{
+				Utils.showError(null, "Pagamento Funcionário", "Falha ao tentar atualizar o pagamento selecionado :(");
+			}
+		}
 	}
 
 	// Open windows when click on "button"
