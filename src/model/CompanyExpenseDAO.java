@@ -238,9 +238,10 @@ public class CompanyExpenseDAO {
 					 "id_categoria_conta_pac, "+
 					 "valor, "+
 					 "vencimento, "+
-					 "paga"+
+					 "paga, "+
+					 "log_conta_pac"+
 					 ") "+
-					 "VALUES (?,?,?,?)";
+					 "VALUES (?,?,?,?,now())";
 		try {
 
 			// Create the statement
