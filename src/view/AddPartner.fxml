@@ -25,47 +25,47 @@
                   </ImageView>
                   <Pane layoutX="-200.0" prefHeight="645.0" prefWidth="1280.0" style="-fx-background-color: rgba(40,40,40,0.95);">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtNomeFantasia" layoutX="91.0" layoutY="83.0" promptText="Nome Fantasia">
+                        <TextField fx:id="txtNomeFantasia" layoutX="157.0" layoutY="82.0" promptText="Nome Fantasia">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="39.0" layoutY="14.0" opacity="0.5" text="Dados Gerais" textFill="WHITE">
+                        <Label layoutX="105.0" layoutY="13.0" opacity="0.5" text="Dados Gerais" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtRazaoSocial" layoutX="91.0" layoutY="140.0" promptText="Razão Social">
+                        <TextField fx:id="txtRazaoSocial" layoutX="157.0" layoutY="139.0" promptText="Razão Social">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtCnpj" layoutX="91.0" layoutY="195.0" promptText="CNPJ">
+                        <TextField fx:id="txtCnpj" layoutX="157.0" layoutY="194.0" promptText="CNPJ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/email.png" />
                            </image>
                         </ImageView>
-                        <RadioButton fx:id="rbtSocorristaN" layoutX="186.0" layoutY="498.0" mnemonicParsing="false" text="Não" textFill="WHITE">
+                        <RadioButton fx:id="rbtSocorristaN" layoutX="252.0" layoutY="497.0" mnemonicParsing="false" text="Não" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -73,86 +73,86 @@
                               <ToggleGroup fx:id="socorrista" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rbtSocorristaS" layoutX="91.0" layoutY="498.0" mnemonicParsing="false" text="Sim" textFill="WHITE" toggleGroup="$socorrista">
+                        <RadioButton fx:id="rbtSocorristaS" layoutX="157.0" layoutY="497.0" mnemonicParsing="false" text="Sim" textFill="WHITE" toggleGroup="$socorrista">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <Label layoutX="121.0" layoutY="464.0" opacity="0.5" text="Socorrista" textFill="WHITE">
+                        <Label layoutX="187.0" layoutY="463.0" opacity="0.5" text="Socorrista" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/call.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtTelefone" layoutX="91.0" layoutY="302.0" promptText="Telefone">
+                        <TextField fx:id="txtTelefone" layoutX="157.0" layoutY="301.0" promptText="Telefone">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="txtCelular" layoutX="91.0" layoutY="353.0" promptText="Celular">
+                        <TextField fx:id="txtCelular" layoutX="157.0" layoutY="352.0" promptText="Celular">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/smartphone.png" />
                            </image>
                         </ImageView>
-                        <ComboBox fx:id="cbxPlanoContratacao" layoutX="91.0" layoutY="411.0" prefHeight="25.0" prefWidth="175.0" promptText="Plano" />
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="48.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+                        <ComboBox fx:id="cbxPlanoContratacao" layoutX="157.0" layoutY="410.0" prefHeight="25.0" prefWidth="175.0" promptText="Plano" />
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="114.0" layoutY="408.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/subscription.png" />
                            </image>
                         </ImageView>
-                        <Separator layoutX="66.0" layoutY="525.0" opacity="0.38" prefWidth="200.0" />
-                        <Separator layoutX="305.0" layoutY="-12.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
-                        <Separator layoutX="13.0" layoutY="50.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
-                        <Separator layoutX="7.0" layoutY="57.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
-                        <Separator layoutX="653.0" layoutY="59.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
-                        <Separator layoutX="659.0" layoutY="52.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
-                        <Label layoutX="685.0" layoutY="16.0" opacity="0.5" text="Dados Usuário" textFill="WHITE">
+                        <Separator layoutX="132.0" layoutY="524.0" opacity="0.38" prefWidth="200.0" />
+                        <Separator layoutX="445.0" layoutY="2.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="0.0" />
+                        <Separator layoutX="79.0" layoutY="49.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
+                        <Separator layoutX="73.0" layoutY="56.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <Separator layoutX="826.0" layoutY="58.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <Separator layoutX="832.0" layoutY="51.0" opacity="0.38" prefHeight="3.0" prefWidth="230.0" />
+                        <Label layoutX="858.0" layoutY="15.0" opacity="0.5" text="Dados Usuário" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtUsuario" layoutX="739.0" layoutY="84.0" promptText="Nome de Usuario">
+                        <TextField fx:id="txtUsuario" layoutX="912.0" layoutY="83.0" promptText="Nome de Usuario">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="696.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="869.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/account.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="696.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="869.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/key.png" />
                            </image>
                         </ImageView>
-                        <PasswordField fx:id="txtSenha" layoutX="739.0" layoutY="139.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
+                        <PasswordField fx:id="txtSenha" layoutX="912.0" layoutY="138.0" prefHeight="30.0" prefWidth="175.0" promptText="Senha">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </PasswordField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="696.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="869.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/group.png" />
                            </image>
                         </ImageView>
-                        <ComboBox fx:id="cbxNivelUsuario" layoutX="739.0" layoutY="196.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
-                        <Separator layoutX="726.0" layoutY="307.0" opacity="0.38" prefWidth="200.0" />
-                        <Label layoutX="800.0" layoutY="244.0" opacity="0.5" text="Ativo" textFill="WHITE">
+                        <ComboBox fx:id="cbxNivelUsuario" layoutX="912.0" layoutY="195.0" prefHeight="25.0" prefWidth="175.0" promptText="Nível do Usuário" />
+                        <Separator layoutX="899.0" layoutY="306.0" opacity="0.38" prefWidth="200.0" />
+                        <Label layoutX="973.0" layoutY="243.0" opacity="0.5" text="Ativo" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="751.0" layoutY="280.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
+                        <RadioButton layoutX="924.0" layoutY="279.0" mnemonicParsing="false" text="Sim" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -160,87 +160,82 @@
                               <ToggleGroup fx:id="ativoUsuario" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton layoutX="846.0" layoutY="280.0" mnemonicParsing="false" text="Não" textFill="WHITE" toggleGroup="$ativoUsuario">
+                        <RadioButton layoutX="1019.0" layoutY="279.0" mnemonicParsing="false" text="Não" textFill="WHITE" toggleGroup="$ativoUsuario">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </RadioButton>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtLogradouro" layoutX="409.0" layoutY="83.0" promptText="Logradouro">
+                        <TextField fx:id="txtLogradouro" layoutX="541.0" layoutY="80.0" promptText="Logradouro">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <Label layoutX="355.0" layoutY="15.0" opacity="0.5" text="Dados de Endereço" textFill="WHITE">
+                        <Label layoutX="504.0" layoutY="10.0" opacity="0.5" text="Dados de Endereço" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Separator layoutX="329.0" layoutY="51.0" opacity="0.38" prefHeight="3.0" prefWidth="253.0" />
-                        <Separator layoutX="323.0" layoutY="58.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
-                        <TextField fx:id="txtNumero" layoutX="409.0" layoutY="138.0" promptText="Número">
+                        <Separator layoutX="478.0" layoutY="46.0" opacity="0.38" prefHeight="3.0" prefWidth="253.0" />
+                        <Separator layoutX="472.0" layoutY="53.0" opacity="0.38" prefHeight="3.0" prefWidth="122.0" />
+                        <TextField fx:id="txtNumero" layoutX="541.0" layoutY="135.0" promptText="Número">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/city.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtCidade" layoutX="409.0" layoutY="193.0" promptText="Cidade">
+                        <TextField fx:id="txtCidade" layoutX="541.0" layoutY="190.0" promptText="Cidade">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="txtCep" layoutX="409.0" layoutY="300.0" promptText="CEP">
+                        <TextField fx:id="txtCep" layoutX="541.0" layoutY="297.0" promptText="CEP">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <ComboBox fx:id="cbxEstado" layoutX="409.0" layoutY="248.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+                        <ComboBox fx:id="cbxEstado" layoutX="541.0" layoutY="245.0" prefHeight="25.0" prefWidth="175.0" promptText="Estado" />
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtBairro" layoutX="409.0" layoutY="351.0" promptText="Bairro">
+                        <TextField fx:id="txtBairro" layoutX="541.0" layoutY="348.0" promptText="Bairro">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="txtComplemento" layoutX="409.0" layoutY="407.0" promptText="Complemento">
+                        <TextField fx:id="txtComplemento" layoutX="541.0" layoutY="404.0" promptText="Complemento">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="366.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="43.0" layoutX="498.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/pictures/icons/business.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="ivImgParceiro" fitHeight="200.0" fitWidth="200.0" layoutX="999.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/pictures/profile/perfil.jpeg" />
                            </image>
                         </ImageView>
                         <Button layoutY="615.0" mnemonicParsing="false" onAction="#insertPartner" prefHeight="30.0" prefWidth="1280.0" style="-fx-background-color: #00C853;" stylesheets="@application.css" text="CADASTRAR">
@@ -248,8 +243,8 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Separator layoutX="634.0" layoutY="-15.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="6.0" />
-                        <TextField fx:id="txtEmail" layoutX="92.0" layoutY="248.0" promptText="E-mail">
+                        <Separator layoutX="774.0" layoutY="-1.0" opacity="0.75" orientation="VERTICAL" prefHeight="614.0" prefWidth="6.0" />
+                        <TextField fx:id="txtEmail" layoutX="158.0" layoutY="247.0" promptText="E-mail">
                            <font>
                               <Font size="14.0" />
                            </font>
