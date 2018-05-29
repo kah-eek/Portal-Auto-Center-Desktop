@@ -105,7 +105,7 @@ public class UpdatePartner {
 		txtLogradouro.setText(fullPartner.getLogradouro());
 		txtNumero.setText(fullPartner.getNumero());
 		txtCidade.setText(fullPartner.getCidade());
-		cbxEstado.getSelectionModel().select(fullPartner.getIdEndereco()-1);
+		cbxEstado.getSelectionModel().select(fullPartner.getIdEstado()-1);
 		txtCep.setText(fullPartner.getCep());
 		txtBairro.setText(fullPartner.getBairro());
 		txtComplemento.setText(fullPartner.getComplemento());
