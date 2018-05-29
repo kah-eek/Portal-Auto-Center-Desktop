@@ -30,26 +30,30 @@ public class ResetPassword {
 
 	@FXML public void checkData()
 	{
-		// Verify if text fields are empty
-		if(!txtCpf.getText().isEmpty() && !dpDtNasc.getValue().toString().isEmpty())
-		{
-			// Create a employee object
-			Employee employee = new Employee(txtCpf.getText(), dpDtNasc.getValue().toString());
-
-			// Verify if exists one employee with data
-			userId = employee.existsEmployee(employee);
-
-			// Active button to update password if employee exists into DB
-			if(userId != -1) // Exists it
+		try {
+			
+			// Verify if text fields are empty
+			if(!txtCpf.getText().isEmpty() && !dpDtNasc.getValue().toString().isEmpty())
 			{
-				btnResetPassword.setDisable(false);
-			}
-			else // Not exists it
-			{
-				Utils.showError(null, "Redefinição de Senha", "Funcionário não encontrado !");
-			}
+				// Create a employee object
+				Employee employee = new Employee(txtCpf.getText(), dpDtNasc.getValue().toString());
 
-		}
+				// Verify if exists one employee with data
+				userId = employee.existsEmployee(employee);
+
+				// Active button to update password if employee exists into DB
+				if(userId != -1) // Exists it
+				{
+					btnResetPassword.setDisable(false);
+				}
+				else // Not exists it
+				{
+					Utils.showError(null, "Redefinição de Senha", "Funcionário não encontrado !");
+				}
+
+			}
+			
+		}catch(NullPointerException e){}
 	}
 
 	@FXML public void updatePassword()
@@ -71,6 +75,9 @@ public class ResetPassword {
 				if(user.updatePassword(user)) // Successful
 				{
 					Utils.showInfo(null, "Senha redefinida com sucesso!", "Redefinição de Senha");
+					
+					// Go to login page (main page)
+					Main.openWindow("Main", null);
 				}
 				else // Fail
 				{
