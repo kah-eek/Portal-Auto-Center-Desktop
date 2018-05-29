@@ -119,7 +119,7 @@ public class UpdateEmployee {
 		txtLogradouro.setText(fullEmployee.getLogradouro());
 		txtNumero.setText(fullEmployee.getNumero());
 		txtCidade.setText(fullEmployee.getCidade());
-		cbxEstado.getSelectionModel().select(fullEmployee.getIdEndereco()-1);
+		cbxEstado.getSelectionModel().select(fullEmployee.getIdEstado()-1);
 		txtCep.setText(fullEmployee.getCep());
 		txtBairro.setText(fullEmployee.getBairro());
 		txtComplemento.setText(fullEmployee.getComplemento());
