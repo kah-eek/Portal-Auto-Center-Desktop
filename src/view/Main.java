@@ -79,7 +79,7 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 
 			// set window's title
-			primaryStage.setTitle("Portal Auto Center");
+			primaryStage.setTitle("Auto Fast");
 
 			// set window icon
 			primaryStage.getIcons().add(new Image("/resources/pictures/logo/portal_auto_center_icon.png"));
