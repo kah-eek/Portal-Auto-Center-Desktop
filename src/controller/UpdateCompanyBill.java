@@ -70,6 +70,14 @@ public class UpdateCompanyBill {
 	}
 
 	/**
+	 * Return to company expense window
+	 */
+	@FXML public void openCompanyExpenseWindow()
+    {
+		Main.openWindow("CompanyExpense", new CompanyExpense(employee));
+    }
+
+	/**
 	 * Update employee
 	 */
 	@FXML public void updateBill()
